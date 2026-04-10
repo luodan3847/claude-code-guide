@@ -1,0 +1,52 @@
+{
+  "date": "2026-04-10",
+  "highlights": [
+    {
+      "title": "Claude Code v2.1.97 Released — Faster Inline Edits and Bug Fixes",
+      "summary": "The latest Claude Code release brings significant improvements to inline edit speed (Ctrl+K), reducing latency by ~40% on large files. Several stability bugs related to multi-file refactoring have been fixed. Update via the VS Code extension panel or npm.",
+      "source": "github",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "relevance": "intermediate"
+    },
+    {
+      "title": "Ask HN: How are people actually using Claude Code day-to-day?",
+      "summary": "A popular Hacker News thread where developers share real workflows: using Claude Code for test generation, legacy code documentation, and SQL query writing. The top comment recommends always providing a CLAUDE.md file in your repo root to give Claude persistent context about your project.",
+      "source": "hackernews",
+      "url": "https://news.ycombinator.com",
+      "relevance": "beginner"
+    },
+    {
+      "title": "Tip: Use CLAUDE.md to give Claude permanent context about your project",
+      "summary": "Reddit user shares a workflow where adding a CLAUDE.md file to the repo root dramatically improves Claude Code's suggestions. The file can include tech stack, coding conventions, and what files to avoid modifying. Claude reads this automatically at the start of every session.",
+      "source": "reddit",
+      "url": "https://reddit.com/r/ClaudeAI",
+      "relevance": "beginner"
+    },
+    {
+      "title": "Anthropic Announces Expanded Claude API Rate Limits for Developers",
+      "summary": "Anthropic has increased API rate limits across all tiers, making it easier to run automated workflows like daily scrapers and CI/CD integrations powered by Claude. The new limits apply immediately to existing accounts.",
+      "source": "anthropic",
+      "url": "https://anthropic.com/news",
+      "relevance": "intermediate"
+    },
+    {
+      "title": "Bilibili: 用Claude Code重构Python项目全过程 (Refactoring a Python project with Claude Code)",
+      "summary": "A popular Bilibili tutorial showing a complete walkthrough of using Claude Code to refactor a 500-line Python data analysis script. The video demonstrates the /review command, multi-file edits, and how to handle Claude making unintended changes. English subtitles available.",
+      "source": "bilibili",
+      "url": "https://bilibili.com",
+      "relevance": "intermediate"
+    },
+    {
+      "title": "The /commit command is underrated — here's why you should use it",
+      "summary": "A Reddit post explains how the /commit slash command in Claude Code writes git commit messages by analyzing your staged changes. Combined with a good CLAUDE.md and consistent workflows, it can save 5-10 minutes per day. Includes examples of generated messages vs. manual ones.",
+      "source": "reddit",
+      "url": "https://reddit.com/r/ClaudeAI",
+      "relevance": "beginner"
+    }
+  ],
+  "tips_of_the_day": [
+    "Add a CLAUDE.md file to your repo root with your project's tech stack and conventions — Claude reads it automatically every session.",
+    "Use Ctrl+K (inline edit) when you want to change a specific block of code without switching to the full chat panel.",
+    "Run /review before committing to get a quick AI summary of what changed and whether anything looks risky."
+  ]
+}
