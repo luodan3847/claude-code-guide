@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Claude Code Guide
 
-## Getting Started
+Claude Code Guide is a public-facing project about turning AI-assisted exploration into a clearer, more professional workflow.
 
-First, run the development server:
+Instead of treating Claude Code as a one-off coding assistant, this repository frames it as part of a broader system for research, resource curation, structured learning, and practical experimentation. The goal is to make the work legible: easier to understand, easier to maintain, and easier to present to collaborators, recruiters, or stakeholders.
+
+## What this project demonstrates
+
+- AI workflow design grounded in repeatable structure
+- Next.js implementation for a polished public interface
+- Clear information architecture across content, automation, and presentation
+- Product thinking that connects technical decisions to user value
+- Documentation that explains the system, not just the code
+
+## Project focus
+
+The current version is designed around a practical knowledge workflow:
+
+- curating updates and resources from multiple sources
+- organizing learning materials into a more navigable system
+- separating interface code from content and automation logic
+- presenting AI-assisted work as a reusable product, not a loose experiment
+
+## Tech stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Anthropic SDK
+- Axios
+- Cheerio
+
+## Repository structure
+
+```text
+app/        App routes, layout, metadata, and homepage UI
+public/     Static assets
+data/       Structured source material and content inputs
+scripts/    Automation, scraping, and data-processing logic
+docs/       Architecture, product thinking, and roadmap notes
+.github/    GitHub workflows and repository automation
+```
+
+## Documentation
+
+- [Architecture overview](docs/architecture.md)
+- [Product thinking](docs/product-thinking.md)
+- [Roadmap](docs/roadmap.md)
+
+## Why this repo exists
+
+Many AI projects stay fragmented. They rely on scattered prompts, ad hoc notes, and undocumented steps, which makes them hard to reuse and hard to explain.
+
+This repository is an attempt to solve that problem with structure. It shows how AI tools can be wrapped in better interface decisions, clearer documentation, and a more maintainable project shape.
+
+## Local development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build the production version:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run TypeScript checks:
 
-## Learn More
+```bash
+npm run typecheck
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the combined verification step:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run check
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Suggested next improvements
 
-## Deploy on Vercel
+- expand the homepage into reusable UI sections and components
+- add richer filtering and discovery flows for curated resources
+- introduce stronger automation documentation for data refreshes
+- add screenshots or branded demo assets for public sharing
+- publish contribution and license guidance for wider reuse
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## About the author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project reflects a working style centered on strategy, research, customer understanding, and applied AI. The intention is not only to build functional tools, but to present them with clarity, structure, and professional execution.

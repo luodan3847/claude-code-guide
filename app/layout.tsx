@@ -1,26 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
-  title: "Claude Code + VS Code Guide",
+  title: {
+    default: "Claude Code Guide",
+    template: "%s | Claude Code Guide",
+  },
+  metadataBase: new URL(siteUrl),
   description:
-    "The daily-updated beginner guide to using Claude Code with VS Code. Step-by-step setup, tips, and the latest news — automatically summarized every day.",
+    "A professional public project about AI-assisted research workflows, structured learning, and clearer technical execution with Claude Code.",
+  keywords: [
+    "Claude Code",
+    "AI workflow",
+    "Next.js",
+    "research workflow",
+    "TypeScript",
+    "applied AI",
+    "portfolio project",
+  ],
   openGraph: {
-    title: "Claude Code + VS Code Guide",
-    description: "Daily-updated AI coding guide for beginners and pros.",
+    title: "Claude Code Guide",
+    description:
+      "A polished project that presents Claude Code as a structured system for research, learning, and practical execution.",
     type: "website",
+    siteName: "Claude Code Guide",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Claude Code Guide",
+    description:
+      "A polished project that presents Claude Code as a structured system for research, learning, and practical execution.",
   },
 };
 
@@ -30,16 +41,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-gray-50 text-gray-900">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-gray-200 py-6 text-center text-sm text-gray-500">
-          Built with Next.js · Powered by Claude API · Auto-updated daily via GitHub Actions
-        </footer>
+    <html lang="en">
+      <body className="antialiased">
+        {children}
       </body>
     </html>
   );
