@@ -1,0 +1,143 @@
+{
+  "date": "2026-04-24",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.119 Released",
+      "content": "## What's changed\n\n- `/config` settings (theme, editor mode, verbose, etc.) now persist to `~/.claude/settings.json` and participate in project/local/policy override precedence\n- Added `prUrlTemplate` setting to point the footer PR badge at a custom code-review URL instead of github.com\n- Added `CLAUDE_CODE_HIDE_CWD` environment variable to hide the working directory in the startup logo\n- `--from-pr` now accepts GitLab merge-request, Bitbucket pull-request, and GitHub Enterprise PR URLs\n- `--print` mode now honors the agent's `tools:` and `disallowedTools:` frontmatter, matching interactive-mode behavior\n- `--agent <name>` now honors the agent definition's `permissionMode` for built-in agents\n- PowerShell tool commands can now be auto-approved in permission mode, matching Bash behavior\n- H",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
+      "date": "2026-04-23T23:24:19Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.118 Released",
+      "content": "## What's changed\n\n- Added vim visual mode (`v`) and visual-line mode (`V`) with selection, operators, and visual feedback\n- Merged `/cost` and `/stats` into `/usage` — both remain as typing shortcuts that open the relevant tab\n- Create and switch between named custom themes from `/theme`, or hand-edit JSON files in `~/.claude/themes/`; plugins can also ship themes via a `themes/` directory\n- Hooks can now invoke MCP tools directly via `type: \"mcp_tool\"`\n- Added `DISABLE_UPDATES` env var to completely block all update paths including manual `claude update` — stricter than `DISABLE_AUTOUPDATER`\n- WSL on Windows can now inherit Windows-side managed settings via the `wslInheritsWindowsSettings` policy key\n- Auto mode: include `\"$defaults\"` in `autoMode.allow`, `autoMode.soft_deny`, or `autoMo",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.118",
+      "date": "2026-04-23T00:42:21Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.117 Released",
+      "content": "## What's changed\n\n- Forked subagents can now be enabled on external builds by setting `CLAUDE_CODE_FORK_SUBAGENT=1`\n- Agent frontmatter `mcpServers` are now loaded for main-thread agent sessions via `--agent`\n- Improved `/model`: selections now persist across restarts even when the project pins a different model, and the startup header shows when the active model comes from a project or managed-settings pin\n- The `/resume` command now offers to summarize stale, large sessions before re-reading them, matching the existing `--resume` behavior\n- Faster startup when both local and claude.ai MCP servers are configured (concurrent connect now default)\n- `plugin install` on an already-installed plugin now installs any missing dependencies instead of stopping at \"already installed\"\n- Plugin depen",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117",
+      "date": "2026-04-22T00:04:40Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.116 Released",
+      "content": "## What's changed\n\n- `/resume` on large sessions is significantly faster (up to 67% on 40MB+ sessions) and handles sessions with many dead-fork entries more efficiently\n- Faster MCP startup when multiple stdio servers are configured; `resources/templates/list` is now deferred to first `@`-mention\n- Smoother fullscreen scrolling in VS Code, Cursor, and Windsurf terminals — `/terminal-setup` now configures the editor's scroll sensitivity\n- Thinking spinner now shows progress inline (\"still thinking\", \"thinking more\", \"almost done thinking\"), replacing the separate hint row\n- `/config` search now matches option values (e.g. searching \"vim\" finds the Editor mode setting)\n- `/doctor` can now be opened while Claude is responding, without waiting for the current turn to finish\n- `/reload-plugins`",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.116",
+      "date": "2026-04-20T22:18:28Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.114 Released",
+      "content": "## What's changed\n\n- Fixed a crash in the permission dialog when an agent teams teammate requested tool permission\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.114",
+      "date": "2026-04-18T01:34:30Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "An update on recent Claude Code quality reports",
+      "content": "",
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "date": "2026-04-23T17:48:38Z",
+      "points": 702
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code to be removed from Anthropic's Pro plan?",
+      "content": "<a href=\"https:&#x2F;&#x2F;x.com&#x2F;TheAmolAvasare&#x2F;status&#x2F;2046725498592722972\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;TheAmolAvasare&#x2F;status&#x2F;2046725498592722972</a><p><a href=\"https:&#x2F;&#x2F;xcancel.com&#x2F;TheAmolAvasare&#x2F;status&#x2F;2046725498592722972\" rel=\"nofollow\">https:&#x2F;&#x2F;xcancel.com&#x2F;TheAmolAvasare&#x2F;status&#x2F;204672549859272297...</a>",
+      "url": "https://bsky.app/profile/edzitron.com/post/3mjzxwfx3qs2a",
+      "date": "2026-04-21T21:03:04Z",
+      "points": 679
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: GIDE-Offline AI coding assistant for private development",
+      "content": "",
+      "url": "https://generativeide.com/",
+      "date": "2026-04-23T11:40:48Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-04-24"
+    },
+    {
+      "source": "youtube",
+      "title": "Beginners Guide to Claude (Save Time & Make Money)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gxzMLBi6kJY",
+      "date": "2026-04-24",
+      "video_id": "gxzMLBi6kJY",
+      "thumbnail_url": "https://i.ytimg.com/vi/gxzMLBi6kJY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-04-24",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-04-24",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "How to Make Claude Code Your AI Engineering Team",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=wkv2ifxPpF8",
+      "date": "2026-04-24",
+      "video_id": "wkv2ifxPpF8",
+      "thumbnail_url": "https://i.ytimg.com/vi/wkv2ifxPpF8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-04-24",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-04-24",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-04-24",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-04-24",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    }
+  ]
+}
