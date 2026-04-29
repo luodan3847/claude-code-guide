@@ -1,0 +1,175 @@
+{
+  "date": "2026-04-29",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.123 Released",
+      "content": "## What's changed\n\n- Fixed OAuth authentication failing with a 401 retry loop when `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` is set\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.123",
+      "date": "2026-04-29T03:29:13Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.122 Released",
+      "content": "## What's changed\n\n- Added `ANTHROPIC_BEDROCK_SERVICE_TIER` environment variable to select a Bedrock service tier (`default`, `flex`, or `priority`), sent as the `X-Amzn-Bedrock-Service-Tier` header\n- Pasting a PR URL into the `/resume` search box now finds the session that created that PR (GitHub, GitHub Enterprise, GitLab, and Bitbucket)\n- `/mcp` now shows claude.ai connectors hidden by a manually-added server with the same URL, with a hint to remove the duplicate\n- Clarified the `/mcp` message shown when an MCP server is still unauthorized after the browser sign-in flow\n- OpenTelemetry: numeric attributes on `api_request`/`api_error` log events are now emitted as numbers, not strings\n- OpenTelemetry: added `claude_code.at_mention` log event for `@`-mention resolution\n- Fixed `/branch` p",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.122",
+      "date": "2026-04-28T22:05:15Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.121 Released",
+      "content": "## What's changed\n\n- Added `alwaysLoad` option to MCP server config — when `true`, all tools from that server skip tool-search deferral and are always available\n- Added `claude plugin prune` to remove orphaned auto-installed plugin dependencies; `plugin uninstall --prune` cascades\n- Added a type-to-filter search box to `/skills` so you can find a skill in long lists without scrolling\n- PostToolUse hooks can now replace tool output for all tools via `hookSpecificOutput.updatedToolOutput` (previously MCP-only)\n- Fullscreen mode: typing into the prompt no longer jumps scroll back to the bottom after you've scrolled up to read earlier output\n- Dialogs that overflow the terminal are now scrollable with arrow keys, PgUp/PgDn, home/end, and mouse wheel in both fullscreen and non-fullscreen modes\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.121",
+      "date": "2026-04-28T00:31:31Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.119 Released",
+      "content": "## What's changed\n\n- `/config` settings (theme, editor mode, verbose, etc.) now persist to `~/.claude/settings.json` and participate in project/local/policy override precedence\n- Added `prUrlTemplate` setting to point the footer PR badge at a custom code-review URL instead of github.com\n- Added `CLAUDE_CODE_HIDE_CWD` environment variable to hide the working directory in the startup logo\n- `--from-pr` now accepts GitLab merge-request, Bitbucket pull-request, and GitHub Enterprise PR URLs\n- `--print` mode now honors the agent's `tools:` and `disallowedTools:` frontmatter, matching interactive-mode behavior\n- `--agent <name>` now honors the agent definition's `permissionMode` for built-in agents\n- PowerShell tool commands can now be auto-approved in permission mode, matching Bash behavior\n- H",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
+      "date": "2026-04-23T23:24:19Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.118 Released",
+      "content": "## What's changed\n\n- Added vim visual mode (`v`) and visual-line mode (`V`) with selection, operators, and visual feedback\n- Merged `/cost` and `/stats` into `/usage` — both remain as typing shortcuts that open the relevant tab\n- Create and switch between named custom themes from `/theme`, or hand-edit JSON files in `~/.claude/themes/`; plugins can also ship themes via a `themes/` directory\n- Hooks can now invoke MCP tools directly via `type: \"mcp_tool\"`\n- Added `DISABLE_UPDATES` env var to completely block all update paths including manual `claude update` — stricter than `DISABLE_AUTOUPDATER`\n- WSL on Windows can now inherit Windows-side managed settings via the `wslInheritsWindowsSettings` policy key\n- Auto mode: include `\"$defaults\"` in `autoMode.allow`, `autoMode.soft_deny`, or `autoMo",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.118",
+      "date": "2026-04-23T00:42:21Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "An update on recent Claude Code quality reports",
+      "content": "",
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "date": "2026-04-23T17:48:38Z",
+      "points": 941
+    },
+    {
+      "source": "hackernews",
+      "title": "Who owns the code Claude Code wrote?",
+      "content": "",
+      "url": "https://legallayer.substack.com/p/who-owns-the-claude-code-wrote",
+      "date": "2026-04-28T11:24:52Z",
+      "points": 361
+    },
+    {
+      "source": "hackernews",
+      "title": "EvanFlow – A TDD driven feedback loop for Claude Code",
+      "content": "",
+      "url": "https://github.com/evanklem/evanflow",
+      "date": "2026-04-27T01:56:39Z",
+      "points": 108
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: How are you evaluating AI apps and CLI?",
+      "content": "I&#x27;m sure many of you work for companies where various AI tools are being made available and IT departments asking for feedback on those tools. The IT departments are allocating in some cases unlimited budget in the hopes that something comes out as a winner and sticks out eventually...<p>For example the models from Anthropic, OpenAI, Google etc. can be accessed via:\n- IDE integration, e.g. VS Code, JetBrains etc.\n- Dedicated apps and CLIs, e.g. Codex, Claude, Copilot CLI etc.<p>It&#x27;s already bad enough that SWE orgs are struggling to quantify the strength weaknesses of the models themselves and now we have their integration&#x2F;entry points to test out too and I&#x27;m not sure how we can even being to systematically evaluate these tools...<p>How are you approaching this? What&#x27;s worked for you and what&#x27;s not?",
+      "url": "https://news.ycombinator.com/item?id=47893745",
+      "date": "2026-04-24T18:03:36Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: GIDE-Offline AI coding assistant for private development",
+      "content": "",
+      "url": "https://generativeide.com/",
+      "date": "2026-04-23T11:40:48Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: How are you using AI code assistants on large messy legacy code bases?",
+      "content": "My company is starting to explore AI coding. I am a dev with 20+ years of experience and I am tasked with trying to help see how we can use this tool to help our company. I have only used Claude so my experience is limited to that.<p>As you might guess, I find AI to be extremely good at some things and actively terrible at others. A lot of the things I read and demos I watch all have to do with reasonable code bases. Our code base is not reasonable. It&#x27;s over 20 years old, coded by a multitude of different developers with different coding styles, design patterns, etc... What you would expect from a small company that has been slowly growing for decades. I also work in the medical field so slow evolving old code bases are the norm.<p>One of the reasons the AI fails constantly is that it has no context of the entire code base. It simply can&#x27;t keep that context in scope for every session. So it actively adds bloat to the system unless it&#x27;s guided by a skilled developer who already knows the system. I am using memories where I can but it has to regularly read huge chunks of code and that uses a lot of tokens. I regularly hit my limit on a Pro account.<p>What are your experiences with this? Any tips or tricks to improve output and cost? Any help is most appreciated. Thanks!",
+      "url": "https://news.ycombinator.com/item?id=47890749",
+      "date": "2026-04-24T14:24:37Z",
+      "points": 13
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: The why and how of TurboPentest for the Agentic Era",
+      "content": "Here is the story of why&#x2F;how I built TurboPentest. TurboPentest was designed for the AI era and to address the large volume of code now produced by coding assistants and the associated security vulnerabilities it introduces.",
+      "url": "https://integsec.com/blog/the-genesis-of-turbopentest.com-bridging-the-gap-in-an-ai-code-explosion-era",
+      "date": "2026-04-24T13:58:56Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-04-29"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Desktop App: Beginner's Guide (No Terminal Needed)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=P7-0grEB7nk",
+      "date": "2026-04-29",
+      "video_id": "P7-0grEB7nk",
+      "thumbnail_url": "https://i.ytimg.com/vi/P7-0grEB7nk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-04-29",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-04-29",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial for Beginners in 2026! (Step-By-Step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=qYqIhX9hTQk",
+      "date": "2026-04-29",
+      "video_id": "qYqIhX9hTQk",
+      "thumbnail_url": "https://i.ytimg.com/vi/qYqIhX9hTQk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-04-29",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-04-29",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-04-29",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-04-29",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    }
+  ]
+}
