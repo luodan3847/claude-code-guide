@@ -1,0 +1,167 @@
+{
+  "date": "2026-05-03",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.126 Released",
+      "content": "## What's changed\n\n- The `/model` picker now lists models from your gateway's `/v1/models` endpoint when `ANTHROPIC_BASE_URL` points at an Anthropic-compatible gateway\n- - Added `claude project purge [path]` to delete all Claude Code state for a project (transcripts, tasks, file history, config entry) — supports `--dry-run`, `-y/--yes`, `-i/--interactive`, and `--all`\n- `--dangerously-skip-permissions` now bypasses prompts for writes to `.claude/`, `.git/`, `.vscode/`, shell config files, and other previously-protected paths (catastrophic removal commands still prompt as a safety net)\n- `claude auth login` now accepts the OAuth code pasted into the terminal when the browser callback can't reach localhost (WSL2, SSH, containers)\n- `claude_code.skill_activated` OpenTelemetry event now fires ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.126",
+      "date": "2026-05-01T02:05:23Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.123 Released",
+      "content": "## What's changed\n\n- Fixed OAuth authentication failing with a 401 retry loop when `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` is set\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.123",
+      "date": "2026-04-29T03:29:13Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.122 Released",
+      "content": "## What's changed\n\n- Added `ANTHROPIC_BEDROCK_SERVICE_TIER` environment variable to select a Bedrock service tier (`default`, `flex`, or `priority`), sent as the `X-Amzn-Bedrock-Service-Tier` header\n- Pasting a PR URL into the `/resume` search box now finds the session that created that PR (GitHub, GitHub Enterprise, GitLab, and Bitbucket)\n- `/mcp` now shows claude.ai connectors hidden by a manually-added server with the same URL, with a hint to remove the duplicate\n- Clarified the `/mcp` message shown when an MCP server is still unauthorized after the browser sign-in flow\n- OpenTelemetry: numeric attributes on `api_request`/`api_error` log events are now emitted as numbers, not strings\n- OpenTelemetry: added `claude_code.at_mention` log event for `@`-mention resolution\n- Fixed `/branch` p",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.122",
+      "date": "2026-04-28T22:05:15Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.121 Released",
+      "content": "## What's changed\n\n- Added `alwaysLoad` option to MCP server config — when `true`, all tools from that server skip tool-search deferral and are always available\n- Added `claude plugin prune` to remove orphaned auto-installed plugin dependencies; `plugin uninstall --prune` cascades\n- Added a type-to-filter search box to `/skills` so you can find a skill in long lists without scrolling\n- PostToolUse hooks can now replace tool output for all tools via `hookSpecificOutput.updatedToolOutput` (previously MCP-only)\n- Fullscreen mode: typing into the prompt no longer jumps scroll back to the bottom after you've scrolled up to read earlier output\n- Dialogs that overflow the terminal are now scrollable with arrow keys, PgUp/PgDn, home/end, and mouse wheel in both fullscreen and non-fullscreen modes\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.121",
+      "date": "2026-04-28T00:31:31Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.119 Released",
+      "content": "## What's changed\n\n- `/config` settings (theme, editor mode, verbose, etc.) now persist to `~/.claude/settings.json` and participate in project/local/policy override precedence\n- Added `prUrlTemplate` setting to point the footer PR badge at a custom code-review URL instead of github.com\n- Added `CLAUDE_CODE_HIDE_CWD` environment variable to hide the working directory in the startup logo\n- `--from-pr` now accepts GitLab merge-request, Bitbucket pull-request, and GitHub Enterprise PR URLs\n- `--print` mode now honors the agent's `tools:` and `disallowedTools:` frontmatter, matching interactive-mode behavior\n- `--agent <name>` now honors the agent definition's `permissionMode` for built-in agents\n- PowerShell tool commands can now be auto-approved in permission mode, matching Bash behavior\n- H",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
+      "date": "2026-04-23T23:24:19Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
+      "content": "<a href=\"https:&#x2F;&#x2F;xcancel.com&#x2F;theo&#x2F;status&#x2F;2049645973350363168\" rel=\"nofollow\">https:&#x2F;&#x2F;xcancel.com&#x2F;theo&#x2F;status&#x2F;2049645973350363168</a>",
+      "url": "https://twitter.com/theo/status/2049645973350363168",
+      "date": "2026-04-30T14:36:58Z",
+      "points": 1329
+    },
+    {
+      "source": "hackernews",
+      "title": "Who owns the code Claude Code wrote?",
+      "content": "",
+      "url": "https://legallayer.substack.com/p/who-owns-the-claude-code-wrote",
+      "date": "2026-04-28T11:24:52Z",
+      "points": 553
+    },
+    {
+      "source": "hackernews",
+      "title": "Uber torches 2026 AI budget on Claude Code in four months",
+      "content": "",
+      "url": "https://www.briefs.co/news/uber-torches-entire-2026-ai-budget-on-claude-code-in-four-months/",
+      "date": "2026-05-01T16:08:53Z",
+      "points": 397
+    },
+    {
+      "source": "hackernews",
+      "title": "Amnitex: Lossless memory layer for AI coding assistants",
+      "content": "",
+      "url": "https://github.com/Amnibro/amnitex",
+      "date": "2026-05-02T02:31:30Z",
+      "points": 6
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: MCP Servers Can Fix the Biggest Problem with AI Coding Assistants",
+      "content": "",
+      "url": "https://medium.com/@xcf.seetan/how-mcp-servers-can-fix-the-biggest-problem-with-ai-coding-assistants-254a848590c7",
+      "date": "2026-04-30T19:32:19Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "GitHub Copilot is moving to usage-based billing and retiring annual plans",
+      "content": "Hi there,<p>You&#x27;re receiving this because you have an annual Copilot Pro or Pro+ plan.<p>GitHub Copilot isn&#x27;t the same product it was a year ago. It has evolved from an in-editor assistant into an agentic platform capable of running long, multi-step coding sessions, using the latest models, and iterating across entire repositories. Agentic usage is becoming the default, and it brings significantly higher compute and inference demands.<p>To keep up with the way you use Copilot, we&#x27;re transitioning to usage-based billing, and we want to give you enough time to prepare. If you&#x27;re also an admin on a Copilot Business or Enterprise plan, you&#x27;ll receive a separate email covering what&#x27;s changing for your organization.<p>Last week, we made temporary updates to Copilot individual plans to improve reliability and performance ahead of the broader move to usage-based billing. We will loosen usage limits once usage-based billing is in effect.<p>What&#x27;s changing on June 1 for Copilot Billing<p>Premium request units, or PRUs, will be replaced by GitHub AI Credits which are a monthly allotment of credits consumed based on token consumption (input, output, and cached tokens) according to the listed API rates per model. This change aligns Copilot pricing with actual usage and is an important step toward a sustainable, reliable Copilot business and experience for all users.\nCopilot code review’s agentic architecture runs on GitHub Actions. Copilot code review will now consume GitHub Actions minutes, in addition to GitHub AI Credits. These minutes are billed at the same per-minute rates as other GitHub Actions workflows.\nFallback experiences will no longer be available. Under the new model, usage will instead be governed by available credits.\nWhat&#x27;s changing on June 1 for Copilot Annual Plans<p>GitHub is retiring Copilot annual plans. As a current annual subscriber your Copilot Pro or Pro+ plan will continue as-is with premium request-based pricing. When your annual plan ends, your account will automatically transition to Copilot Free, which you can continue using at no cost.\nThe experience on annual plans will change significantly: model multipliers will increase, and standard-tier models (currently 0x) will no longer be available, reflecting increased compute costs and the transition to usage-based billing, and no new models or features will be added to annual plans going forward.\nTo keep getting new models and features, we recommend switching to a Copilot Pro or Pro+ monthly plan with the new usage-based billing system starting June 1. If you switch before your annual subscription expires, you&#x27;ll receive prorated credits for the remaining value of your annual plan.<p>If you switch to a monthly plan, Copilot Pro is $10&#x2F;month and Pro+ is $39&#x2F;month, and each includes $10 and $39 in monthly AI Credits, respectively.<p>You can find more details on usage-based billing in our blog post and FAQ. We appreciate your patience as we build a more sustainable Copilot for everyone.<p>The GitHub Team",
+      "url": "https://news.ycombinator.com/item?id=47924285",
+      "date": "2026-04-27T17:05:35Z",
+      "points": 9
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-03"
+    },
+    {
+      "source": "youtube",
+      "title": "The Ultimate Non-Technical Guide to Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=bqJzIWAEn40",
+      "date": "2026-05-03",
+      "video_id": "bqJzIWAEn40",
+      "thumbnail_url": "https://i.ytimg.com/vi/bqJzIWAEn40/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-03",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-05-03",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-05-03",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial for Beginners in 2026! (Step-By-Step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=qYqIhX9hTQk",
+      "date": "2026-05-03",
+      "video_id": "qYqIhX9hTQk",
+      "thumbnail_url": "https://i.ytimg.com/vi/qYqIhX9hTQk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-03",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-03",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-03",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
