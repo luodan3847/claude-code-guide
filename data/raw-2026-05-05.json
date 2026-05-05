@@ -1,0 +1,167 @@
+{
+  "date": "2026-05-05",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.128 Released",
+      "content": "## What's changed\n\n- Bare `/color` (no args) now picks a random session color\n- `/mcp` now shows the tool count for connected servers and flags servers that connected with 0 tools\n- `--plugin-dir` now accepts `.zip` plugin archives in addition to directories\n- `--channels` now works with console (API key) authentication — console orgs with managed settings must set `channelsEnabled: true` to enable\n- Updated `/model` picker: collapsed duplicate Opus 4.7 entries, and current Opus now shows as \"Opus\" instead of \"Opus 4.7\"\n- Subprocesses (Bash, hooks, MCP, LSP) no longer inherit `OTEL_*` environment variables, so OTEL-instrumented apps run via the Bash tool no longer pick up the CLI's own OTLP endpoint\n- MCP: `workspace` is now a reserved server name — existing servers with that name will be ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
+      "date": "2026-05-04T23:01:47Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.126 Released",
+      "content": "## What's changed\n\n- The `/model` picker now lists models from your gateway's `/v1/models` endpoint when `ANTHROPIC_BASE_URL` points at an Anthropic-compatible gateway\n- - Added `claude project purge [path]` to delete all Claude Code state for a project (transcripts, tasks, file history, config entry) — supports `--dry-run`, `-y/--yes`, `-i/--interactive`, and `--all`\n- `--dangerously-skip-permissions` now bypasses prompts for writes to `.claude/`, `.git/`, `.vscode/`, shell config files, and other previously-protected paths (catastrophic removal commands still prompt as a safety net)\n- `claude auth login` now accepts the OAuth code pasted into the terminal when the browser callback can't reach localhost (WSL2, SSH, containers)\n- `claude_code.skill_activated` OpenTelemetry event now fires ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.126",
+      "date": "2026-05-01T02:05:23Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.123 Released",
+      "content": "## What's changed\n\n- Fixed OAuth authentication failing with a 401 retry loop when `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` is set\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.123",
+      "date": "2026-04-29T03:29:13Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.122 Released",
+      "content": "## What's changed\n\n- Added `ANTHROPIC_BEDROCK_SERVICE_TIER` environment variable to select a Bedrock service tier (`default`, `flex`, or `priority`), sent as the `X-Amzn-Bedrock-Service-Tier` header\n- Pasting a PR URL into the `/resume` search box now finds the session that created that PR (GitHub, GitHub Enterprise, GitLab, and Bitbucket)\n- `/mcp` now shows claude.ai connectors hidden by a manually-added server with the same URL, with a hint to remove the duplicate\n- Clarified the `/mcp` message shown when an MCP server is still unauthorized after the browser sign-in flow\n- OpenTelemetry: numeric attributes on `api_request`/`api_error` log events are now emitted as numbers, not strings\n- OpenTelemetry: added `claude_code.at_mention` log event for `@`-mention resolution\n- Fixed `/branch` p",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.122",
+      "date": "2026-04-28T22:05:15Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.121 Released",
+      "content": "## What's changed\n\n- Added `alwaysLoad` option to MCP server config — when `true`, all tools from that server skip tool-search deferral and are always available\n- Added `claude plugin prune` to remove orphaned auto-installed plugin dependencies; `plugin uninstall --prune` cascades\n- Added a type-to-filter search box to `/skills` so you can find a skill in long lists without scrolling\n- PostToolUse hooks can now replace tool output for all tools via `hookSpecificOutput.updatedToolOutput` (previously MCP-only)\n- Fullscreen mode: typing into the prompt no longer jumps scroll back to the bottom after you've scrolled up to read earlier output\n- Dialogs that overflow the terminal are now scrollable with arrow keys, PgUp/PgDn, home/end, and mouse wheel in both fullscreen and non-fullscreen modes\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.121",
+      "date": "2026-04-28T00:31:31Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
+      "content": "<a href=\"https:&#x2F;&#x2F;xcancel.com&#x2F;theo&#x2F;status&#x2F;2049645973350363168\" rel=\"nofollow\">https:&#x2F;&#x2F;xcancel.com&#x2F;theo&#x2F;status&#x2F;2049645973350363168</a>",
+      "url": "https://twitter.com/theo/status/2049645973350363168",
+      "date": "2026-04-30T14:36:58Z",
+      "points": 1338
+    },
+    {
+      "source": "hackernews",
+      "title": "DeepClaude – Claude Code agent loop with DeepSeek V4 Pro",
+      "content": "",
+      "url": "https://github.com/aattaran/deepclaude",
+      "date": "2026-05-03T22:13:20Z",
+      "points": 657
+    },
+    {
+      "source": "hackernews",
+      "title": "Who owns the code Claude Code wrote?",
+      "content": "",
+      "url": "https://legallayer.substack.com/p/who-owns-the-claude-code-wrote",
+      "date": "2026-04-28T11:24:52Z",
+      "points": 555
+    },
+    {
+      "source": "hackernews",
+      "title": "Amnitex: Lossless memory layer for AI coding assistants",
+      "content": "",
+      "url": "https://github.com/Amnibro/amnitex",
+      "date": "2026-05-02T02:31:30Z",
+      "points": 7
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: MCP Servers Can Fix the Biggest Problem with AI Coding Assistants",
+      "content": "",
+      "url": "https://medium.com/@xcf.seetan/how-mcp-servers-can-fix-the-biggest-problem-with-ai-coding-assistants-254a848590c7",
+      "date": "2026-04-30T19:32:19Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Enoch – Control Plane for Autonomous AI Research",
+      "content": "I built Enoch after working with OpenClaw and trying to get an agentic coding system setup with Codex. In the past, I was trying to manually generate, code, and test this all manually. Then - I figured I&#x27;d try to start automation. Too many times have I typed &quot;Continue&quot; and gone back to my work. I figured I could automate that. Well - Enoch is what stemmed from that.<p>My first implementations were a mess with OpenClaw. I&#x27;ll spare you the details. I moved to n8n. n8n was not bad but it felt like I had to strong arm it to do what I wanted. Had issues, but less.<p>Then this system - LangGraph &#x2F; FastAPI... it has been working pretty well. The papers generated seem to have meaning. Generation of ideas have shown to have some positive substance. All ideas are grounded on a basis of pass &#x2F; fail or positive &#x2F; negative - based on criteria set on idea generation.<p>I will spare you too much reading.<p>Disclaimer: Yes, I used Codex to help code and Claude for some verbiage. I am not new to coding but I know there is a huge stigma in the business for this AI coding assistance bits. AI has helped to allow me dump my ideas down to a worker - and not have to take the time to sit and learn to code to get ideas out. Democratized software could have a grand effect.",
+      "url": "https://github.com/alias8818/enoch-agentic-research-system",
+      "date": "2026-05-03T07:45:21Z",
+      "points": 5
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-05"
+    },
+    {
+      "source": "youtube",
+      "title": "Full Claude Code Tutorial for Non-Technical Beginners in 2026 (step-by-step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=bqJzIWAEn40",
+      "date": "2026-05-05",
+      "video_id": "bqJzIWAEn40",
+      "thumbnail_url": "https://i.ytimg.com/vi/bqJzIWAEn40/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "The ONLY Claude Tutorial You'll Ever Need in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=WqoPkZ88f5k",
+      "date": "2026-05-05",
+      "video_id": "WqoPkZ88f5k",
+      "thumbnail_url": "https://i.ytimg.com/vi/WqoPkZ88f5k/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-05",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-05-05",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-05-05",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-05",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-05",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-05",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
