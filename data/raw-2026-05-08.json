@@ -1,0 +1,197 @@
+{
+  "date": "2026-05-08",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.133 Released",
+      "content": "## What's changed\n\n- Added `worktree.baseRef` setting (`fresh` | `head`) to choose whether `--worktree`, `EnterWorktree`, and agent-isolation worktrees branch from `origin/<default>` or local `HEAD`. **Note:** the default `fresh` changes `EnterWorktree`'s base back to `origin/<default>` (it has been local `HEAD` since 2.1.128) — set `worktree.baseRef: \"head\"` to keep unpushed commits in new worktrees\n- Added `sandbox.bwrapPath` and `sandbox.socatPath` managed settings (Linux/WSL) to specify custom bubblewrap and socat binary locations\n- Added `parentSettingsBehavior` admin-tier key (`'first-wins' | 'merge'`) to let admins opt SDK `managedSettings` (parent tier) into the policy merge\n- Hooks now receive the active effort level via the `effort.level` JSON input field and the `$CLAUDE_EFFORT`",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.133",
+      "date": "2026-05-07T23:49:04Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.132 Released",
+      "content": "## What's changed\n\n- Added `CLAUDE_CODE_SESSION_ID` environment variable to the Bash tool subprocess environment, matching the `session_id` passed to hooks\n- Added `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1` env var to opt out of the fullscreen alternate-screen renderer and keep the conversation in the terminal's native scrollback\n- Added a \"Pasting…\" footer hint while a Ctrl+V image paste is being read from the clipboard\n- Fixed external SIGINT (e.g. IDE stop button, `kill -INT`) not running graceful shutdown — terminal modes are now restored and the `--resume` hint is printed instead of an abrupt exit\n- Fixed an uncaught exception when the terminal is closed or SSH disconnects mid-session under the native build\n- Fixed `--resume` failing with `no low surrogate in string` when a tool error t",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.132",
+      "date": "2026-05-06T22:08:13Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.131 Released",
+      "content": "## What's changed\n\n- Fixed VS Code extension failing to activate on Windows due to a hardcoded build path in the bundled SDK (`createRequire` polyfill bug)\n- Fixed Mantle endpoint authentication failing with missing `x-api-key` header\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.131",
+      "date": "2026-05-06T07:47:56Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.129 Released",
+      "content": "## What's changed\n\n- Added `--plugin-url <url>` flag to fetch a plugin `.zip` archive from a URL for the current session\n- Added `CLAUDE_CODE_FORCE_SYNC_OUTPUT=1` env var to force-enable synchronized output on terminals that auto-detection misses (e.g. Emacs `eat`)\n- Added `CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE`: when set on Homebrew or WinGet installations, Claude Code runs the upgrade command in the background and prompts to restart\n- Plugin manifests: `themes` and `monitors` should now be declared under `\"experimental\": { ... }`. Top-level declarations still work but `claude plugin validate` will warn\n- Gateway `/v1/models` discovery for the `/model` picker is now opt-in via `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` (was automatic in 2.1.126–2.1.128)\n- Ctrl+R history picker now d",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.129",
+      "date": "2026-05-06T01:40:18Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.128 Released",
+      "content": "## What's changed\n\n- Bare `/color` (no args) now picks a random session color\n- `/mcp` now shows the tool count for connected servers and flags servers that connected with 0 tools\n- `--plugin-dir` now accepts `.zip` plugin archives in addition to directories\n- `--channels` now works with console (API key) authentication — console orgs with managed settings must set `channelsEnabled: true` to enable\n- Updated `/model` picker: collapsed duplicate Opus 4.7 entries, and current Opus now shows as \"Opus\" instead of \"Opus 4.7\"\n- Subprocesses (Bash, hooks, MCP, LSP) no longer inherit `OTEL_*` environment variables, so OTEL-instrumented apps run via the Bash tool no longer pick up the CLI's own OTLP endpoint\n- MCP: `workspace` is now a reserved server name — existing servers with that name will be ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
+      "date": "2026-05-04T23:01:47Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "DeepClaude – Claude Code agent loop with DeepSeek V4 Pro",
+      "content": "",
+      "url": "https://github.com/aattaran/deepclaude",
+      "date": "2026-05-03T22:13:20Z",
+      "points": 674
+    },
+    {
+      "source": "hackernews",
+      "title": "Uber torches 2026 AI budget on Claude Code in four months",
+      "content": "",
+      "url": "https://www.briefs.co/news/uber-torches-entire-2026-ai-budget-on-claude-code-in-four-months/",
+      "date": "2026-05-01T16:08:53Z",
+      "points": 401
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Destiny – Claude Code's fortune Teller skill",
+      "content": "Destiny is the Claude Code&#x27;s plugin that gives you a real fortune reading.<p>Type &#x2F;destiny to see today&#x27;s destiny!<p>It uses the actual classical East Asian astrology system. You enter your birthday once, then &#x2F;destiny gives you today&#x27;s reading anytime.<p>Two layers, kept honest:<p>1. The numbers (your eight-character birth chart, today&#x27;s day pillar, the hexagram for the moment, five-element relationships) are computed by a Python script. Same person + same day = identical output. You can verify against any traditional calendar source.<p>2. The prose (today&#x27;s stars, character sketch, life arc, advice) is written by Claude, applying centuries-old reading conventions to that fixed data. Not LLM-hallucinated horoscope.<p>If you have fun with it, a star would mean a lot.",
+      "url": "https://github.com/xodn348/destiny",
+      "date": "2026-05-01T19:56:18Z",
+      "points": 41
+    },
+    {
+      "source": "hackernews",
+      "title": "Amnitex: Lossless memory layer for AI coding assistants",
+      "content": "",
+      "url": "https://github.com/Amnibro/amnitex",
+      "date": "2026-05-02T02:31:30Z",
+      "points": 7
+    },
+    {
+      "source": "hackernews",
+      "title": "Integrate Cashfree Payments in less than 7 minutes",
+      "content": "",
+      "url": "https://tech.cashfree.com/building-cashfree-agent-skills-a-task-aware-knowledge-layer-for-ai-coding-assistants-84098c384f26",
+      "date": "2026-05-06T06:10:12Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: Real life autonomous AI Agents",
+      "content": "Is there a place where I can read real use cases &#x2F; actual deployments of AI Agents?<p>The internet is flooded with examples similar to below but these in my head are not true AI Agents right?<p>1. If email arrives with pdf, check pdf for invoice information and put it in a google sheet is not a AI Agent? Its a workflow that now has llm call as a node\n2. Check my google search console and suggest ideas for SEO - This again is a cron job (run every xhrs), collate information and feed it into a llm to generate ideas. This is a workflow as well.\n3. personal assistants - I ask for information and llm figures out which tool to call and gets it and writes to a database<p>perhaps coding agents which do some stuff autonoumously when prompted is a good example. Is there a compilation of real use case anywhere online?",
+      "url": "https://news.ycombinator.com/item?id=48047428",
+      "date": "2026-05-07T09:51:08Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-08"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 320915,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "小白也会的trae里安装 claude code 教程",
+      "content": "",
+      "url": "https://www.bilibili.com/video/BV1ofSSBfEC1",
+      "date": "2026-04-05T15:08:17.000Z",
+      "views": 5986,
+      "video_id": "BV1ofSSBfEC1",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/6407ab475eaca97e63de9ec1bb822351c1e27bf9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "全网最全！60分钟全面掌握Claude Code～【附完整文档】",
+      "content": "Claude Code保姆级教学【收藏起来不会错！】\n从上手安装，到高级用法，这期一次讲全～\n花了三周做教程，希望能帮到你嘻嘻，感谢朋友们的三连+关注啦～",
+      "url": "https://www.bilibili.com/video/BV1NvRyBzEhq",
+      "date": "2026-05-05T14:08:25.000Z",
+      "views": 336555,
+      "video_id": "BV1NvRyBzEhq",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/4ef379f4341e05c09ba920b4a4ccc6d6cf54f076.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "The ONLY Claude Tutorial You'll Ever Need in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=WqoPkZ88f5k",
+      "date": "2026-05-08",
+      "video_id": "WqoPkZ88f5k",
+      "thumbnail_url": "https://i.ytimg.com/vi/WqoPkZ88f5k/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "How to Build an App With Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=GUgxx6fMiR8",
+      "date": "2026-05-08",
+      "video_id": "GUgxx6fMiR8",
+      "thumbnail_url": "https://i.ytimg.com/vi/GUgxx6fMiR8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-08",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
+      "date": "2026-05-08",
+      "video_id": "Xg55nTrbYYY",
+      "thumbnail_url": "https://i.ytimg.com/vi/Xg55nTrbYYY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-05-08",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-08",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-08",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-08",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
