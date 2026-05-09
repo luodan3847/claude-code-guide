@@ -1,0 +1,227 @@
+{
+  "date": "2026-05-09",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.138 Released",
+      "content": "## What's changed\n\n- Internal fixes\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.138",
+      "date": "2026-05-09T06:33:25Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.137 Released",
+      "content": "## What's changed\n\n- [VSCode] Fixed extension failing to activate on Windows\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.137",
+      "date": "2026-05-09T00:11:04Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.136 Released",
+      "content": "## What's changed\n\n- Added `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL` to re-enable the session quality survey for enterprises capturing responses through OpenTelemetry\n- Added `settings.autoMode.hard_deny` for auto mode classifier rules that block unconditionally regardless of user intent or allow exceptions\n- Fixed MCP servers configured in `.mcp.json`, plugins, and claude.ai connectors silently disappearing after `/clear` in the VS Code extension, JetBrains plugin, and Agent SDK\n- Fixed a rare login loop where a concurrent credential write could overwrite a freshly-rotated OAuth token and force re-login\n- Fixed MCP OAuth refresh tokens being lost when multiple servers refresh concurrently — users with several remote MCP servers should no longer need daily re-authentication\n- Fixed an ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.136",
+      "date": "2026-05-08T18:39:08Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.133 Released",
+      "content": "## What's changed\n\n- Added `worktree.baseRef` setting (`fresh` | `head`) to choose whether `--worktree`, `EnterWorktree`, and agent-isolation worktrees branch from `origin/<default>` or local `HEAD`. **Note:** the default `fresh` changes `EnterWorktree`'s base back to `origin/<default>` (it has been local `HEAD` since 2.1.128) — set `worktree.baseRef: \"head\"` to keep unpushed commits in new worktrees\n- Added `sandbox.bwrapPath` and `sandbox.socatPath` managed settings (Linux/WSL) to specify custom bubblewrap and socat binary locations\n- Added `parentSettingsBehavior` admin-tier key (`'first-wins' | 'merge'`) to let admins opt SDK `managedSettings` (parent tier) into the policy merge\n- Hooks now receive the active effort level via the `effort.level` JSON input field and the `$CLAUDE_EFFORT`",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.133",
+      "date": "2026-05-07T23:49:04Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.132 Released",
+      "content": "## What's changed\n\n- Added `CLAUDE_CODE_SESSION_ID` environment variable to the Bash tool subprocess environment, matching the `session_id` passed to hooks\n- Added `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1` env var to opt out of the fullscreen alternate-screen renderer and keep the conversation in the terminal's native scrollback\n- Added a \"Pasting…\" footer hint while a Ctrl+V image paste is being read from the clipboard\n- Fixed external SIGINT (e.g. IDE stop button, `kill -INT`) not running graceful shutdown — terminal modes are now restored and the `--resume` hint is printed instead of an abrupt exit\n- Fixed an uncaught exception when the terminal is closed or SSH disconnects mid-session under the native build\n- Fixed `--resume` failing with `no low surrogate in string` when a tool error t",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.132",
+      "date": "2026-05-06T22:08:13Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "DeepClaude – Claude Code agent loop with DeepSeek V4 Pro",
+      "content": "",
+      "url": "https://github.com/aattaran/deepclaude",
+      "date": "2026-05-03T22:13:20Z",
+      "points": 676
+    },
+    {
+      "source": "hackernews",
+      "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+      "content": "Examples: <a href=\"https:&#x2F;&#x2F;thariqs.github.io&#x2F;html-effectiveness&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;thariqs.github.io&#x2F;html-effectiveness&#x2F;</a><p>Related: <a href=\"https:&#x2F;&#x2F;simonwillison.net&#x2F;2026&#x2F;May&#x2F;8&#x2F;unreasonable-effectiveness-of-html&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;simonwillison.net&#x2F;2026&#x2F;May&#x2F;8&#x2F;unreasonable-effectiven...</a>",
+      "url": "https://twitter.com/trq212/status/2052809885763747935",
+      "date": "2026-05-09T04:53:52Z",
+      "points": 89
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code CVE-2026-39861:sandbox escape via symlink",
+      "content": "",
+      "url": "https://github.com/advisories/GHSA-vp62-r36r-9xqp",
+      "date": "2026-05-08T02:39:55Z",
+      "points": 49
+    },
+    {
+      "source": "hackernews",
+      "title": "Integrate Cashfree Payments in less than 7 minutes",
+      "content": "",
+      "url": "https://tech.cashfree.com/building-cashfree-agent-skills-a-task-aware-knowledge-layer-for-ai-coding-assistants-84098c384f26",
+      "date": "2026-05-06T06:10:12Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: Real life autonomous AI Agents",
+      "content": "Is there a place where I can read real use cases &#x2F; actual deployments of AI Agents?<p>The internet is flooded with examples similar to below but these in my head are not true AI Agents right?<p>1. If email arrives with pdf, check pdf for invoice information and put it in a google sheet is not a AI Agent? Its a workflow that now has llm call as a node\n2. Check my google search console and suggest ideas for SEO - This again is a cron job (run every xhrs), collate information and feed it into a llm to generate ideas. This is a workflow as well.\n3. personal assistants - I ask for information and llm figures out which tool to call and gets it and writes to a database<p>perhaps coding agents which do some stuff autonoumously when prompted is a good example. Is there a compilation of real use case anywhere online?",
+      "url": "https://news.ycombinator.com/item?id=48047428",
+      "date": "2026-05-07T09:51:08Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Enoch – Control Plane for Autonomous AI Research",
+      "content": "I built Enoch after working with OpenClaw and trying to get an agentic coding system setup with Codex. In the past, I was trying to manually generate, code, and test this all manually. Then - I figured I&#x27;d try to start automation. Too many times have I typed &quot;Continue&quot; and gone back to my work. I figured I could automate that. Well - Enoch is what stemmed from that.<p>My first implementations were a mess with OpenClaw. I&#x27;ll spare you the details. I moved to n8n. n8n was not bad but it felt like I had to strong arm it to do what I wanted. Had issues, but less.<p>Then this system - LangGraph &#x2F; FastAPI... it has been working pretty well. The papers generated seem to have meaning. Generation of ideas have shown to have some positive substance. All ideas are grounded on a basis of pass &#x2F; fail or positive &#x2F; negative - based on criteria set on idea generation.<p>I will spare you too much reading.<p>Disclaimer: Yes, I used Codex to help code and Claude for some verbiage. I am not new to coding but I know there is a huge stigma in the business for this AI coding assistance bits. AI has helped to allow me dump my ideas down to a worker - and not have to take the time to sit and learn to code to get ideas out. Democratized software could have a grand effect.",
+      "url": "https://github.com/alias8818/enoch-agentic-research-system",
+      "date": "2026-05-03T07:45:21Z",
+      "points": 5
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-09"
+    },
+    {
+      "source": "bilibili",
+      "title": "HBX插件推荐：CodeGeex智能编程助手",
+      "content": "HBuilderX首款AI智能编程助手上线了，快来体验吧",
+      "url": "https://www.bilibili.com/video/BV1Kc411q7vW",
+      "date": "2023-12-11T14:20:37.000Z",
+      "views": 3719,
+      "video_id": "BV1Kc411q7vW",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/adf895c5941c5a143e37bee84b2abaef4d40f167.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "vscode如何使用AI编程",
+      "content": "如何在vs code中使用AI进行开发，推荐了国产AI编程助手，包括安装扩展、注册登录、选择模型、生成代码和微调代码等步骤。同时，强调AI编程还有很多复杂方面，欢迎在评论区留言。",
+      "url": "https://www.bilibili.com/video/BV1nM6dBdER6",
+      "date": "2026-01-11T08:58:44.000Z",
+      "views": 94135,
+      "video_id": "BV1nM6dBdER6",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/48f014b86acaa5cf946a58d237d52da9a6d721ef.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【零基础AI编程实战】开发自己的AI原生应用",
+      "content": "",
+      "url": "https://www.bilibili.com/video/",
+      "date": "1970-01-01T00:00:00.000Z",
+      "views": 11550,
+      "video_id": null,
+      "thumbnail_url": "https://archive.biliimg.com/bfs/archive/b9caa9c86fadddfa6844f7367284768010e9faa0.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "这家最懂AI安全的公司，为什么成了美国的安全威胁？【差评君】",
+      "content": "明明高举安全旗帜，却主动进入军事体系，然后又突出一个不配合。反商业化，又深度依赖亚马逊和谷歌；一直在警告AI的危险，但是却是为AI加速最欢的一方。今天咱们就来聊聊，Anthropic为什么看起来如此矛盾？",
+      "url": "https://www.bilibili.com/video/BV1LLRyBpE3r",
+      "date": "2026-05-05T13:57:09.000Z",
+      "views": 323043,
+      "video_id": "BV1LLRyBpE3r",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/47b60fbd25599e8d18128083fa70a5968e78594b.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "私募和AI合体了。。OpenAI，Anthropic和黑石",
+      "content": "OpenAI和Anthropic刚刚各自成立了AI咨询合资公司——黑石投了，阿波罗投了，贝恩资本和TPG都进来了。表面上是&quot;投资未来科技&quot;，但你看一眼交易结构就明白了：私募既是合资公司的股东，又是客户的实控人。买方和卖方是同一拨人。\n这期视频，我把它拆开来讲。三个逻辑：第一，私募基金的吸血模式——从玩具反斗城到养老院，它怎样把能抽的都抽走；第二，私募和AI合体之后，怎样用AI咨询费和AI股价故事，两笔钱同时抽血，最后留一地债务走人；第三，这些钱从哪来——特朗普的行政令、劳工部的新规、SEC的松绑，加上私募",
+      "url": "https://www.bilibili.com/video/BV1fLduBbEP1",
+      "date": "2026-05-08T10:00:00.000Z",
+      "views": 99378,
+      "video_id": "BV1fLduBbEP1",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/4dc9f2833631b9ca7db862620a3ac53a85b21290.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "为何 Anthropic 如此反华？",
+      "content": "简介内容：\n作为程序员，我们不得不承认 Claude 系列模型在编程能力上的卓越。从霸榜权威评测到定义 MCP 标准，Anthropic 似乎站在了技术之巅。\n但你是否感觉到，这也是一家对中国用户“恶意”最大的公司？\n从最初的封禁 IP，到如今“穿透式”审查股权结构；从指控中国大模型“偷窃”，到 CEO 公开将 AI 芯片比作“核武器”并游说立法……\n这真的仅仅是为了商业合规吗？为什么同样的法律环境下，OpenAI 甚至 NVIDIA 的做法截然不同？\n本期视频，我们将剥开 Anthropic 的技术外衣",
+      "url": "https://www.bilibili.com/video/BV12zP7zWExf",
+      "date": "2026-03-02T15:18:06.000Z",
+      "views": 188931,
+      "video_id": "BV12zP7zWExf",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/8b9727d300b922c4b5b4cb03b2f192249ee615ba.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "How to Build an App With Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=GUgxx6fMiR8",
+      "date": "2026-05-09",
+      "video_id": "GUgxx6fMiR8",
+      "thumbnail_url": "https://i.ytimg.com/vi/GUgxx6fMiR8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "The ONLY Claude Tutorial You'll Ever Need in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=WqoPkZ88f5k",
+      "date": "2026-05-09",
+      "video_id": "WqoPkZ88f5k",
+      "thumbnail_url": "https://i.ytimg.com/vi/WqoPkZ88f5k/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-09",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-05-09",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-05-09",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-09",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-09",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-09",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
