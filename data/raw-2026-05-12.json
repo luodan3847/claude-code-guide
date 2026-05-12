@@ -1,0 +1,167 @@
+{
+  "date": "2026-05-12",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.139 Released",
+      "content": "## What's changed\n\n- Added agent view (Research Preview): a single list of every Claude Code session — running, blocked on you, or done. Run `claude agents` to get started. See https://code.claude.com/docs/en/agent-view\n- Added `/goal` command: set a completion condition and Claude keeps working across turns until it's met. Works in interactive, `-p`, and Remote Control. Shows live elapsed/turns/tokens as an overlay panel\n- Added `/scroll-speed` command to tune mouse wheel scroll speed with a live preview\n- Added `claude plugin details <name>` to show a plugin's component inventory and projected per-session token cost\n- Added transcript view navigation: `?` for keyboard shortcuts, `{`/`}` to jump between user prompts, `v` to toggle shortcut panel\n- Added hook `args: string[]` field (exec f",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.139",
+      "date": "2026-05-11T18:43:42Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.138 Released",
+      "content": "## What's changed\n\n- Internal fixes\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.138",
+      "date": "2026-05-09T06:33:25Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.137 Released",
+      "content": "## What's changed\n\n- [VSCode] Fixed extension failing to activate on Windows\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.137",
+      "date": "2026-05-09T00:11:04Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.136 Released",
+      "content": "## What's changed\n\n- Added `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL` to re-enable the session quality survey for enterprises capturing responses through OpenTelemetry\n- Added `settings.autoMode.hard_deny` for auto mode classifier rules that block unconditionally regardless of user intent or allow exceptions\n- Fixed MCP servers configured in `.mcp.json`, plugins, and claude.ai connectors silently disappearing after `/clear` in the VS Code extension, JetBrains plugin, and Agent SDK\n- Fixed a rare login loop where a concurrent credential write could overwrite a freshly-rotated OAuth token and force re-login\n- Fixed MCP OAuth refresh tokens being lost when multiple servers refresh concurrently — users with several remote MCP servers should no longer need daily re-authentication\n- Fixed an ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.136",
+      "date": "2026-05-08T18:39:08Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.133 Released",
+      "content": "## What's changed\n\n- Added `worktree.baseRef` setting (`fresh` | `head`) to choose whether `--worktree`, `EnterWorktree`, and agent-isolation worktrees branch from `origin/<default>` or local `HEAD`. **Note:** the default `fresh` changes `EnterWorktree`'s base back to `origin/<default>` (it has been local `HEAD` since 2.1.128) — set `worktree.baseRef: \"head\"` to keep unpushed commits in new worktrees\n- Added `sandbox.bwrapPath` and `sandbox.socatPath` managed settings (Linux/WSL) to specify custom bubblewrap and socat binary locations\n- Added `parentSettingsBehavior` admin-tier key (`'first-wins' | 'merge'`) to let admins opt SDK `managedSettings` (parent tier) into the policy merge\n- Hooks now receive the active effort level via the `effort.level` JSON input field and the `$CLAUDE_EFFORT`",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.133",
+      "date": "2026-05-07T23:49:04Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+      "content": "Examples: <a href=\"https:&#x2F;&#x2F;thariqs.github.io&#x2F;html-effectiveness&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;thariqs.github.io&#x2F;html-effectiveness&#x2F;</a><p>Related: <a href=\"https:&#x2F;&#x2F;simonwillison.net&#x2F;2026&#x2F;May&#x2F;8&#x2F;unreasonable-effectiveness-of-html&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;simonwillison.net&#x2F;2026&#x2F;May&#x2F;8&#x2F;unreasonable-effectiven...</a>",
+      "url": "https://twitter.com/trq212/status/2052809885763747935",
+      "date": "2026-05-09T04:53:52Z",
+      "points": 523
+    },
+    {
+      "source": "hackernews",
+      "title": "Academic Research Skills for Claude Code",
+      "content": "",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "date": "2026-05-10T13:42:00Z",
+      "points": 81
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: adamsreview – better multi-agent PR reviews for Claude Code",
+      "content": "I built adamsreview, a Claude Code plugin that runs deeper, multi-stage PR reviews using parallel sub-agents, validation passes, persistent JSON state, and optional ensemble review via Codex CLI and PR bot comments.<p>On my own PRs, it has been catching dramatically more real bugs than Claude’s built-in &#x2F;review, &#x2F;ultrareview, CodeRabbit, Greptile, and Codex’s built-in review, while producing fewer false positives.<p>adamsreview is six Claude Code slash commands packaged as a plugin: review, codex-review, add, promote, walkthrough, and fix. I modeled it after the built-in &#x2F;review command and extended it meaningfully.<p>You can clear context between review stages because state is stored in JSON artifacts on disk, with built-in scripts for keeping it updated.<p>The walkthrough command uses Claude’s AskUserQuestion feature to walk you through uncertain findings or items needing human review one by one. Then, the fix command dispatches per-fix-group agents and re-reviews the work with Opus, reverting any regressions before committing survivors.<p>It runs against your regular Claude Code subscription (Max plan recommended), unlike &#x2F;ultrareview, which charges against your Extra Usage pool.<p>I would love feedback from Claude Code users, pro devs, and anyone with strong opinions about AI code reviews.<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;adamjgmiller&#x2F;adamsreview\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;adamjgmiller&#x2F;adamsreview</a><p>Install:\n&#x2F;plugin marketplace add adamjgmiller&#x2F;adamsreview, &#x2F;plugin install adamsreview@adamsreview",
+      "url": "https://github.com/adamjgmiller/adamsreview",
+      "date": "2026-05-11T02:06:29Z",
+      "points": 80
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: I built a 500K LOC production app alone in 7 months. Here is the proof",
+      "content": "Here is the proof, a 5-hour uncut live session, no edits, no cuts: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;VPrU8WZJOVs\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;VPrU8WZJOVs</a><p>Full article: <a href=\"https:&#x2F;&#x2F;medium.com&#x2F;@bonjourjoel&#x2F;i-built-a-500-000-line-production-app-alone-in-7-months-here-is-the-proof-22253ca8c652\" rel=\"nofollow\">https:&#x2F;&#x2F;medium.com&#x2F;@bonjourjoel&#x2F;i-built-a-500-000-line-produ...</a><p>I believe I am the first human to have done this in a documented, verifiable way: maintaining a stable production-grade 500,000-line TypeScript codebase as a solo developer, using an AI coding assistant I built myself.<p>If you know someone who has done the same, one person, 500k lines, documented proof, please write their name in the comments.",
+      "url": "https://news.ycombinator.com/item?id=48081450",
+      "date": "2026-05-10T06:15:55Z",
+      "points": 5
+    },
+    {
+      "source": "hackernews",
+      "title": "Integrate Cashfree Payments in less than 7 minutes",
+      "content": "",
+      "url": "https://tech.cashfree.com/building-cashfree-agent-skills-a-task-aware-knowledge-layer-for-ai-coding-assistants-84098c384f26",
+      "date": "2026-05-06T06:10:12Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: NodeDB – High Perfomance Multi-Model Database",
+      "content": "Hey HN,<p>I&#x27;ve been working on a multi-model database called NodeDB.<p>Originally, i&#x27;ve found out the idea of SurrealDB quite good. However, it doesn&#x27;t have some graph and vector features that I need. And since it is just a KV wrapper, instead of purpose-built engine, the performance will never be close to the specialized databases (like Neo4j, Pinecone, Clickhouse, etc).<p>And i&#x27;ve asked myself, what if, there is a database that have the same idea, but built differently? Instead of just treating it as KV database, we build specialized engines for the data.<p>Besides that, I want it to be able to support my IOT&#x2F;edge project, where i need offline sync capabilities (Currentyl still in progress).<p>Will it work?<p>I put it into test. I&#x27;ve been experimenting and researching for a year, creating multiple versions, and then I created NodeDB.<p>Disclaimer: It is still in public beta (as of May 2026), but it really excites me if I can make this db work. And I use AI as assistant for coding and planning. It is nearly impossible to do as a solo developer without any AI assistance.<p>Would love feedback from HN:<p>- Are there specific features or improvements that would make it more useful?<p>If you&#x27;re interested in experimenting or contributing, the repo is here: GitHub Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;nodedb-lab&#x2F;nodedb\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;nodedb-lab&#x2F;nodedb</a><p>Looking forward to your thoughts!",
+      "url": "https://github.com/nodedb-lab/nodedb",
+      "date": "2026-05-11T23:21:42Z",
+      "points": 4
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-12"
+    },
+    {
+      "source": "youtube",
+      "title": "How to Build an App With Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=GUgxx6fMiR8",
+      "date": "2026-05-12",
+      "video_id": "GUgxx6fMiR8",
+      "thumbnail_url": "https://i.ytimg.com/vi/GUgxx6fMiR8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-12",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Just Got a Dashboard",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=7zxIeRWasbc",
+      "date": "2026-05-12",
+      "video_id": "7zxIeRWasbc",
+      "thumbnail_url": "https://i.ytimg.com/vi/7zxIeRWasbc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-05-12",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Full Claude Code Tutorial for Non-Technical Beginners in 2026 (step-by-step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=bqJzIWAEn40",
+      "date": "2026-05-12",
+      "video_id": "bqJzIWAEn40",
+      "thumbnail_url": "https://i.ytimg.com/vi/bqJzIWAEn40/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-12",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-12",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-12",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
