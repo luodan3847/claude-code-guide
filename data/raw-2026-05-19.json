@@ -1,0 +1,167 @@
+{
+  "date": "2026-05-19",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.144 Released",
+      "content": "## What's changed\n\n- Added `/resume` support for background sessions — sessions started via `claude --bg` or agent view now appear alongside interactive ones, marked with `bg`\n- Added elapsed duration to background subagent completion notifications (e.g. \"Agent completed · 3h 2m 5s\")\n- The `/plugin` browse and discover panes now show when a plugin was last updated\n- `/model` now changes the model for the current session only; press `d` in the model picker to set a default for new sessions\n- Renamed \"extra usage\" to \"usage credits\" across CLI copy; `/extra-usage` is now `/usage-credits` (old name still works)\n- Fixed startup hanging up to 75s when `api.anthropic.com` is unreachable (captive portal, firewall, VPN issues) — side-channel API calls now time out after 15s\n- Fixed garbled termina",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.144",
+      "date": "2026-05-19T00:48:51Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.143 Released",
+      "content": "## What's changed\n\n- Added plugin dependency enforcement: `claude plugin disable` now refuses when another enabled plugin depends on the target (with a copy-pasteable disable-chain hint), and `claude plugin enable` force-enables transitive dependencies\n- Added projected context cost (per-turn and per-invocation token estimates) to the `/plugin` marketplace browse pane\n- Added `worktree.bgIsolation: \"none\"` setting to let background sessions edit the working copy directly without `EnterWorktree`, for repos where worktrees are impractical\n- PowerShell tool now passes `-ExecutionPolicy Bypass`. Opt out with `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1`\n- Background sessions now preserve the model and effort level you set after waking from idle\n- Shift+Tab in attached agent sessions now ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.143",
+      "date": "2026-05-15T22:28:22Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.142 Released",
+      "content": "## What's changed\n\n- Added new `claude agents` flags: `--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, and `--dangerously-skip-permissions` to configure dispatched background sessions\n- Fast mode now uses Opus 4.7 by default (previously Opus 4.6). Set `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1` to pin fast mode to Opus 4.6\n- Plugins with a root-level `SKILL.md` and no `skills/` subdirectory are now surfaced as a skill\n- The `/plugin` details pane and `claude plugin details` now show LSP servers a plugin provides\n- `/web-setup` warns before replacing an existing GitHub App connection\n- Fixed `MCP_TOOL_TIMEOUT` not raising the per-request fetch timeout for remote HTTP and SSE MCP servers, which capped tool calls at 60 seconds regardless o",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.142",
+      "date": "2026-05-14T22:55:10Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.141 Released",
+      "content": "## What's changed\n\n- Added `terminalSequence` field to hook JSON output so hooks can emit desktop notifications, window titles, and bells without a controlling terminal\n- Added `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` to clone GitHub plugin sources over HTTPS instead of SSH, for environments without a GitHub SSH key\n- Added `ANTHROPIC_WORKSPACE_ID` environment variable for workload identity federation — scopes the minted token to a specific workspace when the federation rule covers more than one\n- Added `claude agents --cwd <path>` to scope the session list to a directory\n- `/feedback` can now include recent sessions (last 24 hours or 7 days) for issues spanning more than the current session\n- Rewind menu: added \"Summarize up to here\" to compress earlier context while keeping recent turns intact\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.141",
+      "date": "2026-05-13T23:19:16Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.140 Released",
+      "content": "## What's changed\n\n- Improved Agent tool `subagent_type` matching to accept case- and separator-insensitive values (e.g. `\"Code Reviewer\"` resolves to `code-reviewer`)\n- Updated agent color palette\n- Fixed `/goal` silently hanging when `disableAllHooks` or `allowManagedHooksOnly` is set — now shows a clear message instead of an indicator that never resolves\n- Fixed a regression in settings hot-reload where symlinked settings files caused misattributed change events and spurious `ConfigChange` hooks\n- Fixed `claude --bg` failing with \"connection dropped mid-request\" when the background service was about to idle-exit\n- Fixed background service startup failing on machines with enterprise endpoint security by allowing more time\n- Fixed remote managed settings not retrying on 401 — now retries ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.140",
+      "date": "2026-05-12T21:09:45Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "A Claude Code and Codex Skill for Deliberate Skill Development",
+      "content": "",
+      "url": "https://github.com/DrCatHicks/learning-opportunities",
+      "date": "2026-05-14T03:13:31Z",
+      "points": 253
+    },
+    {
+      "source": "hackernews",
+      "title": "How Claude Code works in large codebases",
+      "content": "",
+      "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+      "date": "2026-05-15T04:15:31Z",
+      "points": 245
+    },
+    {
+      "source": "hackernews",
+      "title": "New Claude Code programmatic usage restrictions",
+      "content": "",
+      "url": "https://twitter.com/i/status/2054610152817619388",
+      "date": "2026-05-13T19:38:39Z",
+      "points": 50
+    },
+    {
+      "source": "hackernews",
+      "title": "AI Coding Assistant Is Not Enough",
+      "content": "",
+      "url": "https://articles.zimetic.com/your-ai-coding-assistant-is-not-enough/",
+      "date": "2026-05-13T13:22:05Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "Session Amnesia: The Hidden Cost of Stateless AI Coding Assistants",
+      "content": "",
+      "url": "https://www.aisterna.com/post/session-amnesia-the-hidden-cost-of-stateless-ai-coding-assistants",
+      "date": "2026-05-18T19:25:37Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Knowledge Graphs for AI Coding Assistants",
+      "content": "",
+      "url": "https://graphify.net/",
+      "date": "2026-05-18T19:09:30Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-19"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-19",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "How to Use Your Claude Code Projects in Codex in 5 Mins",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=kB9iMD0EjT8",
+      "date": "2026-05-19",
+      "video_id": "kB9iMD0EjT8",
+      "thumbnail_url": "https://i.ytimg.com/vi/kB9iMD0EjT8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-05-19",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-05-19",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Code with Claude 2026 | London",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AgQ4cwL5eOM",
+      "date": "2026-05-19",
+      "video_id": "AgQ4cwL5eOM",
+      "thumbnail_url": "https://i.ytimg.com/vi/AgQ4cwL5eOM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-19",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-19",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-19",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
