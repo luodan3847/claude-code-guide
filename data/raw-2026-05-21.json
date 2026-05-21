@@ -1,0 +1,197 @@
+{
+  "date": "2026-05-21",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.146 Released",
+      "content": "## What's changed\n\n- Renamed `/simplify` to `/code-review` with an optional effort level (e.g. `/code-review high`)\n- Auto mode no longer suppresses `AskUserQuestion` when the user or a skill explicitly relies on it\n- Fixed Windows PowerShell tool failing with \"command line is invalid\" when `pwsh` is installed via winget or the Microsoft Store (regression in v2.1.124)\n- Fixed MCP `resources/list`, `resources/templates/list`, and `prompts/list` dropping items past page 1 on paginating servers\n- Fixed full-screen strobing in attached background sessions on Windows Terminal while Claude is streaming\n- Fixed the auto-updater status line not showing your current version when an update fails\n- Fixed on Windows, removing a background-job worktree no longer follows NTFS junctions into the main rep",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.146",
+      "date": "2026-05-21T01:51:52Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.145 Released",
+      "content": "## What's changed\n\n- Added `claude agents --json` to list live Claude sessions as JSON for scripting (tmux-resurrect, status bars, session pickers)\n- Added `agent_id` and `parent_agent_id` attributes to `claude_code.tool` OTEL spans, and fixed trace parenting so background subagent spans nest under the dispatching Agent tool span\n- Status line JSON input now includes GitHub repo and PR information when detected\n- `/plugin` Discover and Browse screens now show a plugin's commands, agents, skills, hooks, and MCP/LSP servers before installation\n- `claude agents` terminal tab title now shows the awaiting-input count so an alt-tabbed window tells you when an agent needs attention\n- Slash command and @-mention suggestion list now supports mouse hover and click in fullscreen mode\n- Stop and Subag",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.145",
+      "date": "2026-05-19T21:31:07Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.144 Released",
+      "content": "## What's changed\n\n- Added `/resume` support for background sessions — sessions started via `claude --bg` or agent view now appear alongside interactive ones, marked with `bg`\n- Added elapsed duration to background subagent completion notifications (e.g. \"Agent completed · 3h 2m 5s\")\n- The `/plugin` browse and discover panes now show when a plugin was last updated\n- `/model` now changes the model for the current session only; press `d` in the model picker to set a default for new sessions\n- Renamed \"extra usage\" to \"usage credits\" across CLI copy; `/extra-usage` is now `/usage-credits` (old name still works)\n- Fixed startup hanging up to 75s when `api.anthropic.com` is unreachable (captive portal, firewall, VPN issues) — side-channel API calls now time out after 15s\n- Fixed garbled termina",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.144",
+      "date": "2026-05-19T00:48:51Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.143 Released",
+      "content": "## What's changed\n\n- Added plugin dependency enforcement: `claude plugin disable` now refuses when another enabled plugin depends on the target (with a copy-pasteable disable-chain hint), and `claude plugin enable` force-enables transitive dependencies\n- Added projected context cost (per-turn and per-invocation token estimates) to the `/plugin` marketplace browse pane\n- Added `worktree.bgIsolation: \"none\"` setting to let background sessions edit the working copy directly without `EnterWorktree`, for repos where worktrees are impractical\n- PowerShell tool now passes `-ExecutionPolicy Bypass`. Opt out with `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1`\n- Background sessions now preserve the model and effort level you set after waking from idle\n- Shift+Tab in attached agent sessions now ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.143",
+      "date": "2026-05-15T22:28:22Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.142 Released",
+      "content": "## What's changed\n\n- Added new `claude agents` flags: `--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, and `--dangerously-skip-permissions` to configure dispatched background sessions\n- Fast mode now uses Opus 4.7 by default (previously Opus 4.6). Set `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1` to pin fast mode to Opus 4.6\n- Plugins with a root-level `SKILL.md` and no `skills/` subdirectory are now surfaced as a skill\n- The `/plugin` details pane and `claude plugin details` now show LSP servers a plugin provides\n- `/web-setup` warns before replacing an existing GitHub App connection\n- Fixed `MCP_TOOL_TIMEOUT` not raising the per-request fetch timeout for remote HTTP and SSE MCP servers, which capped tool calls at 60 seconds regardless o",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.142",
+      "date": "2026-05-14T22:55:10Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "How Claude Code works in large codebases",
+      "content": "",
+      "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+      "date": "2026-05-15T04:15:31Z",
+      "points": 247
+    },
+    {
+      "source": "hackernews",
+      "title": "Microsoft starts canceling Claude Code licenses",
+      "content": "",
+      "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+      "date": "2026-05-14T20:53:32Z",
+      "points": 24
+    },
+    {
+      "source": "hackernews",
+      "title": "AgentCRM – Headless CRM for Claude Code",
+      "content": "",
+      "url": "https://github.com/cluster-software/agent-crm",
+      "date": "2026-05-19T00:23:16Z",
+      "points": 17
+    },
+    {
+      "source": "hackernews",
+      "title": "Session Amnesia: The Hidden Cost of Stateless AI Coding Assistants",
+      "content": "",
+      "url": "https://www.aisterna.com/post/session-amnesia-the-hidden-cost-of-stateless-ai-coding-assistants",
+      "date": "2026-05-18T19:25:37Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Knowledge Graphs for AI Coding Assistants",
+      "content": "",
+      "url": "https://graphify.net/",
+      "date": "2026-05-18T19:09:30Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: How are you using AI?",
+      "content": "I&#x27;m a software developer and I do some DevOps. I&#x27;ve gone back and forth on the pendulum of AI. Code completion, having it generate code, write tests, scripts, even tried vibe coding something from scratch.<p>There are times it amazes me with how &quot;capable&quot; it seems but more often than not I&#x27;m not happy with the end result as well as the missed opportunity to learn something or reinforce existing knowledge. At the same time I feel that it is useful in some scenarios and I just need to learn when and how best to use it, like a new power tool that I haven&#x27;t learned how to use yet.<p>Lately I&#x27;ve put in my agents file that I don&#x27;t want it to touch any files. Instead of using it to write code or docs I&#x27;m using it to analyse code bases, give guidance, do research, give suggestions, etc. It&#x27;s my assistant but I&#x27;m still in the driver&#x27;s seat. The exception are cases when it&#x27;s some kind of domain-specific language I don&#x27;t touch often and really don&#x27;t care to learn (Gradle is a prime example for me).<p>How are you using AI? How has it changed? How do you feel about it?",
+      "url": "https://news.ycombinator.com/item?id=48148293",
+      "date": "2026-05-15T13:24:37Z",
+      "points": 2
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-21"
+    },
+    {
+      "source": "bilibili",
+      "title": "Karpathy为何要加入Anthropic？",
+      "content": "",
+      "url": "https://www.bilibili.com/video/BV18YLk6yEHY",
+      "date": "2026-05-19T23:05:22.000Z",
+      "views": 17288,
+      "video_id": "BV18YLk6yEHY",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/c81945ff112697c8eba91751786e0c48cf975866.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "一夜变天！OpenAI vs Anthropic，谁能拿下 AGI 门票，3 人顶 300 人！AI 正在改写人类职业结构，细思极恐，藏 27 年漏洞被 AI",
+      "content": "",
+      "url": "https://www.bilibili.com/video/BV1sg5768EjA",
+      "date": "2026-05-10T12:16:42.000Z",
+      "views": 9127,
+      "video_id": "BV1sg5768EjA",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/595b2b0bd5baf0901f876c5cf3d1c629a286b1a3.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "重磅！Karpathy加盟Anthropic，深度解析Claude将迎来哪些巨变",
+      "content": "原视频链接：https://www.youtube.com/watch?v=brB-hSiV2iU\n本视频为AI技术搬运翻译，使用AI智能移除原视频广告营销内容，旨在降低信息差，帮助大家了解海外最新AI动态。\n翻译：烟神殿API,模型gemini-3-flash-preview,\nAI实用工具看下面视频👇：\n1、烟神殿AI平台：yansd666.com，国内直接调用全球500+AI大模型API！\n2、保姆级OpenClaw一键安装教程：https://www.bilibili.com/video/BV1R",
+      "url": "https://www.bilibili.com/video/BV1tzLk66Evn",
+      "date": "2026-05-19T22:52:35.000Z",
+      "views": 396,
+      "video_id": "BV1tzLk66Evn",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/0598fe973f5fd02ecec476556789ed507bf4fa1a.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-05-21",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-21",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-05-21",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial for Beginners in 2026! (Step-By-Step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=qYqIhX9hTQk",
+      "date": "2026-05-21",
+      "video_id": "qYqIhX9hTQk",
+      "thumbnail_url": "https://i.ytimg.com/vi/qYqIhX9hTQk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-05-21",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-21",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-21",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-21",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
