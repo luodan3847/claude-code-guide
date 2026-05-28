@@ -1,0 +1,197 @@
+{
+  "date": "2026-05-28",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.153 Released",
+      "content": "## What's changed\n\n- Added `skipLfs` option to `github`/`git` plugin marketplace sources to skip Git LFS downloads during clone and update\n- Claude Code now shows a one-time notice when your npm global install can't auto-update; `/doctor` lists the fixes\n- Status line commands now receive `COLUMNS` and `LINES` environment variables so scripts can size output to the terminal width\n- `claude agents`: autocomplete in the dispatch input now suggests native slash commands and bundled skills, not just project skills\n- `claude agents`: PR column now shows `PR #N` for a single PR or `N PRs` for multiple\n- `claude doctor` now shows the result of your last update attempt\n- Combined the separate \"needs authentication\" startup notifications for MCP servers and connectors into a single message\n- macOS:",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.153",
+      "date": "2026-05-28T00:52:08Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.152 Released",
+      "content": "## What's changed\n\n- `/code-review --fix` now applies review findings to your working tree after the review, surfacing reuse, simplification, and efficiency suggestions; `/simplify` now invokes `/code-review --fix`\n- Skills and slash commands can now set `disallowed-tools` in frontmatter to remove tools from the model while the skill is active\n- Added `/reload-skills` command to re-scan skill directories without restarting the session\n- `SessionStart` hooks can now return `reloadSkills: true` to re-scan skill directories, making skills installed by the hook available in the same session\n- `SessionStart` hooks can now set the session title via `hookSpecificOutput.sessionTitle` on startup and resume\n- Added a `MessageDisplay` hook event that lets hooks transform or hide assistant message tex",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.152",
+      "date": "2026-05-27T01:30:59Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.150 Released",
+      "content": "## What's changed\n\n- Internal infrastructure improvements (no user-facing changes)\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.150",
+      "date": "2026-05-23T04:03:51Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.149 Released",
+      "content": "## What's changed\n\n- `/usage` now shows a per-category breakdown of what's driving your limits usage — skills, subagents, plugins, and per-MCP-server cost\n- `/diff` detail view can now be scrolled with the keyboard (arrows, `j`/`k`, `PgUp`/`PgDn`, `Space`, `Home`/`End`)\n- Markdown output now renders GFM task list checkboxes (`- [ ] todo` / `- [x] done`) instead of plain bullets\n- Enterprise: added the `allowAllClaudeAiMcps` managed setting to load claude.ai cloud MCP connectors alongside `managed-mcp.json`\n- Fixed a PowerShell permission bypass: built-in `cd` functions (`cd..`, `cd\\`, `cd~`, `X:`) changed the working directory undetected, letting a later command read outside the workspace\n- Fixed the sandbox write allowlist in git worktrees covering the entire main repository root instead ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.149",
+      "date": "2026-05-22T22:09:29Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.148 Released",
+      "content": "## What's changed\n\n- Fixed the Bash tool returning exit code 127 on every command for some users (a regression introduced in 2.1.147)\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.148",
+      "date": "2026-05-22T01:16:52Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Microsoft starts canceling Claude Code licenses",
+      "content": "<a href=\"https:&#x2F;&#x2F;archive.ph&#x2F;WfCta\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.ph&#x2F;WfCta</a>",
+      "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+      "date": "2026-05-22T17:32:04Z",
+      "points": 489
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",
+      "content": "",
+      "url": "https://arps18.github.io/posts/claude-code-mastery/",
+      "date": "2026-05-27T05:13:39Z",
+      "points": 401
+    },
+    {
+      "source": "hackernews",
+      "title": "Why Ctrl+V won't paste images in Claude Code on WSL, with a fix",
+      "content": "",
+      "url": "https://rajveerbachkaniwala.com/blog/2026/05/24/on-the-difficulty-of-pasting-a-picture/",
+      "date": "2026-05-25T14:41:09Z",
+      "points": 50
+    },
+    {
+      "source": "hackernews",
+      "title": "AI Coding Assistants",
+      "content": "",
+      "url": "https://www.winstoncooke.com/blog/on-ai-coding-assistants/",
+      "date": "2026-05-22T15:14:04Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "Argus – multi‑agent AI coding assistant that never gets stuc",
+      "content": "",
+      "url": "https://github.com/argustek/Argus",
+      "date": "2026-05-26T03:36:05Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "CodeAlta an efficient agentic AI coding CLI assistant coded in C#/.NET",
+      "content": "",
+      "url": "https://codealta.github.io/",
+      "date": "2026-05-22T07:42:21Z",
+      "points": 2
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.7",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-05-28"
+    },
+    {
+      "source": "bilibili",
+      "title": "为何 Anthropic 如此反华？",
+      "content": "简介内容：\n作为程序员，我们不得不承认 Claude 系列模型在编程能力上的卓越。从霸榜权威评测到定义 MCP 标准，Anthropic 似乎站在了技术之巅。\n但你是否感觉到，这也是一家对中国用户“恶意”最大的公司？\n从最初的封禁 IP，到如今“穿透式”审查股权结构；从指控中国大模型“偷窃”，到 CEO 公开将 AI 芯片比作“核武器”并游说立法……\n这真的仅仅是为了商业合规吗？为什么同样的法律环境下，OpenAI 甚至 NVIDIA 的做法截然不同？\n本期视频，我们将剥开 Anthropic 的技术外衣",
+      "url": "https://www.bilibili.com/video/BV12zP7zWExf",
+      "date": "2026-03-02T15:18:06.000Z",
+      "views": 221087,
+      "video_id": "BV12zP7zWExf",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/8b9727d300b922c4b5b4cb03b2f192249ee615ba.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "直播：教皇利奥十四世与 Anthropic 联合创始人共同发布人工智能主题通谕",
+      "content": "在人工智能飞速变革的背景下，一份关于在数字时代守护人类尊严的指导性文献正式发布。该文献聚焦于数字化转型中的生命价值、劳动正义及社会质量，强调技术应服务于全人类的共同利益。\n\nAnna Rollins 教授认为，应将技术发展的权力模式转化为共享模式，确保自由植根于具身化的关系真理中。她提倡通过社会对话，防止技术沦为任意权力的工具。Christopher Olah 强调，人工智能作为人类思想与语言的遗产，其系统复杂性远超单纯的计算机器。他呼吁建立全球收益共享机制，并利用道德想象力引导技术走向繁荣。Leocad",
+      "url": "https://www.bilibili.com/video/BV15JVA6PEYd",
+      "date": "2026-05-26T10:14:44.000Z",
+      "views": 19255,
+      "video_id": "BV15JVA6PEYd",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/25ac2d7b6c949440ff393c3040e59d3ea6ec9efd.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic Claude兄妹创始人罕见一同接受采访 | Oprah深度对话Dario &amp; Daniela Amodei_奥普拉播客",
+      "content": "Claude AI 的联合创始人兼兄妹——CEO 达里奥·阿莫代（Dario Amodei）和总裁丹妮拉·阿莫代（Daniela Amodei），与奥普拉（Oprah）进行了一场深度对谈，探讨了人工智能以及它将如何深远地影响我们每一个人。\nAnthropic（克劳德 AI 的母公司）是引领 AI 发展的科技巨头之一，旗下拥有备受欢迎的聊天机器人助手 Claude。在节目中，达里奥和丹妮拉探讨了创造先进人工智能所伴随的伦理责任与道德拷问，分享了他们关于政府监管的看法，并介绍了他们的新模型 。",
+      "url": "https://www.bilibili.com/video/BV1G4GH6EEkf",
+      "date": "2026-05-24T15:40:41.000Z",
+      "views": 2070,
+      "video_id": "BV1G4GH6EEkf",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/ad214ac3005949bbf9a3ef675f8dc473e2f29ed9.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-05-28",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-05-28",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-05-28",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-05-28",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial for Beginners in 2026! (Step-By-Step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=qYqIhX9hTQk",
+      "date": "2026-05-28",
+      "video_id": "qYqIhX9hTQk",
+      "thumbnail_url": "https://i.ytimg.com/vi/qYqIhX9hTQk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-05-28",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-05-28",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-05-28",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
