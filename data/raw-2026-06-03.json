@@ -1,0 +1,189 @@
+{
+  "date": "2026-06-03",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.161 Released",
+      "content": "## What's changed\n\n- `OTEL_RESOURCE_ATTRIBUTES` values are now included as labels on metric datapoints, so you can slice usage metrics by custom dimensions like team or repo\n- `claude agents` rows now show `done/total` before the detail when work is fanned out; peek shows the longest-running item\n- `/mcp` now collapses claude.ai connectors you've never signed in to behind a \"Show unused connectors\" row\n- Parallel tool calls: a failed Bash command no longer cancels other calls in the same batch — each tool returns its own result independently\n- Fullscreen mode: clipboard now uses `wl-copy`/`xclip`/`xsel` on Linux when available, copies to both the clipboard and PRIMARY selection for middle-click paste, and the \"hold {key} for native selection\" hint now shows the correct key per terminal\n- F",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.161",
+      "date": "2026-06-02T21:58:22Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.160 Released",
+      "content": "## What's changed\n\n- Added a prompt before writing to shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) and `~/.config/git/`, which could otherwise lead to unintended command execution\n- `acceptEdits` mode now prompts before writing build-tool config files that grant code execution (`.npmrc`, `.yarnrc*`, `bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`, etc.)\n- Edit no longer requires a separate Read after viewing a file with `grep`: single-file `grep`/`egrep`/`fgrep` commands now satisfy the read-before-edit check\n- Fixed copy-on-select not writing to the Windows clipboard on WSL — now uses PowerShell interop instead of OSC 52, which terminals like MobaXterm don't support\n- Fixed restoring a completed session from `claude agents` dropping chat history and re-",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.160",
+      "date": "2026-06-02T02:10:25Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.159 Released",
+      "content": "## What's changed\n\n- Internal infrastructure improvements (no user-facing changes)\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.159",
+      "date": "2026-05-31T19:42:49Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.158 Released",
+      "content": "## What's changed\n\n- Auto mode is now available on Bedrock, Vertex, and Foundry for Opus 4.7 and Opus 4.8. Opt in by setting `CLAUDE_CODE_ENABLE_AUTO_MODE=1`\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.158",
+      "date": "2026-05-30T02:42:16Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.157 Released",
+      "content": "## What's changed\n\n- Plugins in `.claude/skills` directories are now automatically loaded, no marketplace required\n- Added `claude plugin init <name>` to scaffold a new plugin in `.claude/skills`\n- Added autocomplete for `/plugin` arguments: subcommands, installed plugin names, and plugins from known marketplaces\n- `claude agents`: the `agent` field in `settings.json` is now honored for dispatched sessions, with `--agent <name>` to override it\n- `EnterWorktree` can now switch between Claude-managed worktrees mid-session\n- `tool_decision` telemetry events now include `tool_parameters` (bash commands, MCP/skill names) when `OTEL_LOG_TOOL_DETAILS=1`\n- Worktrees managed by Claude are now left unlocked when the agent finishes, so `git worktree remove`/`prune` can clean them up\n- Fixed unprocess",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.157",
+      "date": "2026-05-29T20:20:38Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code – Everything you can configure that the docs don't tell you",
+      "content": "",
+      "url": "https://buildingbetter.tech/p/i-read-the-claude-code-source-code",
+      "date": "2026-05-29T02:13:20Z",
+      "points": 326
+    },
+    {
+      "source": "hackernews",
+      "title": "Dynamic Workflows in Claude Code",
+      "content": "",
+      "url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
+      "date": "2026-05-28T16:52:21Z",
+      "points": 199
+    },
+    {
+      "source": "hackernews",
+      "title": "Python utility package for building Claude Code hooks",
+      "content": "",
+      "url": "https://github.com/RasmusGodske/claude-hook-utils",
+      "date": "2026-05-29T04:18:34Z",
+      "points": 18
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: .Net/C# TUI framework (used Claude)",
+      "content": "With an example for an HN client (#64). The library is used to build a coding assistant. 100% vibe coded ignoring all the work to get there.",
+      "url": "https://github.com/rivoli-ai/andy-tui2",
+      "date": "2026-06-01T17:26:07Z",
+      "points": 4
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: AG2B – Run the agent loop in the browser, expose your tools via WebMCP",
+      "content": "Hello everyone,<p>TL;DR<p>Live demo: <a href=\"https:&#x2F;&#x2F;ag2b-example.vercel.app\" rel=\"nofollow\">https:&#x2F;&#x2F;ag2b-example.vercel.app</a><p>Working on different projects, especially in B2B, I am getting the same request more and more often - &quot;Add an AI feature, yesterday!&quot;\nMost agent frameworks I found run the runtime on the server - and that pulls in a whole stack. Both backend and frontend have to learn how that runtime works and adopt its SDKs. The server turns into an orchestrator carrying most of the logic. For a feature that&#x27;s really just &quot;automate what the app already does, and add a brain,&quot; I kept asking the same thing: do we actually need all of that and how to ship these AI features faster?<p>AG2B (Agent to Browser) is my research on this question. The agent loop runs in the browser, where your app already is. Tools (the first primitive) are just your existing client functions (store actions, click handlers, whatever you already wrote), so there&#x27;s no second tool registry and no contract to negotiate between the frontend and backend. The server shrinks (but not limited) to a thin proxy that keeps your API key out of the bundle plus optionally gates with user&#x27;s permissions.<p>Because the loop runs where the UI lives, each turn can carry a fresh snapshot of what the user sees and can do right now. Scopes (the second primitive) re-inject live context on every iteration - into the system or user prompt, your choice. The model sees what&#x27;s actually on screen right now. Nothing stale, zero roundtrips and clear context for the LLM.<p>On security take, does it secure? The LLM can only call the tools you delegate, and those tools are your existing handlers which already hit authenticated, permission-checked endpoints. A tool call goes through the same gates a user or frontend logic goes through.<p>What about existing server-side runtimes? Actually they can coexist. With AG2B you can write your own tool or custom provider which interacts with these endpoints.<p>There are some alternatives to run the agent in browser like working with DOM. That also works, but you pay for it a lot - parsing html and DOM operations are more expensive (tokens, bundle size) than telling LLM what it can do and provide a filtered context.<p>Two cases I built it for:<p>1. General app automation - a tiny LLM proxy + good prompting + your existing frontend logic wrapped with small primitives = the assistant can drive the app.<p>2. Domain tasks - e.g. &quot;turn this question into a SQL query&quot; over a big proprietary BI model. A fine-tuned&#x2F;prompted model that knows the schema + an endpoint to hit it + one Tool - and you get the result.<p>It&#x27;s plain TypeScript, provider-agnostic (OpenAI&#x2F;Anthropic built in, or your own), with a hook system to observe&#x2F;intercept every step (human-in-the-loop approvals, guardrails, RAG) and React bindings - headless hooks or a drop-in chat. Vue is coming.<p>There is also a plugin system. For example I created a WebMCP plugin which exposes your agent&#x27;s tools through the browser API - which already could be tested in Chrome.<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;ag2b&#x2F;ag2b\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;ag2b&#x2F;ag2b</a><p>Docs: <a href=\"https:&#x2F;&#x2F;ag2b.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;ag2b.ai</a>",
+      "url": "https://ag2b.ai/docs",
+      "date": "2026-05-28T12:44:45Z",
+      "points": 2
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.8",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "date": "2026-06-03"
+    },
+    {
+      "source": "bilibili",
+      "title": "【Claude Code】这绝对是b站讲的最好的Claude Code教程，手把手教你在国内从安装到代码实战的保姆级教程！!让你少走99%弯路！AI大模型",
+      "content": "如果视频对你有用的话请 一键三连【长按点赞】支持一下UP哦，拜托，这对我真的很重要！\n【视频配套籽料+问题解答请看”平论区置顶”自取哦】",
+      "url": "https://www.bilibili.com/video/BV1Yi5M6DERk",
+      "date": "2026-05-12T06:24:19.000Z",
+      "views": 185383,
+      "video_id": "BV1Yi5M6DERk",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/11fbec7b215cc93727f963cb85f816f9248e4967.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 900540,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "全网最全！60分钟全面掌握Claude Code～【附完整文档】",
+      "content": "Claude Code保姆级教学【收藏起来不会错！】\n从上手安装，到高级用法，这期一次讲全～\n花了三周做教程，希望能帮到你嘻嘻，感谢朋友们的三连+关注啦～",
+      "url": "https://www.bilibili.com/video/BV1NvRyBzEhq",
+      "date": "2026-05-05T14:08:25.000Z",
+      "views": 981076,
+      "video_id": "BV1NvRyBzEhq",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/4ef379f4341e05c09ba920b4a4ccc6d6cf54f076.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-03",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-06-03",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-03",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-06-03",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-06-03",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-03",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-03",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-03",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
