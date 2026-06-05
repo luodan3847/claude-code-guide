@@ -1,0 +1,159 @@
+{
+  "date": "2026-06-05",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.165 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.165",
+      "date": "2026-06-05T05:45:06Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.163 Released",
+      "content": "## What's changed\n\n- Added `requiredMinimumVersion` and `requiredMaximumVersion` managed settings — Claude Code refuses to start if its version is outside the allowed range and directs the user to an approved version\n- Added `/plugin list` command to list installed plugins, with `--enabled`/`--disabled` filters\n- Added a \"c to copy\" shortcut to `/btw` that copies the raw markdown answer to the clipboard, preserving formatting when pasted elsewhere\n- Hooks: Stop and SubagentStop hooks can now return `hookSpecificOutput.additionalContext` to give Claude feedback and keep the turn going without being labeled a hook error\n- Skills: added `\\$` escape syntax to include a literal `$` before a digit in command bodies\n- stdio MCP servers now receive the same `CLAUDE_CODE_SESSION_ID` as hooks/Bash o",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.163",
+      "date": "2026-06-04T21:52:51Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.162 Released",
+      "content": "## What's changed\n\n- `claude agents --json` now includes `waitingFor` showing what a waiting session is blocked on (e.g. permission prompt)\n- `--tools`: explicitly listing Grep/Glob now provides the dedicated search tools on native builds with embedded search (previously these names were silently ignored)\n- `/effort` now confirms when your chosen level will persist as the default for new sessions\n- Clicking a slash command in the autocomplete menu now fills it into your prompt instead of running it immediately; press Enter to run\n- Remote Control now shows as a persistent footer pill (with a link to the session) instead of a startup message\n- Renamed Windsurf to Devin Desktop in the `/ide` menu, `/terminal-setup`, and `/scroll-speed`, following the editor's rebrand\n- Fixed a silent startup",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.162",
+      "date": "2026-06-03T21:31:35Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.161 Released",
+      "content": "## What's changed\n\n- `OTEL_RESOURCE_ATTRIBUTES` values are now included as labels on metric datapoints, so you can slice usage metrics by custom dimensions like team or repo\n- `claude agents` rows now show `done/total` before the detail when work is fanned out; peek shows the longest-running item\n- `/mcp` now collapses claude.ai connectors you've never signed in to behind a \"Show unused connectors\" row\n- Parallel tool calls: a failed Bash command no longer cancels other calls in the same batch — each tool returns its own result independently\n- Fullscreen mode: clipboard now uses `wl-copy`/`xclip`/`xsel` on Linux when available, copies to both the clipboard and PRIMARY selection for middle-click paste, and the \"hold {key} for native selection\" hint now shows the correct key per terminal\n- F",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.161",
+      "date": "2026-06-02T21:58:22Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.160 Released",
+      "content": "## What's changed\n\n- Added a prompt before writing to shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) and `~/.config/git/`, which could otherwise lead to unintended command execution\n- `acceptEdits` mode now prompts before writing build-tool config files that grant code execution (`.npmrc`, `.yarnrc*`, `bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`, etc.)\n- Edit no longer requires a separate Read after viewing a file with `grep`: single-file `grep`/`egrep`/`fgrep` commands now satisfy the read-before-edit check\n- Fixed copy-on-select not writing to the Windows clipboard on WSL — now uses PowerShell interop instead of OSC 52, which terminals like MobaXterm don't support\n- Fixed restoring a completed session from `claude agents` dropping chat history and re-",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.160",
+      "date": "2026-06-02T02:10:25Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code and Codex can have real-time conversation via Git",
+      "content": "",
+      "url": "https://medium.com/@Koukyosyumei/claude-code-and-codex-can-have-real-time-conversation-via-git-f95b696c1c05",
+      "date": "2026-05-31T14:12:48Z",
+      "points": 109
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Boxes.dev: ditch localhost; run Claude Code and Codex in the cloud",
+      "content": "Hi HN, we’re Nick and Drew, and we’re building boxes.dev – the first cloud-only agentic dev environment (ADE) that gives every Codex and Claude Code agent its own cloud computer.<p>We’re two engineers who previously built Gem (co-founder&#x2F;CTO and first hire), and we spent the last year coding almost exclusively using Codex and Claude Code. It’s been a huge change to how we code, and it’s been exhilarating seeing the models keep getting better – but we eventually realized that developing on localhost was holding us back:<p>- Git worktrees are clunky to set up and use for parallelizing work\n- It’s 2026, but somehow everyone is still walking around with laptops cracked open or SSHing into mac minis in their garage so their agents don’t stop working.\n- Mobile is treated like an afterthought even though coding is just texting now\nWe started hitting resource constraints when multiple parallel agents test their own work by running the full app locally.\n- We tried different products, but couldn’t find any that solved all of our pain points – so we pivoted and decided to just build the ADE we wanted for ourselves.<p>Boxes.dev is a desktop and mobile app that lets you run Claude Code, Codex (using your subscription!), and the full dev environment for whatever you’re building, all on remote compute. It’s similar to Conductor or the Codex desktop app, except everything is in the cloud.<p>We use coding agents to scan your local dev setup and port it to the cloud. Then every Claude Code&#x2F;Codex thread starts from a snapshot of the full setup, with its own filesystem and compute. \nNo more git worktrees, no more cracked-open laptops, and your coding agents can actually test their work end-to-end because they can run your full app in isolation.<p>We’ve mirrored the Claude Code and Codex UX to feel natural to power users, and also have a fully-featured mobile app (no handoffs or remote control), plus scheduled automations and a Slack integration.<p>We’re obviously biased, but we’ve been building boxes.dev with boxes.dev for months and it’s honestly been a gamechanger. It’s hard to go back once you realize how much localhost has been limiting you; based on early feedback from beta testers, we’re increasingly sure that cloud is the future of agentic coding.<p>We’d love for you to experience it yourselves! Would appreciate any feedback – and happy to answer any questions on this thread.",
+      "url": "https://boxes.dev",
+      "date": "2026-06-04T14:38:35Z",
+      "points": 90
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Chatcode – Remote Control for Claude Code and Codex",
+      "content": "Hey HN,<p>what I wanted to build here is a proper universal layer for persisted agentic sessions, that could be seamlessly interacted both via web and a messenger (Telegram). I really like what&#x27;s done so far and would be nice to hear some feedback from you.<p>The interesting thing is that I started to use Chatcode during its development as soon it was possible, so used this tool to build itself.<p>I know that there could be trust&#x2F;privacy concerns, because it relies on a gateway that you need to install on your machine in order to work, but:\n1. You can use it on any machine, just have some test VPS for that\n2. I really believe you will love it as soon as it fits your needs! And it&#x27;s free to start BTW.<p>Anyways, looking forward to your questions&#x2F;suggestions.",
+      "url": "https://chatcode.dev/",
+      "date": "2026-06-04T10:35:56Z",
+      "points": 9
+    },
+    {
+      "source": "hackernews",
+      "title": "Headroom",
+      "content": "Headroom is a menu bar app that quietly optimizes the inputs Claude Code gets by trimming prompt bloat, stripping boilerplate, and compressing documents without changing how you work.\nThis unlocks about 2x as much Claude Code usage on the Claude plan you already pay for. Unlike the competition, the Headroom App is entirely open source and free to get started\nIdeal for developers and teams looking to maximize their AI coding assistant investment.<p>Links: \nhttps:&#x2F;&#x2F;extraheadroom.com&#x2F;\nhttps:&#x2F;&#x2F;github.com&#x2F;gglucass&#x2F;headroom-desktop\nhttps:&#x2F;&#x2F;x.com&#x2F;garmdotcom\nhttps:&#x2F;&#x2F;www.instagram.com&#x2F;extraheadroom&#x2F;\nhttps:&#x2F;&#x2F;youtu.be&#x2F;2NPBaqRGcOs",
+      "url": "https://news.ycombinator.com/item?id=48399637",
+      "date": "2026-06-04T14:54:50Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: .Net/C# TUI framework (used Claude)",
+      "content": "With an example for an HN client (#64). The library is used to build a coding assistant. 100% vibe coded ignoring all the work to get there.",
+      "url": "https://github.com/rivoli-ai/andy-tui2",
+      "date": "2026-06-01T17:26:07Z",
+      "points": 4
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.8",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "date": "2026-06-05"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-05",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Full Claude Code Tutorial for Beginners - Become A Pro Without Coding",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=cSOpT-vCXck",
+      "date": "2026-06-05",
+      "video_id": "cSOpT-vCXck",
+      "thumbnail_url": "https://i.ytimg.com/vi/cSOpT-vCXck/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-05",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-05",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Full Claude Code Tutorial for Non-Technical Beginners in 2026 (step-by-step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=bqJzIWAEn40",
+      "date": "2026-06-05",
+      "video_id": "bqJzIWAEn40",
+      "thumbnail_url": "https://i.ytimg.com/vi/bqJzIWAEn40/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-05",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-05",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-05",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
