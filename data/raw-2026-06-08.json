@@ -1,0 +1,227 @@
+{
+  "date": "2026-06-08",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.168 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.168",
+      "date": "2026-06-06T23:41:53Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.167 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.167",
+      "date": "2026-06-06T01:33:35Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.166 Released",
+      "content": "## What's changed\n\n- Added `fallbackModel` setting to configure up to three fallback models tried in order when the primary model is overloaded or unavailable; `--fallback-model` now also applies to interactive sessions\n- Added glob pattern support in deny rule tool-name position (`\"*\"` denies all tools); allow rules reject non-MCP globs, and unknown tool names in deny rules warn at startup\n- Hardened cross-session messaging: messages relayed via `SendMessage` from other Claude sessions no longer carry user authority — receivers refuse relayed permission requests, and auto mode blocks them\n- `MAX_THINKING_TOKENS=0`, `--thinking disabled`, and the per-model thinking toggle now disable thinking on models that think by default via the Claude API (3P providers unchanged)\n- Claude Code now retr",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.166",
+      "date": "2026-06-06T00:55:18Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.165 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.165",
+      "date": "2026-06-05T05:45:06Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.163 Released",
+      "content": "## What's changed\n\n- Added `requiredMinimumVersion` and `requiredMaximumVersion` managed settings — Claude Code refuses to start if its version is outside the allowed range and directs the user to an approved version\n- Added `/plugin list` command to list installed plugins, with `--enabled`/`--disabled` filters\n- Added a \"c to copy\" shortcut to `/btw` that copies the raw markdown answer to the clipboard, preserving formatting when pasted elsewhere\n- Hooks: Stop and SubagentStop hooks can now return `hookSpecificOutput.additionalContext` to give Claude feedback and keep the turn going without being labeled a hook error\n- Skills: added `\\$` escape syntax to include a literal `$` before a digit in command bodies\n- stdio MCP servers now receive the same `CLAUDE_CODE_SESSION_ID` as hooks/Bash o",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.163",
+      "date": "2026-06-04T21:52:51Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Boxes.dev: ditch localhost; run Claude Code and Codex in the cloud",
+      "content": "Hi HN, we’re Nick and Drew, and we’re building boxes.dev – the first cloud-only agentic dev environment (ADE) that gives every Codex and Claude Code agent its own cloud computer.<p>We’re two engineers who previously built Gem (co-founder&#x2F;CTO and first hire), and we spent the last year coding almost exclusively using Codex and Claude Code. It’s been a huge change to how we code, and it’s been exhilarating seeing the models keep getting better – but we eventually realized that developing on localhost was holding us back:<p>- Git worktrees are clunky to set up and use for parallelizing work\n- It’s 2026, but somehow everyone is still walking around with laptops cracked open or SSHing into mac minis in their garage so their agents don’t stop working.\n- Mobile is treated like an afterthought even though coding is just texting now\nWe started hitting resource constraints when multiple parallel agents test their own work by running the full app locally.\n- We tried different products, but couldn’t find any that solved all of our pain points – so we pivoted and decided to just build the ADE we wanted for ourselves.<p>Boxes.dev is a desktop and mobile app that lets you run Claude Code, Codex (using your subscription!), and the full dev environment for whatever you’re building, all on remote compute. It’s similar to Conductor or the Codex desktop app, except everything is in the cloud.<p>We use coding agents to scan your local dev setup and port it to the cloud. Then every Claude Code&#x2F;Codex thread starts from a snapshot of the full setup, with its own filesystem and compute. \nNo more git worktrees, no more cracked-open laptops, and your coding agents can actually test their work end-to-end because they can run your full app in isolation.<p>We’ve mirrored the Claude Code and Codex UX to feel natural to power users, and also have a fully-featured mobile app (no handoffs or remote control), plus scheduled automations and a Slack integration.<p>We’re obviously biased, but we’ve been building boxes.dev with boxes.dev for months and it’s honestly been a gamechanger. It’s hard to go back once you realize how much localhost has been limiting you; based on early feedback from beta testers, we’re increasingly sure that cloud is the future of agentic coding.<p>We’d love for you to experience it yourselves! Would appreciate any feedback – and happy to answer any questions on this thread.",
+      "url": "https://boxes.dev",
+      "date": "2026-06-04T14:38:35Z",
+      "points": 103
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Lessons learned from running Claude Code swarms at scale",
+      "content": "Some time ago I built a simple app to run swarms of coding agents — I call it fleet (<a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=48256389\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=48256389</a>). It&#x27;s based on centralized beads with a Python orchestrator and can run any coder (Claude, agy, Codex). Recently I added a UI to manage the whole agent lifecycle: adding new tasks, monitoring running ones, and a chat interface built on MCP with a centralized SQLite DB. From the UI I can spawn agents to run in any directory, define dependencies on other tasks, and specify which coder&#x2F;model should do the job. Today I can run 10–15 agents concurrently. At that scale you burn through limits very fast, so I spent some time investigating where those limits go and how to maximize efficiency. Here are the lessons learned after a few weeks of running the fleet:<p>- CLAUDE.md is a terrible abstraction. These files load unconditionally, they often contain descriptions irrelevant to the task at hand, and they stack from your working directory upward. The result is wasted tokens and confusion from injecting irrelevant instructions into the session.<p>- Skills are bad, but not as bad as CLAUDE.md. They use a progressive disclosure approach: only the skill description goes into the session, and Claude loads the full skill text with a tool when it&#x27;s needed. That&#x27;s one level better, but it still doesn&#x27;t let you scale — you can&#x27;t create 10K skills, as that would eat your entire usable context. Claude recently introduced a skills budget that silently drops less frequently used skills from the session entirely. You can still invoke them in an interactive session, but the model can&#x27;t invoke them in a background session.<p>- Some plugins may be installed more than once. During cleanup I found that a few of mine were installed in multiple locations, consuming double the tokens on duplicated instructions.<p>- Attaching plugins to every session is a bad idea at scale. You want to be precise about which plugins are actually useful and attach them per task.<p>- Use a hierarchical knowledge base instead of CLAUDE.md &#x2F; skills &#x2F; plugins. It lets you benefit from real progressive disclosure: keep your instructions and tool descriptions in it and let Claude navigate through it quickly and cheaply.<p>- System tools consume ~15K tokens (7% of the session). You can&#x27;t manage this — they&#x27;re just attached, and disabling tools doesn&#x27;t remove them from the context.<p>- AskUserQuestion isn&#x27;t available in background sessions. You need to implement your own tool — MCP- or CLI-based — to give `claude -p` the ability to talk to you.<p>- You become selective about which model handles each task. Decompose work into harder and simpler subtasks so you can route the simpler ones to weaker, cheaper models and save tokens.<p>- Your context-switching skill improves over time.<p>Fleet repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;sermakarevich&#x2F;fleet\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;sermakarevich&#x2F;fleet</a>",
+      "url": "https://news.ycombinator.com/item?id=48407998",
+      "date": "2026-06-05T04:34:09Z",
+      "points": 10
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Chatcode – Remote Control for Claude Code and Codex",
+      "content": "Hey HN,<p>what I wanted to build here is a proper universal layer for persisted agentic sessions, that could be seamlessly interacted both via web and a messenger (Telegram). I really like what&#x27;s done so far and would be nice to hear some feedback from you.<p>The interesting thing is that I started to use Chatcode during its development as soon it was possible, so used this tool to build itself.<p>I know that there could be trust&#x2F;privacy concerns, because it relies on a gateway that you need to install on your machine in order to work, but:\n1. You can use it on any machine, just have some test VPS for that\n2. I really believe you will love it as soon as it fits your needs! And it&#x27;s free to start BTW.<p>Anyways, looking forward to your questions&#x2F;suggestions.",
+      "url": "https://chatcode.dev/",
+      "date": "2026-06-04T10:35:56Z",
+      "points": 9
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Nanocode-CLI – A lightweight terminal-based AI coding assistant",
+      "content": "",
+      "url": "https://github.com/hit9/nanocode",
+      "date": "2026-06-06T04:54:05Z",
+      "points": 4
+    },
+    {
+      "source": "hackernews",
+      "title": "Headroom",
+      "content": "Headroom is a menu bar app that quietly optimizes the inputs Claude Code gets by trimming prompt bloat, stripping boilerplate, and compressing documents without changing how you work.\nThis unlocks about 2x as much Claude Code usage on the Claude plan you already pay for. Unlike the competition, the Headroom App is entirely open source and free to get started\nIdeal for developers and teams looking to maximize their AI coding assistant investment.<p>Links: \nhttps:&#x2F;&#x2F;extraheadroom.com&#x2F;\nhttps:&#x2F;&#x2F;github.com&#x2F;gglucass&#x2F;headroom-desktop\nhttps:&#x2F;&#x2F;x.com&#x2F;garmdotcom\nhttps:&#x2F;&#x2F;www.instagram.com&#x2F;extraheadroom&#x2F;\nhttps:&#x2F;&#x2F;youtu.be&#x2F;2NPBaqRGcOs",
+      "url": "https://news.ycombinator.com/item?id=48399637",
+      "date": "2026-06-04T14:54:50Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: .Net/C# TUI framework (used Claude)",
+      "content": "With an example for an HN client (#64). The library is used to build a coding assistant. 100% vibe coded ignoring all the work to get there.",
+      "url": "https://github.com/rivoli-ai/andy-tui2",
+      "date": "2026-06-01T17:26:07Z",
+      "points": 4
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 4.8",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "date": "2026-06-08"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 985232,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【Claude Code】这绝对是b站讲的最好的Claude Code教程，手把手教你在国内从安装到代码实战的保姆级教程！!让你少走99%弯路！AI大模型",
+      "content": "如果视频对你有用的话请 一键三连【长按点赞】支持一下UP哦，拜托，这对我真的很重要！\n【视频配套籽料+问题解答请看”平论区置顶”自取哦】",
+      "url": "https://www.bilibili.com/video/BV1Yi5M6DERk",
+      "date": "2026-05-12T06:24:19.000Z",
+      "views": 242606,
+      "video_id": "BV1Yi5M6DERk",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/11fbec7b215cc93727f963cb85f816f9248e4967.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【2026最新】这绝对是b站讲的最好的Claude Code教程，手把手教你在国内从安装到代码实战的保姆级教程！!让你少走99%弯路！AI大模型",
+      "content": "求三连！！！求三连！！！求三连！！！求三连！！！求三连！！！求三连！！！求三连！！！求三连！！！求三连！！！求三连！！！求三连！！！",
+      "url": "https://www.bilibili.com/video/BV13HEw6rEDa",
+      "date": "2026-06-04T09:39:37.000Z",
+      "views": 27618,
+      "video_id": "BV13HEw6rEDa",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/52ad6369eb4bfdf3451b65c46c27938c4d7014ca.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic史：从OpenAI叛逃者，到估值万亿的AI帝国",
+      "content": "21小时前，Anthropic公布了估值9650亿美元的融资。距离这家公司首次亮相，刚好五年整。\n\nAnthropic这5年，不只是一个AI创业公司的崛起故事。它也是一部关于理想、资本、产品、算力和地缘竞争如何纠缠在一起的商业史。而当初的屠龙少年，是否也终将变成恶龙？Anthropic影响的，绝不仅仅是一个行业，更可能是全人类。\n\n这是《眼镜说财经》的第一期视频。这个频道会长期分享深度商业史、公司史和行业观察。",
+      "url": "https://www.bilibili.com/video/BV1itVa6nEJH",
+      "date": "2026-05-29T14:26:49.000Z",
+      "views": 50726,
+      "video_id": "BV1itVa6nEJH",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/a8758d33883094ac148f43690160c4064a8dc321.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic发出警告，AI已经开始自我进化！",
+      "content": "",
+      "url": "https://www.bilibili.com/video/BV1nK7r6wEhA",
+      "date": "2026-06-05T06:44:07.000Z",
+      "views": 95045,
+      "video_id": "BV1nK7r6wEhA",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/42f0516cb8b32cefc3801a3dd76c5f347200f6ac.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "量产前夜，OpenAI芯片核心叛逃Anthropic！",
+      "content": "",
+      "url": "https://www.bilibili.com/video/BV1njEM6uEDv",
+      "date": "2026-06-08T08:25:00.000Z",
+      "views": 0,
+      "video_id": "BV1njEM6uEDv",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/0862ca04c9e6337e78ffa1e5d9cb11ebb0831c34.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-08",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-08",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-08",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-06-08",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-06-08",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-08",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-08",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-08",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
