@@ -1,0 +1,181 @@
+{
+  "date": "2026-06-12",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.175 Released",
+      "content": "## What's changed\n\n- Added `enforceAvailableModels` managed setting — when enabled, the `availableModels` allowlist also constrains the Default model (a Default that would resolve to a disallowed model now falls back to the first allowed model), and user or project settings can no longer widen a managed `availableModels` list\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
+      "date": "2026-06-12T04:23:51Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.174 Released",
+      "content": "## What's changed\n\n- Added `wheelScrollAccelerationEnabled` setting to disable mouse-wheel scroll acceleration in fullscreen mode\n- Fixed the `/model` picker hiding the model family that Default resolves to — Opus now appears as its own row on Max/Team Premium/Enterprise plans, Sonnet on Pro/Team plans, and Opus on pay-as-you-go API accounts\n- Fixed `/model` picker showing a hardcoded Sonnet version label when `ANTHROPIC_DEFAULT_SONNET_MODEL` pins a different Sonnet\n- Fixed the \"Fable 5 is now consuming usage credits\" banner incorrectly showing for enterprise accounts with usage-based billing\n- Fixed Bedrock GovCloud regions (`us-gov-*`) deriving the wrong inference profile prefix (`global` instead of `us-gov`), causing 400 errors on derived model IDs\n- Fixed background sessions inheriting",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.174",
+      "date": "2026-06-12T01:16:36Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.173 Released",
+      "content": "## What's changed\n\n- Fixed Fable 5 model names with a `[1m]` suffix not being normalized — Fable 5 includes 1M context by default, so the suffix is now stripped automatically\n- Fixed a spurious \"sandbox dependencies missing\" startup warning on Windows when sandbox was enabled in settings\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.173",
+      "date": "2026-06-11T05:41:54Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.172 Released",
+      "content": "## What's changed\n\n- Sub-agents can now spawn their own sub-agents (up to 5 levels deep)\n- Amazon Bedrock now reads the AWS region from `~/.aws` config files when `AWS_REGION` isn't set, matching AWS SDK precedence; `/status` shows where the region came from\n- Added a search bar when browsing a marketplace's plugins in `/plugin`\n- Added `model` attribute to the `claude_code.lines_of_code.count` OTEL metric\n- Fixed sessions using 1M context without usage credits getting permanently stuck — the session now automatically compacts back under the standard context limit\n- Fixed a repeating \"an image in the conversation could not be processed and was removed\" error when the conversation contained multiple images\n- Fixed the agents view keeping a session under Working with a busy spinner for up to",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.172",
+      "date": "2026-06-10T20:44:15Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.170 Released",
+      "content": "## What's changed\n\n- Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use. Fable’s capabilities exceed those of any model we’ve ever made generally available. Update to version 2.1.170 for access. https://www.anthropic.com/news/claude-fable-5-mythos-5\n- Fixed sessions not saving transcripts (and not appearing in --resume) when launched from the VS Code integrated terminal or any shell that inherited Claude Code environment variables.\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.170",
+      "date": "2026-06-09T17:23:09Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: macOS menu bar gauges for your Claude Code quota",
+      "content": "",
+      "url": "https://github.com/grzegorz-raczek-unit8/claude-quota",
+      "date": "2026-06-10T09:43:16Z",
+      "points": 64
+    },
+    {
+      "source": "hackernews",
+      "title": "Running Claude Code Offline on an M3 Pro with Qwen3.6",
+      "content": "",
+      "url": "https://har-ki.github.io/claude-code-sre-handbook/handbook/06-air-gapped/",
+      "date": "2026-06-11T16:32:04Z",
+      "points": 18
+    },
+    {
+      "source": "hackernews",
+      "title": "Yserver: Modern X11 Server Written in Rust with the Help of Claude Code",
+      "content": "",
+      "url": "https://www.phoronix.com/news/YSERVER-Rust-X11-Server",
+      "date": "2026-06-11T15:17:42Z",
+      "points": 14
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Nanocode-CLI – A lightweight terminal-based AI coding assistant",
+      "content": "",
+      "url": "https://github.com/hit9/nanocode",
+      "date": "2026-06-06T04:54:05Z",
+      "points": 4
+    },
+    {
+      "source": "anthropic",
+      "title": "Claude Fable 5 and Claude Mythos 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "date": "2026-06-12"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic史：从OpenAI叛逃者，到估值万亿的AI帝国",
+      "content": "21小时前，Anthropic公布了估值9650亿美元的融资。距离这家公司首次亮相，刚好五年整。\n\nAnthropic这5年，不只是一个AI创业公司的崛起故事。它也是一部关于理想、资本、产品、算力和地缘竞争如何纠缠在一起的商业史。而当初的屠龙少年，是否也终将变成恶龙？Anthropic影响的，绝不仅仅是一个行业，更可能是全人类。\n\n这是《眼镜说财经》的第一期视频。这个频道会长期分享深度商业史、公司史和行业观察。",
+      "url": "https://www.bilibili.com/video/BV1itVa6nEJH",
+      "date": "2026-05-29T14:26:49.000Z",
+      "views": 59601,
+      "video_id": "BV1itVa6nEJH",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/a8758d33883094ac148f43690160c4064a8dc321.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic 的 CEO万字长文，又在给全人类指点江山了？",
+      "content": "老范讲故事",
+      "url": "https://www.bilibili.com/video/BV1oCEr6fEK6",
+      "date": "2026-06-12T01:48:19.000Z",
+      "views": 274,
+      "video_id": "BV1oCEr6fEK6",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/0e8690b4ece5c9468e006697c52e434a2422d7cf.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic用公益包装在抢人？Claude Corps背后的品牌渗透计划",
+      "content": "今天 3 件事讲清楚：\n\n01｜公益壳子里是人才护城河 — Anthropic宣布Claude Corps计划，招募1000名早期职业者，每人配对一家机构推进AI落地任务，费用全免。表面是公益培训，实际是把早期从业者绑进Claude生态。AI落地卡在两头：不会用的人太多，没人带着上手。这套奖学金计划既解了用户渗透，又建了人才口碑，一块钱当两块花。\n\n02｜1000万研究 AI 群体会不会失控 — 百万级AI agent同时运行，集体层面会涌现什么行为？至今没有系统性研究。单个agent可以建模，但规模到百",
+      "url": "https://www.bilibili.com/video/BV1puE66PEps",
+      "date": "2026-06-12T04:30:00.000Z",
+      "views": 91,
+      "video_id": "BV1puE66PEps",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/93842918134eb951b4091c4b58cb068c6e3d1bad.png"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-12",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-12",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-12",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-06-12",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-06-12",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-12",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-12",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic begged the world to stop AI… then shipped this",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=1PBRhm5ZnjU",
+      "date": "2026-06-12",
+      "video_id": "1PBRhm5ZnjU",
+      "thumbnail_url": "https://i.ytimg.com/vi/1PBRhm5ZnjU/mqdefault.jpg"
+    }
+  ]
+}
