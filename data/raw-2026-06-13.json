@@ -1,0 +1,203 @@
+{
+  "date": "2026-06-13",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.177 Released",
+      "content": "\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.177",
+      "date": "2026-06-13T01:25:15Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.176 Released",
+      "content": "## What's changed\n\n- Session titles are now generated in the language of your conversation (set the `language` setting to pin a specific language)\n- Added `footerLinksRegexes` setting for regex-matched link badges in the footer row, configurable via user or managed settings\n- Improved Bedrock credential caching: credentials from `awsCredentialExport` are now cached until their `Expiration` instead of a fixed 1 hour\n- Fixed `availableModels` enforcement: alias model picks can no longer be redirected to a blocked model via `ANTHROPIC_DEFAULT_*_MODEL` environment variables, and `/fast` now refuses to toggle when it would switch to a model outside the allowlist\n- Fixed auto mode failing on Fable 5 for organizations without Opus 4.8 enabled — the classifier now falls back to the best available ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.176",
+      "date": "2026-06-12T21:53:27Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.175 Released",
+      "content": "## What's changed\n\n- Added `enforceAvailableModels` managed setting — when enabled, the `availableModels` allowlist also constrains the Default model (a Default that would resolve to a disallowed model now falls back to the first allowed model), and user or project settings can no longer widen a managed `availableModels` list\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
+      "date": "2026-06-12T04:23:51Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.174 Released",
+      "content": "## What's changed\n\n- Added `wheelScrollAccelerationEnabled` setting to disable mouse-wheel scroll acceleration in fullscreen mode\n- Fixed the `/model` picker hiding the model family that Default resolves to — Opus now appears as its own row on Max/Team Premium/Enterprise plans, Sonnet on Pro/Team plans, and Opus on pay-as-you-go API accounts\n- Fixed `/model` picker showing a hardcoded Sonnet version label when `ANTHROPIC_DEFAULT_SONNET_MODEL` pins a different Sonnet\n- Fixed the \"Fable 5 is now consuming usage credits\" banner incorrectly showing for enterprise accounts with usage-based billing\n- Fixed Bedrock GovCloud regions (`us-gov-*`) deriving the wrong inference profile prefix (`global` instead of `us-gov`), causing 400 errors on derived model IDs\n- Fixed background sessions inheriting",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.174",
+      "date": "2026-06-12T01:16:36Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.173 Released",
+      "content": "## What's changed\n\n- Fixed Fable 5 model names with a `[1m]` suffix not being normalized — Fable 5 includes 1M context by default, so the suffix is now stripped automatically\n- Fixed a spurious \"sandbox dependencies missing\" startup warning on Windows when sandbox was enabled in settings\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.173",
+      "date": "2026-06-11T05:41:54Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: macOS menu bar gauges for your Claude Code quota",
+      "content": "",
+      "url": "https://github.com/grzegorz-raczek-unit8/claude-quota",
+      "date": "2026-06-10T09:43:16Z",
+      "points": 66
+    },
+    {
+      "source": "hackernews",
+      "title": "Running Claude Code Offline on an M3 Pro with Qwen3.6",
+      "content": "",
+      "url": "https://har-ki.github.io/claude-code-sre-handbook/handbook/06-air-gapped/",
+      "date": "2026-06-11T16:32:04Z",
+      "points": 18
+    },
+    {
+      "source": "hackernews",
+      "title": "Yserver: Modern X11 Server Written in Rust with the Help of Claude Code",
+      "content": "",
+      "url": "https://www.phoronix.com/news/YSERVER-Rust-X11-Server",
+      "date": "2026-06-11T15:17:42Z",
+      "points": 14
+    },
+    {
+      "source": "anthropic",
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "date": "2026-06-13"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 1082482,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【Claude Code】这绝对是b站讲的最好的Claude Code教程，手把手教你在国内从安装到代码实战的保姆级教程！!让你少走99%弯路！AI大模型",
+      "content": "如果视频对你有用的话请 一键三连【长按点赞】支持一下UP哦，拜托，这对我真的很重要！\n【视频配套籽料+问题解答请看”平论区置顶”自取哦】",
+      "url": "https://www.bilibili.com/video/BV1Yi5M6DERk",
+      "date": "2026-05-12T06:24:19.000Z",
+      "views": 287797,
+      "video_id": "BV1Yi5M6DERk",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/11fbec7b215cc93727f963cb85f816f9248e4967.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "全网最全！60分钟全面掌握Claude Code～【附完整文档】",
+      "content": "Claude Code保姆级教学【收藏起来不会错！】\n从上手安装，到高级用法，这期一次讲全～\n花了三周做教程，希望能帮到你嘻嘻，感谢朋友们的三连+关注啦～",
+      "url": "https://www.bilibili.com/video/BV1NvRyBzEhq",
+      "date": "2026-05-05T14:08:25.000Z",
+      "views": 1118496,
+      "video_id": "BV1NvRyBzEhq",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/4ef379f4341e05c09ba920b4a4ccc6d6cf54f076.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic史：从OpenAI叛逃者，到估值万亿的AI帝国",
+      "content": "21小时前，Anthropic公布了估值9650亿美元的融资。距离这家公司首次亮相，刚好五年整。\n\nAnthropic这5年，不只是一个AI创业公司的崛起故事。它也是一部关于理想、资本、产品、算力和地缘竞争如何纠缠在一起的商业史。而当初的屠龙少年，是否也终将变成恶龙？Anthropic影响的，绝不仅仅是一个行业，更可能是全人类。\n\n这是《眼镜说财经》的第一期视频。这个频道会长期分享深度商业史、公司史和行业观察。",
+      "url": "https://www.bilibili.com/video/BV1itVa6nEJH",
+      "date": "2026-05-29T14:26:49.000Z",
+      "views": 62256,
+      "video_id": "BV1itVa6nEJH",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/a8758d33883094ac148f43690160c4064a8dc321.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "探秘估值9650亿美元的AI巨头Anthropic内部 | 《The Circuit》系列",
+      "content": "Emily Chang深度专访Anthropic联合创始人达里奥 Dario 和丹妮拉·阿莫代伊 Daniela Amode ，罕见地展开了一场详实对话，探讨这家初创公司的起源故事、与五角大楼的交锋，以及该公司声称在风险极高的人工智能竞赛中如何将安全置于首位。\n\n由知名记者艾米丽·张 Emily Chang 主持的《The Circuit》是一档快节奏、充满活力的系列节目，聚焦文化、科技、娱乐与商业的交汇点。每周，张都会前往世界各地，采访最引人入胜的创始人、影响者和创新者，进行深入的对话，带领观众走进那些",
+      "url": "https://www.bilibili.com/video/BV1muEv6ZESz",
+      "date": "2026-06-11T09:09:38.000Z",
+      "views": 1803,
+      "video_id": "BV1muEv6ZESz",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/255fd943c3ef7b01606f49b2ab354a1d2908c74f.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "突发：因安全隐患，Anthropic下架Claude Fable 5与Mythos | Theo - t3․gg",
+      "content": "来源：https://www.youtube.com/watch?v=W-kM56mf-Nw\n原标题：BREAKING: Fable and Mythos have been taken down for security concerns.\n频道：Theo - t3․gg\n发布时间：2026-06-13\n\n内容简介：\n突发消息：美国政府刚刚对 Claude Fable 5 实施了出口管制。Anthropic 现已将其下线。",
+      "url": "https://www.bilibili.com/video/BV1NeJJ6nEz6",
+      "date": "2026-06-13T02:47:12.000Z",
+      "views": 1465,
+      "video_id": "BV1NeJJ6nEz6",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/e0081983c322305924f2d837cb58ca45fdc2f9a3.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-13",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-13",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-13",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-06-13",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-06-13",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-13",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-13",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-13",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
