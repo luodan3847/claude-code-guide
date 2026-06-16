@@ -1,0 +1,189 @@
+{
+  "date": "2026-06-16",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.178 Released",
+      "content": "## What's changed\n\n- Added `Tool(param:value)` syntax for permission rules to match a tool's input parameters (with `*` wildcard), e.g. `Agent(model:opus)` to block Opus subagents\n- Skills in nested `.claude/skills` directories now load when working on files there; on a name clash, the nested skill appears as `<dir>:<name>` so both stay available\n- Nested `.claude/` directories: the agent, workflow, and output-style closest to the working directory now wins when names collide; project-scope workflow saves now target the closest existing `.claude/workflows/`\n- Improved auto mode: subagent spawns are now evaluated by the classifier before launch, closing a gap where a subagent could request a blocked action without review\n- Improved `/doctor` with consistent flat tree layout across all secti",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.178",
+      "date": "2026-06-15T21:35:55Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.177 Released",
+      "content": "\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.177",
+      "date": "2026-06-13T01:25:15Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.176 Released",
+      "content": "## What's changed\n\n- Session titles are now generated in the language of your conversation (set the `language` setting to pin a specific language)\n- Added `footerLinksRegexes` setting for regex-matched link badges in the footer row, configurable via user or managed settings\n- Improved Bedrock credential caching: credentials from `awsCredentialExport` are now cached until their `Expiration` instead of a fixed 1 hour\n- Fixed `availableModels` enforcement: alias model picks can no longer be redirected to a blocked model via `ANTHROPIC_DEFAULT_*_MODEL` environment variables, and `/fast` now refuses to toggle when it would switch to a model outside the allowlist\n- Fixed auto mode failing on Fable 5 for organizations without Opus 4.8 enabled — the classifier now falls back to the best available ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.176",
+      "date": "2026-06-12T21:53:27Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.175 Released",
+      "content": "## What's changed\n\n- Added `enforceAvailableModels` managed setting — when enabled, the `availableModels` allowlist also constrains the Default model (a Default that would resolve to a disallowed model now falls back to the first allowed model), and user or project settings can no longer widen a managed `availableModels` list\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
+      "date": "2026-06-12T04:23:51Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.174 Released",
+      "content": "## What's changed\n\n- Added `wheelScrollAccelerationEnabled` setting to disable mouse-wheel scroll acceleration in fullscreen mode\n- Fixed the `/model` picker hiding the model family that Default resolves to — Opus now appears as its own row on Max/Team Premium/Enterprise plans, Sonnet on Pro/Team plans, and Opus on pay-as-you-go API accounts\n- Fixed `/model` picker showing a hardcoded Sonnet version label when `ANTHROPIC_DEFAULT_SONNET_MODEL` pins a different Sonnet\n- Fixed the \"Fable 5 is now consuming usage credits\" banner incorrectly showing for enterprise accounts with usage-based billing\n- Fixed Bedrock GovCloud regions (`us-gov-*`) deriving the wrong inference profile prefix (`global` instead of `us-gov`), causing 400 errors on derived model IDs\n- Fixed background sessions inheriting",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.174",
+      "date": "2026-06-12T01:16:36Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: macOS menu bar gauges for your Claude Code quota",
+      "content": "",
+      "url": "https://github.com/grzegorz-raczek-unit8/claude-quota",
+      "date": "2026-06-10T09:43:16Z",
+      "points": 67
+    },
+    {
+      "source": "hackernews",
+      "title": "Anthropic pauses credit change for Claude Code",
+      "content": "Quoting from an email they sent:<p>Hi Fabian,\nIn May, we sent you an email announcing that starting today, the Claude Agent SDK, claude -p, and third-party apps built on the Agent SDK would stop drawing from subscription rate limits and move to a dedicated monthly credit. We&#x27;re writing to let you know that we’re not making this change today. We’re working to update the plan to better support how users build with Claude subscriptions.\nWhat this means for you\nNothing changes for now. Agent SDK, claude -p, and third-party app usage continues to work with your subscription exactly as it did before today, and there&#x27;s no credit to claim. Your subscription limits are unchanged. When we have an update, we&#x27;ll share it with advance notice before it takes effect.",
+      "url": "https://news.ycombinator.com/item?id=48546618",
+      "date": "2026-06-15T20:28:39Z",
+      "points": 29
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Claude Code for Visual Studio (native diff with accept/reject)",
+      "content": "VS Code and JetBrains have official Claude Code IDE integration, but Visual Studio doesn&#x27;t. There&#x27;s an open GitHub issue with a lot of +1s so I built it myself (check out the gif in the GitHub repo for a visual example).<p>It implements the same protocol the official plugins use, so the Claude CLI connects to it automatically. You don&#x27;t configure anything, just install the extension and click Launch.<p>The main thing it adds over running Claude in a terminal is that edits open in Visual Studio&#x27;s native diff viewer instead of auto-applying or prompting you in the terminal. You click Accept or Reject right there. You can also reject with a reason, and Claude will take another pass.<p>It also shares your compiler errors (C# and C++) and your current selection with the CLI automatically, so Claude has context without you having to copy-paste anything.<p>A few other things:\n- There&#x27;s a dockable panel with connection status and token&#x2F;cost stats for the session\n- A &quot;run wild&quot; toggle to auto-accept edits without opening the diff\nWorks with the existing claude CLI, no model calls of its own<p>Marketplace: <a href=\"https:&#x2F;&#x2F;marketplace.visualstudio.com&#x2F;items?itemName=firish.bridgev1\" rel=\"nofollow\">https:&#x2F;&#x2F;marketplace.visualstudio.com&#x2F;items?itemName=firish.b...</a><p>GitHub: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;firish&#x2F;claude_code_vs\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;firish&#x2F;claude_code_vs</a>",
+      "url": "https://github.com/firish/claude_code_vs",
+      "date": "2026-06-15T23:15:56Z",
+      "points": 19
+    },
+    {
+      "source": "hackernews",
+      "title": "Argus: Open-source AI coding assistant with built-in code review",
+      "content": "",
+      "url": "https://github.com/ArgusTek/Argus",
+      "date": "2026-06-14T15:56:12Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "I built a bookkeeping app for UK sole traders as a new developer using AI",
+      "content": "About a month ago I started building QuarterPerfect — a bookkeeping tool aimed at UK sole traders and landlords, specifically designed around the MTD ITSA changes coming into effect this year (first quarterly deadline: 7 August).<p>A bit of background on me firstly.<p>I&#x27;m not a senior developer. My previous project was a small roster app that converted an XLSX shift rota into a calendar with annual leave support — mostly built for me and a few colleagues at work. Nothing with real users, nothing with payments or compliance requirements. QuarterPerfect is a significant step up from that.<p>QuarterPerfect offers users bank statement import (CSV and PDF), transaction categorization with receipt matching, merchant rules for auto-categorizing recurring transactions, and a read-only accountant share link so clients can hand off clean records without chasing. It&#x27;s web-first with a mobile app in testing.<p>The technical side was challenging but learnable. The harder thing was building in a domain I have no real background in. The HMRC&#x2F;MTD space has a lot of nuance, treatment of different income types, what &quot;quarterly updates&quot; actually mean vs the annual return, what accountants need vs what HMRC needs. Getting that wrong isn&#x27;t a UX problem, it&#x27;s a liability problem.<p>The second hard thing was learning to work effectively with AI assistance. I used Claude and Perplexity heavily throughout. Early on I&#x27;d accept output too uncritically and build on shaky foundations. The shift that helped most was treating it less like a code generator and more like a pair programmer, the decisions still have to be mine, and I have to understand what I&#x27;m shipping well enough to defend it. Honestly though, one really good work flow was to give Perplexity my ideas and have it generate detailed prompts for Claude, I would then post results back to Perplexity. A LOT of copy and pasting but results were spot on. I also had them both agree on a project management structure, which REALLY helped keep things tidy.<p>It&#x27;s still in testing, with no public users yet. The product works end-to-end but I&#x27;m not comfortable pushing it to strangers until I&#x27;m more confident in the compliance side. Also I want the app to be native to iOS and Google Play store, the latter requires me to have a minimum of 12 testers using the app in some capacity for 14 days, I haven&#x27;t reached the minimum amount yet, even after asking for help from friends on social media, quite deflating to be honest!<p>Has anyone else built in a regulated or compliance-heavy space without vast expertise? How did you handle the gap between &quot;this works&quot; and &quot;this is correct enough to trust with someone&#x27;s tax records&quot; for example.<p>Has anyone else found the AI-assisted development workflow genuinely helped them create a working&#x2F;useful website&#x2F;app, what has been your experience?<p>I&#x27;m not looking to recruit users from this post, the product requires signup to evaluate properly anyway. More curious whether anyone&#x27;s been in a similar position and what they did to get it over the line.<p>Thanks,<p>James",
+      "url": "https://news.ycombinator.com/item?id=48527480",
+      "date": "2026-06-14T14:24:30Z",
+      "points": 2
+    },
+    {
+      "source": "anthropic",
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "date": "2026-06-16"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic史：从OpenAI叛逃者，到估值万亿的AI帝国",
+      "content": "21小时前，Anthropic公布了估值9650亿美元的融资。距离这家公司首次亮相，刚好五年整。\n\nAnthropic这5年，不只是一个AI创业公司的崛起故事。它也是一部关于理想、资本、产品、算力和地缘竞争如何纠缠在一起的商业史。而当初的屠龙少年，是否也终将变成恶龙？Anthropic影响的，绝不仅仅是一个行业，更可能是全人类。\n\n这是《眼镜说财经》的第一期视频。这个频道会长期分享深度商业史、公司史和行业观察。",
+      "url": "https://www.bilibili.com/video/BV1itVa6nEJH",
+      "date": "2026-05-29T14:26:49.000Z",
+      "views": 73046,
+      "video_id": "BV1itVa6nEJH",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/a8758d33883094ac148f43690160c4064a8dc321.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic模型被管制，“欧版OpenAI”CEO 警告被证实",
+      "content": "",
+      "url": "https://www.bilibili.com/video/BV1K5j36nELF",
+      "date": "2026-06-16T10:11:37.000Z",
+      "views": 0,
+      "video_id": "BV1K5j36nELF",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/a2680f55de482f5ec958a3fd78cbd94e6c06f9e7.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "为何 Anthropic 如此反华？",
+      "content": "简介内容：\n作为程序员，我们不得不承认 Claude 系列模型在编程能力上的卓越。从霸榜权威评测到定义 MCP 标准，Anthropic 似乎站在了技术之巅。\n但你是否感觉到，这也是一家对中国用户“恶意”最大的公司？\n从最初的封禁 IP，到如今“穿透式”审查股权结构；从指控中国大模型“偷窃”，到 CEO 公开将 AI 芯片比作“核武器”并游说立法……\n这真的仅仅是为了商业合规吗？为什么同样的法律环境下，OpenAI 甚至 NVIDIA 的做法截然不同？\n本期视频，我们将剥开 Anthropic 的技术外衣",
+      "url": "https://www.bilibili.com/video/BV12zP7zWExf",
+      "date": "2026-03-02T15:18:06.000Z",
+      "views": 259535,
+      "video_id": "BV12zP7zWExf",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/8b9727d300b922c4b5b4cb03b2f192249ee615ba.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-06-16",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-16",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-16",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-16",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-06-16",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-16",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-16",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-16",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
