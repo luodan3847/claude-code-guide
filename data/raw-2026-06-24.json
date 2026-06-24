@@ -1,0 +1,197 @@
+{
+  "date": "2026-06-24",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.187 Released",
+      "content": "## What's changed\n\n- Added `sandbox.credentials` setting to block sandboxed commands from reading credential files and secret environment variables\n- Added org-configured model restrictions to the model picker, `--model`, `/model`, and `ANTHROPIC_MODEL`, with a \"restricted by your organization's settings\" message when a restricted model is selected\n- Added mouse click support to select menus (permission prompts, `/model`, `/config`, etc.) in fullscreen mode\n- Fixed `--resume` failing with \"No conversation found\" when the original `-p` run produced no model turns\n- Fixed `--json-schema` and workflow `agent({schema})` structured output: the model can no longer re-call `StructuredOutput` indefinitely after a successful call, and follow-up turns now reliably return structured output\n- Fixed re",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
+      "date": "2026-06-23T21:03:48Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.186 Released",
+      "content": "## What's changed\n\n- Added `claude mcp login <name>` and `claude mcp logout <name>` to authenticate MCP servers from the CLI without opening the interactive `/mcp` menu, with `--no-browser` stdin redirect support for completing over SSH\n- Added status filtering (press `f`) to the `/workflows` agent detail view\n- Added a \"Skills\" section to the `/plugin` Installed tab\n- Added `teammateMode: \"iterm2\"` setting with a warning when auto mode cannot find the `it2` CLI\n- Added \"Claude Platform on AWS - refresh credentials\" option to `/login` when `awsAuthRefresh` is configured\n- `!` bash commands now trigger Claude to respond to the output automatically; set `\"respondToBashCommands\": false` in settings.json to keep the previous context-only behavior\n- Fixed streaming requests failing with \"Conten",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.186",
+      "date": "2026-06-22T20:37:34Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.185 Released",
+      "content": "## What's changed\n\n- The stream-stall hint now reads \"Waiting for API response · will retry in …\" instead of \"No response from API · Retrying in …\", and triggers after 20s of silence instead of 10s\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.185",
+      "date": "2026-06-20T20:59:19Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.183 Released",
+      "content": "## What's changed\n\n- Improved auto mode safety: destructive git commands (`git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop`) are now blocked when you didn't ask to discard local work, `git commit --amend` is blocked when the commit wasn't made by the agent this session, and `terraform destroy`/`pulumi destroy`/`cdk destroy` are blocked unless you asked for the specific stack\n- Added a warning when the requested model is deprecated or automatically updated to a newer model, shown on stderr in print mode (`-p`) and now also covering models set in agent frontmatter\n- Added `attribution.sessionUrl` setting to omit the claude.ai session link from commits and PRs in web and Remote Control sessions\n- Added `/config --help` to list all available shorthand keys for `/config",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.183",
+      "date": "2026-06-19T01:20:50Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.181 Released",
+      "content": "## What's changed\n\n- Added `/config key=value` syntax to set any setting from the prompt (e.g. `/config thinking=false`) — works in interactive, `-p`, and Remote Control\n- Added `sandbox.allowAppleEvents` opt-in setting that lets sandboxed commands send Apple Events on macOS\n- Added `CLAUDE_CLIENT_PRESENCE_FILE` environment variable: point it at a marker file to suppress mobile push notifications while you're at the machine\n- Upgraded the bundled Bun runtime to 1.4\n- Improved streaming of long paragraphs: text now appears line-by-line instead of waiting for the first line break\n- Improved auto-retry: API connection drops mid-thinking now automatically retry instead of showing \"Connection closed while thinking\"\n- Improved the subagent panel: idle subagents auto-hide after 30s, the list caps",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.181",
+      "date": "2026-06-17T22:07:41Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "The text in Claude Code’s “Extended Thinking” output",
+      "content": "",
+      "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
+      "date": "2026-06-22T14:22:46Z",
+      "points": 320
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Recall – Local project memory for Claude Code",
+      "content": "",
+      "url": "https://github.com/raiyanyahya/recall",
+      "date": "2026-06-21T21:05:37Z",
+      "points": 134
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: Anthropic banned me from using Claude Code and I don't know what to do",
+      "content": "After using Claude Code at work for months I wanted to use it on my own projects too. Most probably because my vpn was on I got banned after 1 hour of usage. I got my 120$ back. 1 month later I signed up with vpn off. But this time probably because I used the same credit cart (and that&#x27;s the only card I can use) they banned me again.<p>Even after I contacted support I got a generic &quot;we have determined that we cannot reinstate your account at this time due to a violation of our Usage Policy&quot; answer.<p>I&#x27;m not using it for anything unusal. &quot;Summarize that markdown file&quot;, &quot;how can i refactor payment module&quot; kind of questions mostly. I couldn&#x27;t even move to real coding because 1 hour was only enough for investigation.<p>My last chance is HN to get some visibility on my case. My Boris sees it or some other Anthropic employee.<p>Do you guys have any tips on getting my account back?",
+      "url": "https://news.ycombinator.com/item?id=48641160",
+      "date": "2026-06-23T06:33:52Z",
+      "points": 75
+    },
+    {
+      "source": "hackernews",
+      "title": "OpenMontage: Turn your AI coding assistant into a full video production studio",
+      "content": "",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "date": "2026-06-21T07:08:27Z",
+      "points": 7
+    },
+    {
+      "source": "hackernews",
+      "title": "Agent Rigor – Stop your AI coding assistant from doom-looping",
+      "content": "",
+      "url": "https://github.com/MeherBhaskar/agent-rigor",
+      "date": "2026-06-20T18:10:50Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: What models are powering your product's AI features?",
+      "content": "Not coding assistants or agents, and not things that obviously would just use the latest frontier model like really hard work.<p>I&#x27;m talking about the daily AI features users interact with directly: generating content, rewriting things, recommendations, workflow helpers, contextual suggestions, etc.<p>For my app I mostly use Gemini Flash via OpenRouter because the workloads are fairly structured. It works well enough, but there are now dozens of models available and I&#x27;m not sure how most teams are evaluating them.<p>Are people building proper eval suites? Comparing cost&#x2F;latency? Testing a handful of models and picking the cheapest one that&#x27;s good enough? I think most people fall in that last bucket and I want to at the least hear what others landed on. Besides Flash I found using a qwen or minimax model worked fairly well.<p>Curious what you&#x27;re running in production and how you chose it.",
+      "url": "https://news.ycombinator.com/item?id=48576393",
+      "date": "2026-06-17T20:29:08Z",
+      "points": 3
+    },
+    {
+      "source": "anthropic",
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "date": "2026-06-24"
+    },
+    {
+      "source": "bilibili",
+      "title": "HBX插件推荐：CodeGeex智能编程助手",
+      "content": "HBuilderX首款AI智能编程助手上线了，快来体验吧",
+      "url": "https://www.bilibili.com/video/BV1Kc411q7vW",
+      "date": "2023-12-11T14:20:37.000Z",
+      "views": 3887,
+      "video_id": "BV1Kc411q7vW",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/adf895c5941c5a143e37bee84b2abaef4d40f167.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【2026最新】B站最全最细的AI Agent智能体搭建教程，从入门到实战！手把手教你快速打造自己的专属智能体，一次性搞懂AI大模型智能体开发，学完薪资翻倍！",
+      "content": "【2026最新】B站最全最细的AI Agent智能体搭建教程，从入门到实战！手把手教你快速打造自己的专属智能体，一次性搞懂AI大模型智能体开发，学完薪资翻倍！",
+      "url": "https://www.bilibili.com/video/BV11NNAz5EKn",
+      "date": "2026-03-07T11:28:39.000Z",
+      "views": 764224,
+      "video_id": "BV11NNAz5EKn",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/b21d2f5b7ea123f78936498a61ed50317c288f88.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "小白都能学的AI编程实战：从0带你做出产品",
+      "content": "",
+      "url": "https://www.bilibili.com/video/",
+      "date": "1970-01-01T00:00:00.000Z",
+      "views": 107505,
+      "video_id": null,
+      "thumbnail_url": "https://archive.biliimg.com/bfs/archive/49db7b090795b5221119d08636901d62eef4475a.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-06-24",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-24",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-24",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-24",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-06-24",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-24",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-24",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-24",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
