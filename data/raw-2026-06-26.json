@@ -1,0 +1,167 @@
+{
+  "date": "2026-06-26",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.193 Released",
+      "content": "## What's changed\n\n- Added `autoMode.classifyAllShell` setting to route all Bash/PowerShell commands through the auto-mode classifier instead of only arbitrary-code-execution patterns\n- Added auto-mode denial reasons to the transcript, the denial toast, and `/permissions` recent denials\n- Added `claude_code.assistant_response` OpenTelemetry log event containing the model's response text. Redacted unless `OTEL_LOG_ASSISTANT_RESPONSES=1`; when that var is unset it follows `OTEL_LOG_USER_PROMPTS`, so deployments that already log prompt content will start receiving response content on upgrade — set `OTEL_LOG_ASSISTANT_RESPONSES=0` to keep prompts-only.\n- Added live file path autocomplete to bash mode (`!`)\n- Added a startup notice when MCP servers need authentication, pointing at `/mcp`\n- Adde",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.193",
+      "date": "2026-06-25T21:45:57Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.191 Released",
+      "content": "## What's changed\n\n- Added `/rewind` support for resuming a conversation from before `/clear` was run\n- Fixed scroll position jumping to the bottom while reading earlier output during a streaming response\n- Fixed background agents resurrecting after being stopped — stopping an agent from the tasks panel is now permanent\n- Fixed `/voice` showing a generic \"not available\" message when disabled by an organization's policy — it now explains the restriction\n- Fixed `/login` URL opening truncated in Windows Terminal when it wraps across lines\n- Fixed Cmd+click on links in fullscreen mode for Ghostty over ssh/tmux\n- Fixed `claude agents` sending builtin slash commands like `/usage` to background sessions as prompt text instead of showing a hint\n- Fixed `claude agents` job rows showing full filesy",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.191",
+      "date": "2026-06-24T21:58:12Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.190 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.190",
+      "date": "2026-06-24T15:53:56Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.187 Released",
+      "content": "## What's changed\n\n- Added `sandbox.credentials` setting to block sandboxed commands from reading credential files and secret environment variables\n- Added org-configured model restrictions to the model picker, `--model`, `/model`, and `ANTHROPIC_MODEL`, with a \"restricted by your organization's settings\" message when a restricted model is selected\n- Added mouse click support to select menus (permission prompts, `/model`, `/config`, etc.) in fullscreen mode\n- Fixed `--resume` failing with \"No conversation found\" when the original `-p` run produced no model turns\n- Fixed `--json-schema` and workflow `agent({schema})` structured output: the model can no longer re-call `StructuredOutput` indefinitely after a successful call, and follow-up turns now reliably return structured output\n- Fixed re",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
+      "date": "2026-06-23T21:03:48Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.186 Released",
+      "content": "## What's changed\n\n- Added `claude mcp login <name>` and `claude mcp logout <name>` to authenticate MCP servers from the CLI without opening the interactive `/mcp` menu, with `--no-browser` stdin redirect support for completing over SSH\n- Added status filtering (press `f`) to the `/workflows` agent detail view\n- Added a \"Skills\" section to the `/plugin` Installed tab\n- Added `teammateMode: \"iterm2\"` setting with a warning when auto mode cannot find the `it2` CLI\n- Added \"Claude Platform on AWS - refresh credentials\" option to `/login` when `awsAuthRefresh` is configured\n- `!` bash commands now trigger Claude to respond to the output automatically; set `\"respondToBashCommands\": false` in settings.json to keep the previous context-only behavior\n- Fixed streaming requests failing with \"Conten",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.186",
+      "date": "2026-06-22T20:37:34Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "The text in Claude Code’s “Extended Thinking” output",
+      "content": "",
+      "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
+      "date": "2026-06-22T14:22:46Z",
+      "points": 325
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Recall – Local project memory for Claude Code",
+      "content": "",
+      "url": "https://github.com/raiyanyahya/recall",
+      "date": "2026-06-21T21:05:37Z",
+      "points": 135
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: Anthropic banned me from using Claude Code and I don't know what to do",
+      "content": "After using Claude Code at work for months I wanted to use it on my own projects too. Most probably because my vpn was on I got banned after 1 hour of usage. I got my 120$ back. 1 month later I signed up with vpn off. But this time probably because I used the same credit cart (and that&#x27;s the only card I can use) they banned me again.<p>Even after I contacted support I got a generic &quot;we have determined that we cannot reinstate your account at this time due to a violation of our Usage Policy&quot; answer.<p>I&#x27;m not using it for anything unusal. &quot;Summarize that markdown file&quot;, &quot;how can i refactor payment module&quot; kind of questions mostly. I couldn&#x27;t even move to real coding because 1 hour was only enough for investigation.<p>My last chance is HN to get some visibility on my case. My Boris sees it or some other Anthropic employee.<p>Do you guys have any tips on getting my account back?",
+      "url": "https://news.ycombinator.com/item?id=48641160",
+      "date": "2026-06-23T06:33:52Z",
+      "points": 81
+    },
+    {
+      "source": "hackernews",
+      "title": "OpenMontage: Turn your AI coding assistant into a full video production studio",
+      "content": "",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "date": "2026-06-21T07:08:27Z",
+      "points": 7
+    },
+    {
+      "source": "hackernews",
+      "title": "Local-first AI coding assistant for IntelliJ-based IDEs (paid)",
+      "content": "",
+      "url": "https://plugins.jetbrains.com/plugin/31304-llamatik-code/",
+      "date": "2026-06-26T01:55:55Z",
+      "points": 5
+    },
+    {
+      "source": "hackernews",
+      "title": "Agent Rigor – Stop your AI coding assistant from doom-looping",
+      "content": "",
+      "url": "https://github.com/MeherBhaskar/agent-rigor",
+      "date": "2026-06-20T18:10:50Z",
+      "points": 3
+    },
+    {
+      "source": "anthropic",
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "date": "2026-06-26"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-06-26",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-26",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-26",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-26",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=3HVH2Iuplqo",
+      "date": "2026-06-26",
+      "video_id": "3HVH2Iuplqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/3HVH2Iuplqo/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-26",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-26",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-26",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
