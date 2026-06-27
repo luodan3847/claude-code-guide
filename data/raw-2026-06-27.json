@@ -1,0 +1,227 @@
+{
+  "date": "2026-06-27",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.195 Released",
+      "content": "## What's changed\n\n- Added `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` to disable mouse click/drag/hover in fullscreen mode while keeping wheel scroll\n- Fixed hook matchers with hyphenated identifiers (e.g. `code-reviewer`, `mcp__brave-search`) accidentally substring-matching — they now exact-match. Use `mcp__brave-search__.*` to match all tools from a hyphenated MCP server.\n- Fixed voice dictation on macOS capturing silence in long-running sessions after the default input device changes\n- Fixed voice dictation auto-submit never firing for languages written without spaces (Japanese, Chinese, Thai)\n- Fixed external plugins enabled only by project `.claude/settings.json` not requiring explicit install consent on every loader path\n- Fixed `/plugin` Enable/Disable not working when a plugin's `plugin.js",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.195",
+      "date": "2026-06-26T21:29:42Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.193 Released",
+      "content": "## What's changed\n\n- Added `autoMode.classifyAllShell` setting to route all Bash/PowerShell commands through the auto-mode classifier instead of only arbitrary-code-execution patterns\n- Added auto-mode denial reasons to the transcript, the denial toast, and `/permissions` recent denials\n- Added `claude_code.assistant_response` OpenTelemetry log event containing the model's response text. Redacted unless `OTEL_LOG_ASSISTANT_RESPONSES=1`; when that var is unset it follows `OTEL_LOG_USER_PROMPTS`, so deployments that already log prompt content will start receiving response content on upgrade — set `OTEL_LOG_ASSISTANT_RESPONSES=0` to keep prompts-only.\n- Added live file path autocomplete to bash mode (`!`)\n- Added a startup notice when MCP servers need authentication, pointing at `/mcp`\n- Adde",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.193",
+      "date": "2026-06-25T21:45:57Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.191 Released",
+      "content": "## What's changed\n\n- Added `/rewind` support for resuming a conversation from before `/clear` was run\n- Fixed scroll position jumping to the bottom while reading earlier output during a streaming response\n- Fixed background agents resurrecting after being stopped — stopping an agent from the tasks panel is now permanent\n- Fixed `/voice` showing a generic \"not available\" message when disabled by an organization's policy — it now explains the restriction\n- Fixed `/login` URL opening truncated in Windows Terminal when it wraps across lines\n- Fixed Cmd+click on links in fullscreen mode for Ghostty over ssh/tmux\n- Fixed `claude agents` sending builtin slash commands like `/usage` to background sessions as prompt text instead of showing a hint\n- Fixed `claude agents` job rows showing full filesy",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.191",
+      "date": "2026-06-24T21:58:12Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.190 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.190",
+      "date": "2026-06-24T15:53:56Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.187 Released",
+      "content": "## What's changed\n\n- Added `sandbox.credentials` setting to block sandboxed commands from reading credential files and secret environment variables\n- Added org-configured model restrictions to the model picker, `--model`, `/model`, and `ANTHROPIC_MODEL`, with a \"restricted by your organization's settings\" message when a restricted model is selected\n- Added mouse click support to select menus (permission prompts, `/model`, `/config`, etc.) in fullscreen mode\n- Fixed `--resume` failing with \"No conversation found\" when the original `-p` run produced no model turns\n- Fixed `--json-schema` and workflow `agent({schema})` structured output: the model can no longer re-call `StructuredOutput` indefinitely after a successful call, and follow-up turns now reliably return structured output\n- Fixed re",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
+      "date": "2026-06-23T21:03:48Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "The text in Claude Code’s “Extended Thinking” output",
+      "content": "",
+      "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
+      "date": "2026-06-22T14:22:46Z",
+      "points": 326
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Smart model routing directly in Claude, Codex and Cursor",
+      "content": "We built a model router that plugs into coding agents (e.g. Claude Code, Codex, Cursor, etc.) and intelligently sends requests to the best model to serve them. Here&#x27;s a quick demo of running it locally: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=isKhAyivtfM\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=isKhAyivtfM</a>.<p>At Weave, we write most of our code with AI, and it&#x27;s been getting more expensive. This came to a head when Opus 4.7 was released and, thanks to its tokenizer changes, our costs shot up. We knew we didn&#x27;t need Opus for <i>everything</i> but we didn&#x27;t want to lose out on the intelligence for the cases where you really need it. So we decided to build a model router to handle this for us.<p>The Weave Router acts as an Anthropic&#x2F;OpenAI endpoint specifically for coding agents. It looks at every inference request and intelligently (more on that in a sec) decides what model to send it to, handling all the translations required along the way. So it can use faster&#x2F;cheaper models (e.g. DeepSeek v4, GLM 5.2, Kimi K2.6) when possible, and frontier models (Opus 4.8 &amp; GPT 5.5 (&amp; Fable whenever it&#x27;s back)) when necessary.<p>How do we know what model to route to? We trained an RL model on tens of thousands (so far!) of agent traces. We reward the routing model when it selects an LLM that successfully completes the given task.<p>Here&#x27;s an example: if you ask the router to plan a complex change, it will (probably) route that request to Opus 4.8. Subagents exploring the codebase to gather context will be routed to more suitable models (e.g. DeepSeek V4 Flash). Then when you have the plan ready to implement, it will be (most likely) be handed to a quicker model (e.g. GLM 5.2) to carry it out.<p>We&#x27;ve been using this internally for the last month or so. We&#x27;ve saved 40% on tokens vs. what we otherwise would have paid, with no noticeable differences in quality or velocity.<p>The router is source-available under Elastic License 2.0, so you can self-host it. Or if you prefer, you can also use our hosted version: weaverouter.com.<p>I&#x27;ll be here to answer any questions you may have!",
+      "url": "https://github.com/workweave/router",
+      "date": "2026-06-26T16:40:11Z",
+      "points": 167
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Recall – Local project memory for Claude Code",
+      "content": "",
+      "url": "https://github.com/raiyanyahya/recall",
+      "date": "2026-06-21T21:05:37Z",
+      "points": 135
+    },
+    {
+      "source": "hackernews",
+      "title": "OpenMontage: Turn your AI coding assistant into a full video production studio",
+      "content": "",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "date": "2026-06-21T07:08:27Z",
+      "points": 7
+    },
+    {
+      "source": "hackernews",
+      "title": "Local-first AI coding assistant for IntelliJ-based IDEs (paid)",
+      "content": "",
+      "url": "https://plugins.jetbrains.com/plugin/31304-llamatik-code/",
+      "date": "2026-06-26T01:55:55Z",
+      "points": 5
+    },
+    {
+      "source": "hackernews",
+      "title": "Agent Rigor – Stop your AI coding assistant from doom-looping",
+      "content": "",
+      "url": "https://github.com/MeherBhaskar/agent-rigor",
+      "date": "2026-06-20T18:10:50Z",
+      "points": 3
+    },
+    {
+      "source": "anthropic",
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "date": "2026-06-27"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 1335932,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【Claude Code】这绝对是b站讲的最好的Claude Code教程，手把手教你在国内从安装到代码实战的保姆级教程！!让你少走99%弯路！AI大模型",
+      "content": "如果视频对你有用的话请 一键三连【长按点赞】支持一下UP哦，拜托，这对我真的很重要！\n【视频配套籽料+问题解答请看”平论区置顶”自取哦】",
+      "url": "https://www.bilibili.com/video/BV1Yi5M6DERk",
+      "date": "2026-05-12T06:24:19.000Z",
+      "views": 449805,
+      "video_id": "BV1Yi5M6DERk",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/11fbec7b215cc93727f963cb85f816f9248e4967.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "全网最全！60分钟全面掌握Claude Code～【附完整文档】",
+      "content": "Claude Code保姆级教学【收藏起来不会错！】\n从上手安装，到高级用法，这期一次讲全～\n花了三周做教程，希望能帮到你嘻嘻，感谢朋友们的三连+关注啦～",
+      "url": "https://www.bilibili.com/video/BV1NvRyBzEhq",
+      "date": "2026-05-05T14:08:25.000Z",
+      "views": 1270196,
+      "video_id": "BV1NvRyBzEhq",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/4ef379f4341e05c09ba920b4a4ccc6d6cf54f076.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "彭博社最新访谈丨站在 AI 风暴中心：对话 Anthropic CEO 达里奥·阿莫迪，谈权力、就业冲击与文明崩溃的概率",
+      "content": "彭博《The Circuit》主持人艾米丽·张与 Anthropic CEO 达里奥·阿莫迪（Dario Amodei）的一场加长深度对话。\n\n达里奥是 Anthropic 联合创始人兼 CEO，前 OpenAI 研究负责人，更早是一名生物学家。这家成立仅五年的公司，估值已逼近一万亿美元、年化营收冲到约 470 亿，一举超越 OpenAI。\n\n2026年6月17日，这场访谈步步紧逼、几乎不留情面——从他离开 OpenAI 的真实原因（不是安全分歧，而是信任破裂），到为什么押注企业级而非消费级；从算力紧缺、",
+      "url": "https://www.bilibili.com/video/BV1CMjq6nEu1",
+      "date": "2026-06-19T07:41:43.000Z",
+      "views": 31345,
+      "video_id": "BV1CMjq6nEu1",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/c8d3014ed7df981feacb7b2df618161688b5b66c.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic史：从OpenAI叛逃者，到估值万亿的AI帝国",
+      "content": "21小时前，Anthropic公布了估值9650亿美元的融资。距离这家公司首次亮相，刚好五年整。\n\nAnthropic这5年，不只是一个AI创业公司的崛起故事。它也是一部关于理想、资本、产品、算力和地缘竞争如何纠缠在一起的商业史。而当初的屠龙少年，是否也终将变成恶龙？Anthropic影响的，绝不仅仅是一个行业，更可能是全人类。\n\n这是《眼镜说财经》的第一期视频。这个频道会长期分享深度商业史、公司史和行业观察。",
+      "url": "https://www.bilibili.com/video/BV1itVa6nEJH",
+      "date": "2026-05-29T14:26:49.000Z",
+      "views": 95285,
+      "video_id": "BV1itVa6nEJH",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/a8758d33883094ac148f43690160c4064a8dc321.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "为何 Anthropic 如此反华？",
+      "content": "简介内容：\n作为程序员，我们不得不承认 Claude 系列模型在编程能力上的卓越。从霸榜权威评测到定义 MCP 标准，Anthropic 似乎站在了技术之巅。\n但你是否感觉到，这也是一家对中国用户“恶意”最大的公司？\n从最初的封禁 IP，到如今“穿透式”审查股权结构；从指控中国大模型“偷窃”，到 CEO 公开将 AI 芯片比作“核武器”并游说立法……\n这真的仅仅是为了商业合规吗？为什么同样的法律环境下，OpenAI 甚至 NVIDIA 的做法截然不同？\n本期视频，我们将剥开 Anthropic 的技术外衣",
+      "url": "https://www.bilibili.com/video/BV12zP7zWExf",
+      "date": "2026-03-02T15:18:06.000Z",
+      "views": 274898,
+      "video_id": "BV12zP7zWExf",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/8b9727d300b922c4b5b4cb03b2f192249ee615ba.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-06-27",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-06-27",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-06-27",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-06-27",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Advanced in 20 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ujHXnlSVheI",
+      "date": "2026-06-27",
+      "video_id": "ujHXnlSVheI",
+      "thumbnail_url": "https://i.ytimg.com/vi/ujHXnlSVheI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-06-27",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-06-27",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-06-27",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    }
+  ]
+}
