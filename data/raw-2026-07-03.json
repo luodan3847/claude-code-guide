@@ -1,0 +1,197 @@
+{
+  "date": "2026-07-03",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.199 Released",
+      "content": "## What's changed\n\n- Stacked slash-skill invocations like `/skill-a /skill-b do XYZ` now load all leading skills (up to 5), not just the first\n- Fixed SSL certificate errors (TLS-inspecting proxies, missing `NODE_EXTRA_CA_CERTS`, expired certs) burning retries before showing actionable guidance — they now fail immediately with the fix hint\n- Fixed streaming responses being discarded when the API emits a mid-stream overloaded/server error after partial output — the partial is now kept with an incomplete-response notice\n- Fixed subagents cut off by a rate limit or server error silently failing instead of returning their partial work to the parent\n- Fixed subagents reporting API errors (e.g. usage limit reached) as successful results — the error is now reported to the parent agent\n- Fixed the",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.199",
+      "date": "2026-07-02T23:35:18Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.198 Released",
+      "content": "## What's changed\n\n- Subagents now run in the background by default, so Claude keeps working while they run and is notified when they finish (previously a gradual rollout)\n- Claude in Chrome is now generally available\n- Added background agent notifications in `claude agents` — sessions that need input or finish now fire the `Notification` hook (`agent_needs_input` / `agent_completed`)\n- Added `/dataviz` skill for chart and dashboard design guidance with a runnable color-palette validator\n- Gateway: added Claude Platform on AWS (anthropicAws) as an upstream provider; model-not-found responses now advance the failover chain\n- Background agents launched from `claude agents` now commit, push, and open a draft PR when they finish code work in a worktree, instead of stopping to ask\n- The built-i",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.198",
+      "date": "2026-07-01T20:45:36Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.197 Released",
+      "content": "## What's changed\n\n- Introducing Claude Sonnet 5: now the default model in Claude Code, with a native 1M-token context window and promotional pricing of $2/$10 per Mtok through August 31. Update to version 2.1.197 for access. https://www.anthropic.com/news/claude-sonnet-5\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.197",
+      "date": "2026-06-30T17:56:37Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.196 Released",
+      "content": "## What's changed\n\n- Added support for organization default models — admins set it in the org console; it shows as \"Org default\" (or \"Role default\") in `/model` when you haven't picked one yourself\n- Added readable default names for sessions at start, making them easier to identify and message\n- Added clickable file attachments in chat — Cmd/Ctrl-click reveals the file in Finder/Explorer\n- Security: `claude mcp list`/`get` no longer spawn `.mcp.json` servers that a repo self-approved via a committed `.claude/settings.json`; untrusted workspaces show `⏸ Pending approval`\n- Fixed waking a background job permanently deleting its conversation and re-running the original prompt when the transcript probe misread a real transcript; the file is now set aside, never deleted\n- Fixed the rate-limit w",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.196",
+      "date": "2026-06-29T23:27:32Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.195 Released",
+      "content": "## What's changed\n\n- Added `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` to disable mouse click/drag/hover in fullscreen mode while keeping wheel scroll\n- Fixed hook matchers with hyphenated identifiers (e.g. `code-reviewer`, `mcp__brave-search`) accidentally substring-matching — they now exact-match. Use `mcp__brave-search__.*` to match all tools from a hyphenated MCP server.\n- Fixed voice dictation on macOS capturing silence in long-running sessions after the default input device changes\n- Fixed voice dictation auto-submit never firing for languages written without spaces (Japanese, Chinese, Thai)\n- Fixed external plugins enabled only by project `.claude/settings.json` not requiring explicit install consent on every loader path\n- Fixed `/plugin` Enable/Disable not working when a plugin's `plugin.js",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.195",
+      "date": "2026-06-26T21:29:42Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code is steganographically marking requests",
+      "content": "",
+      "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+      "date": "2026-06-30T15:44:24Z",
+      "points": 2417
+    },
+    {
+      "source": "hackernews",
+      "title": "I used Claude Code to get a second opinion on my MRI",
+      "content": "",
+      "url": "https://antoine.fi/mri-analysis-using-claude-code-opus",
+      "date": "2026-06-28T16:35:19Z",
+      "points": 560
+    },
+    {
+      "source": "hackernews",
+      "title": "ZCode: Claude Code from the Makers of GLM",
+      "content": "",
+      "url": "https://zcode.z.ai/cn",
+      "date": "2026-07-01T19:11:38Z",
+      "points": 276
+    },
+    {
+      "source": "hackernews",
+      "title": "Graphify – Open-Source Knowledge Graph Skill for AI Coding Assistants",
+      "content": "",
+      "url": "https://graphify.net/index.html#features",
+      "date": "2026-06-27T22:26:37Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "AI coding is a nightmare. Am I the only one experiencing this?",
+      "content": "Here are my biggest gripes with AI coding assistants right now:\nObsessed with reinventing the wheel. You&#x27;ll often find it writing three duplicate functions for the exact same feature in a single file. Why? Because it&#x27;s terrified of blowing up the context window, so it only reads a fraction of a large file and completely misses the existing functionality.\nWhy are files so bloated in the first place? Because AI prefers adding new code over modifying existing code, and it rarely deletes anything. After a few iterations, your codebase becomes a mountain of dead code.\nZero holistic awareness. It hyper-focuses on the current task and couldn&#x27;t care less if its changes break other parts of the system. If you point out that the original logic is now broken, it treats it as a brand-new task. It’ll fix that specific bug, but whether its newly written code still works after the fix? &quot;Not my problem.&quot;\nThe context window is painfully short. If you try to solve the issues above by dumping all the necessary context into the prompt, you&#x27;ll hit the 200k token limit in no time. After just two more turns, it triggers auto-compacting, and suddenly it turns back into an idiot.\nLong context = instant brain damage. Just when you&#x27;ve painstakingly stuffed the perfect amount of context into the window, the model completely loses its mind. The longer the context, the more incoherent its responses become.\nLogical reasoning is practically non-existent. A simple feature that would take a human dev 3-5 lines of code to tweak in an existing function? The AI will insist on designing an entirely new system architecture for it.\nThe more you tune it, the dumber it gets. You burn through millions of tokens, and every time it replies with &quot;I understand!&quot; or &quot;I&#x27;ve got it completely!&quot;, the code it spits out still refuses to run.",
+      "url": "https://news.ycombinator.com/item?id=48770319",
+      "date": "2026-07-03T03:18:42Z",
+      "points": 27
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Shoaku – Your Coding Navigator",
+      "content": "AI Agents like Codex and Claude are incredibly powerful and have drastically sped up implementation.\nHowever, I noticed a strange side effect: I began to lose confidence in my own coding.\nI submitted a pull request after the AI completed the implementation. It looked good, but during code review, I was asked, &quot;Why did you implement it this way?&quot; I grew increasingly embarrassed because I couldn&#x27;t immediately explain the complex code.\nPreviously, I built confidence by understanding the design through reading and writing code, which was enjoyable, but now I&#x27;ve lost that.<p>This coding assistant helps users understand their thought process and coding progress, with the AI acting solely as a guide and not writing code on its own. To still leverage the AI agent&#x27;s autonomous implementation capabilities, a separate AI thread runs in the background in a temporary working directory, providing highly accurate navigation assistance to the user.<p>The AI&#x27;s responses are still a bit strange at times, but if this concept resonates with you, please share your feedback. As a solo creator, I find that very encouraging. Thank you.",
+      "url": "https://github.com/seachicken/intellij-shoaku",
+      "date": "2026-06-30T14:24:33Z",
+      "points": 4
+    },
+    {
+      "source": "anthropic",
+      "title": "Redeploying Fable 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "date": "2026-07-03"
+    },
+    {
+      "source": "bilibili",
+      "title": "你以为这是AI编程工具？其实它在教AI“偷懒”",
+      "content": "课程配套资源，可在我的gong众号【辅论AI】发送【777】无偿分享！！",
+      "url": "https://www.bilibili.com/video/BV1vKTj6ZEmx",
+      "date": "2026-07-02T10:08:14.000Z",
+      "views": 138,
+      "video_id": "BV1vKTj6ZEmx",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/0793e8f956dada36259563f17197fcc12053103a.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "MiMoCode开源AI编程助手",
+      "content": "小米MiMo团队开源的AI编程助手，19天狂揽GitHub 11000+ Star。持久记忆系统让AI不再忘记上下文，三种Agent模式+子代理并行+Goal自动评判。一行命令即可安装，限时免费。模型与代理共同进化，这就是MiMoCode。",
+      "url": "https://www.bilibili.com/video/BV1pATF6dELg",
+      "date": "2026-06-30T11:47:10.000Z",
+      "views": 60,
+      "video_id": "BV1pATF6dELg",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/240792459045c39a11e2eb913108253f4dada9f0.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "小白都能学的AI编程实战：从0带你做出产品",
+      "content": "",
+      "url": "https://www.bilibili.com/video/",
+      "date": "1970-01-01T00:00:00.000Z",
+      "views": 136606,
+      "video_id": null,
+      "thumbnail_url": "https://archive.biliimg.com/bfs/archive/49db7b090795b5221119d08636901d62eef4475a.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial For Beginners in 2026! (Become a PRO)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=X_zVY3-mbM8",
+      "date": "2026-07-03",
+      "video_id": "X_zVY3-mbM8",
+      "thumbnail_url": "https://i.ytimg.com/vi/X_zVY3-mbM8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-07-03",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-07-03",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-07-03",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-07-03",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-07-03",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-07-03",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-07-03",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
