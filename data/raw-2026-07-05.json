@@ -1,0 +1,227 @@
+{
+  "date": "2026-07-05",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.201 Released",
+      "content": "## What's changed\n\n- Claude Sonnet 5 sessions no longer use the mid-conversation system role for harness reminders\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.201",
+      "date": "2026-07-03T23:50:35Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.200 Released",
+      "content": "## What's changed\n\n- Changed `AskUserQuestion` dialogs to no longer auto-continue by default; opt into an idle timeout via `/config`\n- Changed the \"default\" permission mode to \"Manual\" across the CLI, `--help`, VS Code, and JetBrains; `--permission-mode manual` and `\"defaultMode\": \"manual\"` are accepted alongside `default`\n- Fixed a crash at startup when `disabledMcpServers` or `enabledMcpServers` in `.claude.json` is set to a non-array value\n- Fixed background sessions silently stopping mid-turn after sleep/wake or when reopening a stalled session\n- Fixed background sessions re-running a turn cancelled with Esc after a stall respawn\n- Fixed background agents never starting again after a crash left a stale `daemon.lock` whose PID the OS reused\n- Fixed background-agent daemon handover so a ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.200",
+      "date": "2026-07-03T16:52:33Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.199 Released",
+      "content": "## What's changed\n\n- Stacked slash-skill invocations like `/skill-a /skill-b do XYZ` now load all leading skills (up to 5), not just the first\n- Fixed SSL certificate errors (TLS-inspecting proxies, missing `NODE_EXTRA_CA_CERTS`, expired certs) burning retries before showing actionable guidance — they now fail immediately with the fix hint\n- Fixed streaming responses being discarded when the API emits a mid-stream overloaded/server error after partial output — the partial is now kept with an incomplete-response notice\n- Fixed subagents cut off by a rate limit or server error silently failing instead of returning their partial work to the parent\n- Fixed subagents reporting API errors (e.g. usage limit reached) as successful results — the error is now reported to the parent agent\n- Fixed the",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.199",
+      "date": "2026-07-02T23:35:18Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.198 Released",
+      "content": "## What's changed\n\n- Subagents now run in the background by default, so Claude keeps working while they run and is notified when they finish (previously a gradual rollout)\n- Claude in Chrome is now generally available\n- Added background agent notifications in `claude agents` — sessions that need input or finish now fire the `Notification` hook (`agent_needs_input` / `agent_completed`)\n- Added `/dataviz` skill for chart and dashboard design guidance with a runnable color-palette validator\n- Gateway: added Claude Platform on AWS (anthropicAws) as an upstream provider; model-not-found responses now advance the failover chain\n- Background agents launched from `claude agents` now commit, push, and open a draft PR when they finish code work in a worktree, instead of stopping to ask\n- The built-i",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.198",
+      "date": "2026-07-01T20:45:36Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.197 Released",
+      "content": "## What's changed\n\n- Introducing Claude Sonnet 5: now the default model in Claude Code, with a native 1M-token context window and promotional pricing of $2/$10 per Mtok through August 31. Update to version 2.1.197 for access. https://www.anthropic.com/news/claude-sonnet-5\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.197",
+      "date": "2026-06-30T17:56:37Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code is steganographically marking requests",
+      "content": "",
+      "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+      "date": "2026-06-30T15:44:24Z",
+      "points": 2435
+    },
+    {
+      "source": "hackernews",
+      "title": "I used Claude Code to get a second opinion on my MRI",
+      "content": "",
+      "url": "https://antoine.fi/mri-analysis-using-claude-code-opus",
+      "date": "2026-06-28T16:35:19Z",
+      "points": 562
+    },
+    {
+      "source": "hackernews",
+      "title": "Alibaba to ban Claude Code in workplace over alleged backdoor risks, source says",
+      "content": "",
+      "url": "https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/",
+      "date": "2026-07-03T08:31:37Z",
+      "points": 331
+    },
+    {
+      "source": "hackernews",
+      "title": "AI coding is a nightmare. Am I the only one experiencing this?",
+      "content": "Here are my biggest gripes with AI coding assistants right now:\nObsessed with reinventing the wheel. You&#x27;ll often find it writing three duplicate functions for the exact same feature in a single file. Why? Because it&#x27;s terrified of blowing up the context window, so it only reads a fraction of a large file and completely misses the existing functionality.\nWhy are files so bloated in the first place? Because AI prefers adding new code over modifying existing code, and it rarely deletes anything. After a few iterations, your codebase becomes a mountain of dead code.\nZero holistic awareness. It hyper-focuses on the current task and couldn&#x27;t care less if its changes break other parts of the system. If you point out that the original logic is now broken, it treats it as a brand-new task. It’ll fix that specific bug, but whether its newly written code still works after the fix? &quot;Not my problem.&quot;\nThe context window is painfully short. If you try to solve the issues above by dumping all the necessary context into the prompt, you&#x27;ll hit the 200k token limit in no time. After just two more turns, it triggers auto-compacting, and suddenly it turns back into an idiot.\nLong context = instant brain damage. Just when you&#x27;ve painstakingly stuffed the perfect amount of context into the window, the model completely loses its mind. The longer the context, the more incoherent its responses become.\nLogical reasoning is practically non-existent. A simple feature that would take a human dev 3-5 lines of code to tweak in an existing function? The AI will insist on designing an entirely new system architecture for it.\nThe more you tune it, the dumber it gets. You burn through millions of tokens, and every time it replies with &quot;I understand!&quot; or &quot;I&#x27;ve got it completely!&quot;, the code it spits out still refuses to run.",
+      "url": "https://news.ycombinator.com/item?id=48770319",
+      "date": "2026-07-03T03:18:42Z",
+      "points": 61
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Shoaku – Your Coding Navigator",
+      "content": "AI Agents like Codex and Claude are incredibly powerful and have drastically sped up implementation.\nHowever, I noticed a strange side effect: I began to lose confidence in my own coding.\nI submitted a pull request after the AI completed the implementation. It looked good, but during code review, I was asked, &quot;Why did you implement it this way?&quot; I grew increasingly embarrassed because I couldn&#x27;t immediately explain the complex code.\nPreviously, I built confidence by understanding the design through reading and writing code, which was enjoyable, but now I&#x27;ve lost that.<p>This coding assistant helps users understand their thought process and coding progress, with the AI acting solely as a guide and not writing code on its own. To still leverage the AI agent&#x27;s autonomous implementation capabilities, a separate AI thread runs in the background in a temporary working directory, providing highly accurate navigation assistance to the user.<p>The AI&#x27;s responses are still a bit strange at times, but if this concept resonates with you, please share your feedback. As a solo creator, I find that very encouraging. Thank you.",
+      "url": "https://github.com/seachicken/intellij-shoaku",
+      "date": "2026-06-30T14:24:33Z",
+      "points": 4
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: OpenATP: A platform for automated theorem proving in Lean",
+      "content": "TL;DR: I created a Python package to make running agentic automated theorem provers (e.g., Aristotle, Numina-Lean-Agent, Claude Code, etc...) as simple as<p>open-atp prove Lemma.lean result&#x2F; claude<p>I took a class on formal verification back in 2022 when I was an undergraduate. There was something incredibly satisfying about constructing proofs in Coq and knowing my statements were now formally verified. However, formal methods were so time consuming that they weren&#x27;t practical in most industry settings. The rise of AI has changed that story: <a href=\"https:&#x2F;&#x2F;blog.janestreet.com&#x2F;formal-methods-at-jane-street-index\" rel=\"nofollow\">https:&#x2F;&#x2F;blog.janestreet.com&#x2F;formal-methods-at-jane-street-in...</a>.<p>AI is producing algorithms and mathematical proofs far faster than humans can review them and formal methods offer a solution. Automated theorem provers take a statement formalized in a proof assistant like Lean and attempt to supply a proof. Unlike natural language proofs, these proofs can be machine-checked, reducing the burden of review on humans.<p>AI agents are powerful automated theorem provers. Even general purpose coding agents, like Claude Code, can be effective provers with the right skills and tooling. However, these methods are currently challenging to run. They require configuring Docker containers with the proper Lean environment and agent tooling (skills, plugins, MCP, credentials). Furthermore, there is not a common interface to existing provers.<p>OpenATP aims to solve both of these challenges! It makes it easy to run methods locally in Docker or remotely in Modal. It currently supports the following provers: <a href=\"https:&#x2F;&#x2F;open-atp.henryrobbins.com&#x2F;en&#x2F;latest&#x2F;provers&#x2F;index.html\" rel=\"nofollow\">https:&#x2F;&#x2F;open-atp.henryrobbins.com&#x2F;en&#x2F;latest&#x2F;provers&#x2F;index.ht...</a>.",
+      "url": "https://github.com/henryrobbins/open-atp",
+      "date": "2026-06-30T12:53:10Z",
+      "points": 3
+    },
+    {
+      "source": "anthropic",
+      "title": "Redeploying Fable 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "date": "2026-07-05"
+    },
+    {
+      "source": "bilibili",
+      "title": "MiMoCode开源AI编程助手",
+      "content": "小米MiMo团队开源的AI编程助手，19天狂揽GitHub 11000+ Star。持久记忆系统让AI不再忘记上下文，三种Agent模式+子代理并行+Goal自动评判。一行命令即可安装，限时免费。模型与代理共同进化，这就是MiMoCode。",
+      "url": "https://www.bilibili.com/video/BV1pATF6dELg",
+      "date": "2026-06-30T11:47:10.000Z",
+      "views": 80,
+      "video_id": "BV1pATF6dELg",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/240792459045c39a11e2eb913108253f4dada9f0.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "AndroidStudio自带的AI助手，帮助写代码，效率倍增",
+      "content": "目前正式版本还没有更新，可以使用 AndroidStudio Canary 版本",
+      "url": "https://www.bilibili.com/video/BV1GP411d7Mu",
+      "date": "2023-05-20T17:56:34.000Z",
+      "views": 11986,
+      "video_id": "BV1GP411d7Mu",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/8c5204b427907835b85ba582ac57266d46efc48d.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "小白都能学的AI编程实战：从0带你做出产品",
+      "content": "",
+      "url": "https://www.bilibili.com/video/",
+      "date": "1970-01-01T00:00:00.000Z",
+      "views": 141373,
+      "video_id": null,
+      "thumbnail_url": "https://archive.biliimg.com/bfs/archive/49db7b090795b5221119d08636901d62eef4475a.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "消息称阿里巴巴全面禁用 Anthropic 旗下 Claude 产品：7 月 10 日生效，全员卸载",
+      "content": "",
+      "url": "https://www.bilibili.com/video/BV1LQMw6RE8s",
+      "date": "2026-07-04T09:24:28.000Z",
+      "views": 11,
+      "video_id": "BV1LQMw6RE8s",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/342e5c14cb8b229ea2c5a4d22e1af8ba0fce797b.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "为何 Anthropic 如此反华？",
+      "content": "简介内容：\n作为程序员，我们不得不承认 Claude 系列模型在编程能力上的卓越。从霸榜权威评测到定义 MCP 标准，Anthropic 似乎站在了技术之巅。\n但你是否感觉到，这也是一家对中国用户“恶意”最大的公司？\n从最初的封禁 IP，到如今“穿透式”审查股权结构；从指控中国大模型“偷窃”，到 CEO 公开将 AI 芯片比作“核武器”并游说立法……\n这真的仅仅是为了商业合规吗？为什么同样的法律环境下，OpenAI 甚至 NVIDIA 的做法截然不同？\n本期视频，我们将剥开 Anthropic 的技术外衣",
+      "url": "https://www.bilibili.com/video/BV12zP7zWExf",
+      "date": "2026-03-02T15:18:06.000Z",
+      "views": 310323,
+      "video_id": "BV12zP7zWExf",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/8b9727d300b922c4b5b4cb03b2f192249ee615ba.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "彭博社最新访谈丨站在 AI 风暴中心：对话 Anthropic CEO 达里奥·阿莫迪，谈权力、就业冲击与文明崩溃的概率",
+      "content": "彭博《The Circuit》主持人艾米丽·张与 Anthropic CEO 达里奥·阿莫迪（Dario Amodei）的一场加长深度对话。\n\n达里奥是 Anthropic 联合创始人兼 CEO，前 OpenAI 研究负责人，更早是一名生物学家。这家成立仅五年的公司，估值已逼近一万亿美元、年化营收冲到约 470 亿，一举超越 OpenAI。\n\n2026年6月17日，这场访谈步步紧逼、几乎不留情面——从他离开 OpenAI 的真实原因（不是安全分歧，而是信任破裂），到为什么押注企业级而非消费级；从",
+      "url": "https://www.bilibili.com/video/BV1CMjq6nEu1",
+      "date": "2026-06-19T07:41:43.000Z",
+      "views": 46713,
+      "video_id": "BV1CMjq6nEu1",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/c8d3014ed7df981feacb7b2df618161688b5b66c.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-07-05",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-07-05",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-07-05",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-07-05",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "7 Levels of Claude Code Explained",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=LIEuGD0pJ18",
+      "date": "2026-07-05",
+      "video_id": "LIEuGD0pJ18",
+      "thumbnail_url": "https://i.ytimg.com/vi/LIEuGD0pJ18/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-07-05",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-07-05",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCV03SRZXJEz-hchIAogeJOg",
+      "date": "2026-07-05",
+      "video_id": "UCV03SRZXJEz-hchIAogeJOg",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCV03SRZXJEz-hchIAogeJOg/mqdefault.jpg"
+    }
+  ]
+}
