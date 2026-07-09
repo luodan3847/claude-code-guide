@@ -1,0 +1,206 @@
+{
+  "date": "2026-07-09",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.205 Released",
+      "content": "## What's changed\n\n- Added an auto mode rule that blocks tampering with session transcript files\n- Fixed `--json-schema` silently producing unstructured output when the schema was invalid, and schemas using the `format` keyword being rejected\n- Fixed a message sent while Claude was working being silently lost when the turn ended at the `--max-turns` limit\n- Fixed Windows worktree removal deleting files outside the worktree when an NTFS junction or directory symlink existed inside it\n- Fixed background agents staying shown as \"failed\" or \"completed\" in the agent list after being resumed with `SendMessage`\n- Fixed background jobs flipping from \"needs input\" back to \"working\" in the agent list when the agent's turn contained no readable text\n- Fixed `claude attach` erroring when a background ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.205",
+      "date": "2026-07-08T21:22:06Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.204 Released",
+      "content": "## What's changed\n\n- Fixed hook events not streaming during SessionStart hooks in headless sessions, which could cause remote workers to be idle-reaped mid-hook\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.204",
+      "date": "2026-07-08T00:27:50Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.203 Released",
+      "content": "## What's changed\n\n- Added a warning when your login is about to expire, so you can re-authenticate before background sessions are interrupted\n- Added a grey ⏸ badge to the footer when in manual permission mode, making the active mode always visible\n- Added the session's additional working directories to MCP `roots/list`, with `notifications/roots/list_changed` sent when the set changes\n- Fixed opening or switching background agent sessions on macOS stalling for 15–20 seconds due to a false low-memory detection (regression in 2.1.196)\n- Fixed background sessions becoming permanently unresponsive to attach, replies, and stop when the daemon's session token went stale — the session now recovers automatically\n- Fixed returning to `claude agents` silently stopping running subagents and re-runn",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.203",
+      "date": "2026-07-07T21:06:12Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.202 Released",
+      "content": "## What's changed\n\n- Added a \"Dynamic workflow size\" setting in `/config` for controlling how large Claude generally makes dynamic workflows (small/medium/large agent counts) — an advisory guideline, not an enforced cap\n- Added `workflow.run_id` and `workflow.name` OpenTelemetry attributes to telemetry emitted by workflow-spawned agents, so a workflow run's activity can be reconstructed from OTel data\n- Fixed a crash in the inline Ctrl+R history search when accepting or cancelling while the search was still scanning the history file\n- Fixed `/rename` on background sessions being reverted when the job restarts, which broke addressing the session by its new name\n- Fixed transient mTLS handshake failures when settings were re-applied during an in-place client certificate rotation\n- Fixed comm",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.202",
+      "date": "2026-07-06T22:51:16Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.201 Released",
+      "content": "## What's changed\n\n- Claude Sonnet 5 sessions no longer use the mid-conversation system role for harness reminders\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.201",
+      "date": "2026-07-03T23:50:35Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Alibaba to ban Claude Code in workplace over alleged backdoor risks, source says",
+      "content": "",
+      "url": "https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/",
+      "date": "2026-07-03T08:31:37Z",
+      "points": 336
+    },
+    {
+      "source": "hackernews",
+      "title": "Geosql: A Claude/Codex skill for geospatial data",
+      "content": "",
+      "url": "https://github.com/dekart-xyz/geosql",
+      "date": "2026-07-08T08:37:26Z",
+      "points": 129
+    },
+    {
+      "source": "hackernews",
+      "title": "The Making of Claude Code",
+      "content": "",
+      "url": "https://www.anthropic.com/features/making-of-claude-code",
+      "date": "2026-07-07T06:19:20Z",
+      "points": 60
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Abralo – Free, easy way to run several Claude Code agents in one window",
+      "content": "Hi guys,<p>I&#x27;ve been using Claude Code for almost everything lately. Have given one an email account so it can research business leads, draft emails, fact-check them and clear them with me before sending (works really well by the way). I also tend to have a few Claude Code agents running at any one time for coding.<p>I used to create a split terminal to manage them from there, but found working in the terminal all day pretty depressing and, more importantly, found it hard to follow Claude Code&#x27;s process and see which agents needed my immediate attention.<p>I tried Anthropic&#x27;s VS Code Claude Code extension and it had a great UI (more info on Claude Code&#x27;s process and easier to read), but it crashed my PC when I ran more than 3 and I couldn&#x27;t watch multiple agents in parallel (had to constantly switch between them).<p>So I built a lightweight Tauri desktop app which lets you run multiple Claude Code agents in one window alongside each other. It&#x27;s easier to read the output and see which agents need your attention than a terminal.<p>Have been using this all day everyday instead of an IDE and have obsessed over every detail to make sure it&#x27;s easy-to-use, but also lightweight and fast (so you can manage multiple agents without your PC crashing).<p>There are some nice features like better usage alerts for when you&#x27;re going to hit your 5-hour and weekly limits (with sparklines to show when usage peaked, and which agents are the most token-intensive).<p>It&#x27;s free to use (you just need to log in with your existing Claude Code account) for up to 4 agents simultaneously. This app doesn&#x27;t store your Claude Code account details and doesn&#x27;t store any of your interactions with Claude Code. They remain between you and Anthropic. It&#x27;s compatible with Windows, MacOS and 64-bit Linux.<p>Would really appreciate any feedback, so if you have any thoughts, issues or suggestions please let me know.<p>Thanks,\nChris",
+      "url": "https://abralo.com/",
+      "date": "2026-07-08T14:54:59Z",
+      "points": 13
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: AI harness for C/C++ with GDB, sanitizers, perf and compile tools",
+      "content": "hey guys, i wanted to show one of my side projects.<p>The idea is a coding harness (independent of models) natively designed for C&#x2F;C++ developer workflows.<p>I&#x27;m a C++ dev and do not find claude code work well with C++ toolchain like gdb and perf.\nThe current version has integrations for gdb, clang-tidy, cppcheck, sanitizers, perf, benchmarking, compile DB navigation, Godbolt, symbolization, binary inspection, and decompilation.<p>It supports Anthropic, OpenAI, Gemini, and self-hosted models. There are editor workflows for VS Code, CLion, emacs, neovim, and cursor.",
+      "url": "https://byteask.ai/",
+      "date": "2026-07-06T14:38:49Z",
+      "points": 4
+    },
+    {
+      "source": "hackernews",
+      "title": "AI coding assistant is quietly shipping your secrets",
+      "content": "",
+      "url": "https://reykur.io/blog/ai-coding-assistant-shipping-secrets/",
+      "date": "2026-07-07T09:28:08Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "AI coding is a nightmare. Am I the only one experiencing this?",
+      "content": "Here are my biggest gripes with AI coding assistants right now:\nObsessed with reinventing the wheel. You&#x27;ll often find it writing three duplicate functions for the exact same feature in a single file. Why? Because it&#x27;s terrified of blowing up the context window, so it only reads a fraction of a large file and completely misses the existing functionality.\nWhy are files so bloated in the first place? Because AI prefers adding new code over modifying existing code, and it rarely deletes anything. After a few iterations, your codebase becomes a mountain of dead code.\nZero holistic awareness. It hyper-focuses on the current task and couldn&#x27;t care less if its changes break other parts of the system. If you point out that the original logic is now broken, it treats it as a brand-new task. It’ll fix that specific bug, but whether its newly written code still works after the fix? &quot;Not my problem.&quot;\nThe context window is painfully short. If you try to solve the issues above by dumping all the necessary context into the prompt, you&#x27;ll hit the 200k token limit in no time. After just two more turns, it triggers auto-compacting, and suddenly it turns back into an idiot.\nLong context = instant brain damage. Just when you&#x27;ve painstakingly stuffed the perfect amount of context into the window, the model completely loses its mind. The longer the context, the more incoherent its responses become.\nLogical reasoning is practically non-existent. A simple feature that would take a human dev 3-5 lines of code to tweak in an existing function? The AI will insist on designing an entirely new system architecture for it.\nThe more you tune it, the dumber it gets. You burn through millions of tokens, and every time it replies with &quot;I understand!&quot; or &quot;I&#x27;ve got it completely!&quot;, the code it spits out still refuses to run.",
+      "url": "https://news.ycombinator.com/item?id=48770319",
+      "date": "2026-07-03T03:18:42Z",
+      "points": 63
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Rowboat – Open-source, local-first alternative to Claude Desktop",
+      "content": "Claude’s desktop app is brilliant, but for our own daily work we kept wanting it to be less like a chat app and more like a full-fledged work app. Rowboat is our attempt at that, including the ability to build your own work surfaces inside Rowboat (more below).<p>Our repo is <a href=\"https:&#x2F;&#x2F;github.com&#x2F;rowboatlabs&#x2F;rowboat\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;rowboatlabs&#x2F;rowboat</a>, and there’s a demo video here: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=et5yQABJ3xI\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=et5yQABJ3xI</a><p>In a previous startup, we built a deep-learning product for enterprise support reps, including teams supporting P&amp;G brands. Models took live notes, suggested replies, and recommended actions while support reps were on calls or handling emails. One lesson stuck with us: it&#x27;s not enough for the AI to be right, the help has to show up where the work is happening.<p>So we added what we came to call “work surfaces”: dedicated areas for email, meetings, notes, browser, and parallel coding, where the assistant can help inside the workflow itself rather than only through chat:<p>- Email client: Rowboat has a simple email client that sorts incoming emails into important vs. everything else, and pre-creates drafts for important emails. As you edit and send emails, it takes notes on your style, so future drafts get closer to your voice.<p>- Meeting notes: We built a Granola-style local meeting notetaker. Notes are stored as plain Markdown files on your machine. After a meeting, Rowboat feeds the notes back into the knowledge graph and updates the relevant people, project, and topic notes.<p>- Browser: We added a built-in browser, isolated from your main one, where you can log in only to the accounts you want the assistant to help with. The assistant uses browser-use skills to navigate websites.<p>- Parallel coding: The code-mode inside Rowboat lets you spin multiple instances of Claude Code or Codex and either work with them directly or let Rowboat use your work context to orchestrate them. We built an ACP (Agent Client Protocol) client in Rowboat for this.<p>- Notes: Rowboat has an Obsidian-style local note-taking system. It comes with graph view, bases view, and voice notes. You can also sync Google Docs files and edit them inside Rowboat.<p>You can also build your own work surfaces inside Rowboat (web apps). Each app gets its own UI and a background agent, and can use all of Rowboat&#x27;s tools, product integrations, and your work memory. For instance: an app to manage GitHub activity, project tracking, or ads campaign management. There are a few community apps at launch you can search and install, and you can publish your own by creating a GitHub repo for it and registering it.<p>Rowboat also indexes your work into a knowledge graph that all of the above surfaces use to have better context. We did a Show HN a few months back on this: <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=46962641\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=46962641</a>.<p>As an example that ties some of these together: you can create an app inside Rowboat that collects feature requests from your email, meetings, and Slack and ranks them, then uses Claude Code to draft a first version of the top-ranked feature, pulling prior context about it from your knowledge graph.<p>Rowboat is local-first: data is stored as plain Markdown files you can read, edit, or delete anytime. It is Apache-2.0 and works with any LLM, including local models through Ollama or LM Studio.<p>We’d love to hear your thoughts, and contributions are welcome!",
+      "url": "https://github.com/rowboatlabs/rowboat",
+      "date": "2026-07-07T16:10:44Z",
+      "points": 214
+    },
+    {
+      "source": "bilibili",
+      "title": "10分钟快速入门Claude Code+Skills一键生成测试用例教程",
+      "content": "【视频配套籽料、测试环境搭建安装包教程、电子书+问题解答请看 ”置顶平论” 自取哦】\r\n本套教程从零开始讲解，手把手教学，包含基础语法、进阶、自动化测试、性能测试、测试开发\r\n无论是新手小白，还是有一定编码经验的选手，皆可学习\r\n如果视频对你有用的话请 一键三连【长按点赞】支持一下UP哦，拜托，这对我真的很重要",
+      "url": "https://www.bilibili.com/video/BV1PFjd6zETW",
+      "date": "2026-06-24T09:54:25.000Z",
+      "views": 3560,
+      "video_id": "BV1PFjd6zETW",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/ff2ce07c256656e20cbb92ac485a6a44876121b8.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【Claude Code】这绝对是b站讲的最好的Claude Code教程，手把手教你在国内从安装到代码实战的保姆级教程！!让你少走99%弯路！AI大模型",
+      "content": "如果视频对你有用的话请 一键三连【长按点赞】支持一下UP哦，拜托，这对我真的很重要！\n【视频配套籽料+问题解答请看”平论区置顶”自取哦】",
+      "url": "https://www.bilibili.com/video/BV1Yi5M6DERk",
+      "date": "2026-05-12T06:24:19.000Z",
+      "views": 567486,
+      "video_id": "BV1Yi5M6DERk",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/11fbec7b215cc93727f963cb85f816f9248e4967.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 1460244,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial For Beginners in 2026! (Become a PRO)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=X_zVY3-mbM8",
+      "date": "2026-07-09",
+      "video_id": "X_zVY3-mbM8",
+      "thumbnail_url": "https://i.ytimg.com/vi/X_zVY3-mbM8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-07-09",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-07-09",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-07-09",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-07-09",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-07-09",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eMZmDH3T2bY",
+      "date": "2026-07-09",
+      "video_id": "eMZmDH3T2bY",
+      "thumbnail_url": "https://i.ytimg.com/vi/eMZmDH3T2bY/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude is definitely not conscious…",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=KGtko3y2RXQ",
+      "date": "2026-07-09",
+      "video_id": "KGtko3y2RXQ",
+      "thumbnail_url": "https://i.ytimg.com/vi/KGtko3y2RXQ/mqdefault.jpg"
+    }
+  ]
+}
