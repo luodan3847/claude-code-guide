@@ -1,0 +1,141 @@
+{
+  "date": "2026-07-13",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.207 Released",
+      "content": "## What's changed\n\n- Auto mode is now available without `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in on Bedrock, Vertex AI, and Foundry; disable via `disableAutoMode` in settings\n- Fixed the terminal freezing and keystrokes lagging while streaming responses containing very long lists, tables, paragraphs, or code blocks\n- Fixed remote managed settings from a non-interactive run (`claude -p`, the SDK) being permanently recorded as consented without ever showing the security consent dialog\n- Fixed spurious prompt-injection warnings triggered by benign system-generated conversation updates\n- Fixed the auto-updater overwriting a custom launcher script or symlink at `~/.local/bin/claude` on every release; `/doctor` now reports an externally managed launcher\n- Fixed compound commands with `cd` prompting",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.207",
+      "date": "2026-07-11T00:52:10Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.206 Released",
+      "content": "## What's changed\n\n- Added directory path suggestions to `/cd`, matching `/add-dir` behavior\n- Added a `/doctor` check that proposes trimming checked-in `CLAUDE.md` files by cutting content Claude could derive from the codebase\n- `/commit-push-pr` now auto-allows `git push` to the repo's configured push remote (`remote.pushDefault`, or the sole remote when only one is configured) in addition to `origin`\n- Gateway: `/login` now supports Anthropic-operated public gateway endpoints\n- `EnterWorktree` now asks for confirmation before entering a git worktree outside the project's `.claude/worktrees/` directory\n- Background agents now upgrade to a new version in the background right after a Claude Code update, instead of paying a slow stale-session upgrade when you attach\n- Fixed an expired login",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.206",
+      "date": "2026-07-10T01:45:26Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.205 Released",
+      "content": "## What's changed\n\n- Added an auto mode rule that blocks tampering with session transcript files\n- Fixed `--json-schema` silently producing unstructured output when the schema was invalid, and schemas using the `format` keyword being rejected\n- Fixed a message sent while Claude was working being silently lost when the turn ended at the `--max-turns` limit\n- Fixed Windows worktree removal deleting files outside the worktree when an NTFS junction or directory symlink existed inside it\n- Fixed background agents staying shown as \"failed\" or \"completed\" in the agent list after being resumed with `SendMessage`\n- Fixed background jobs flipping from \"needs input\" back to \"working\" in the agent list when the agent's turn contained no readable text\n- Fixed `claude attach` erroring when a background ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.205",
+      "date": "2026-07-08T21:22:06Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.204 Released",
+      "content": "## What's changed\n\n- Fixed hook events not streaming during SessionStart hooks in headless sessions, which could cause remote workers to be idle-reaped mid-hook\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.204",
+      "date": "2026-07-08T00:27:50Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.203 Released",
+      "content": "## What's changed\n\n- Added a warning when your login is about to expire, so you can re-authenticate before background sessions are interrupted\n- Added a grey ⏸ badge to the footer when in manual permission mode, making the active mode always visible\n- Added the session's additional working directories to MCP `roots/list`, with `notifications/roots/list_changed` sent when the set changes\n- Fixed opening or switching background agent sessions on macOS stalling for 15–20 seconds due to a false low-memory detection (regression in 2.1.196)\n- Fixed background sessions becoming permanently unresponsive to attach, replies, and stop when the daemon's session token went stale — the session now recovers automatically\n- Fixed returning to `claude agents` silently stopping running subagents and re-runn",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.203",
+      "date": "2026-07-07T21:06:12Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+      "content": "This started based off of a hunch. We usually use OpenCode, but were &#x27;forced&#x27; to use Claude Code for a while due to issues with Meridian. In that time, we saw the usage meter rise much, much more quickly than when using OpenCode.<p>This was the initial anecdotal evidence, but we undertook this small study to collect empirical data:<p>We added logging between the agentic coding tool (Claude Code and OpenCode) and Anthropic&#x27;s endpoint, and captured all requests (and the returned usage blocks).<p>With one caveat (toward the end of the post) we found unambiguously that Claude Code was far more inefficient in terms of its cache strategy and its harness token usage than OpenCode.",
+      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+      "date": "2026-07-12T18:25:51Z",
+      "points": 574
+    },
+    {
+      "source": "hackernews",
+      "title": "Geosql: A Claude/Codex skill for geospatial data",
+      "content": "",
+      "url": "https://github.com/dekart-xyz/geosql",
+      "date": "2026-07-08T08:37:26Z",
+      "points": 138
+    },
+    {
+      "source": "hackernews",
+      "title": "The Making of Claude Code",
+      "content": "",
+      "url": "https://www.anthropic.com/features/making-of-claude-code",
+      "date": "2026-07-07T06:19:20Z",
+      "points": 61
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Abralo – Free, easy way to run several Claude Code agents in one window",
+      "content": "Hi guys,<p>I&#x27;ve been using Claude Code for almost everything lately. Have given one an email account so it can research business leads, draft emails, fact-check them and clear them with me before sending (works really well by the way). I also tend to have a few Claude Code agents running at any one time for coding.<p>I used to create a split terminal to manage them from there, but found working in the terminal all day pretty depressing and, more importantly, found it hard to follow Claude Code&#x27;s process and see which agents needed my immediate attention.<p>I tried Anthropic&#x27;s VS Code Claude Code extension and it had a great UI (more info on Claude Code&#x27;s process and easier to read), but it crashed my PC when I ran more than 3 and I couldn&#x27;t watch multiple agents in parallel (had to constantly switch between them).<p>So I built a lightweight Tauri desktop app which lets you run multiple Claude Code agents in one window alongside each other. It&#x27;s easier to read the output and see which agents need your attention than a terminal.<p>Have been using this all day everyday instead of an IDE and have obsessed over every detail to make sure it&#x27;s easy-to-use, but also lightweight and fast (so you can manage multiple agents without your PC crashing).<p>There are some nice features like better usage alerts for when you&#x27;re going to hit your 5-hour and weekly limits (with sparklines to show when usage peaked, and which agents are the most token-intensive).<p>It&#x27;s free to use (you just need to log in with your existing Claude Code account) for up to 4 agents simultaneously. This app doesn&#x27;t store your Claude Code account details and doesn&#x27;t store any of your interactions with Claude Code. They remain between you and Anthropic. It&#x27;s compatible with Windows, MacOS and 64-bit Linux.<p>Would really appreciate any feedback, so if you have any thoughts, issues or suggestions please let me know.<p>Thanks,\nChris",
+      "url": "https://abralo.com/",
+      "date": "2026-07-08T14:54:59Z",
+      "points": 37
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: AI harness for C/C++ with GDB, sanitizers, perf and compile tools",
+      "content": "hey guys, i wanted to show one of my side projects.<p>The idea is a coding harness (independent of models) natively designed for C&#x2F;C++ developer workflows.<p>I&#x27;m a C++ dev and do not find claude code work well with C++ toolchain like gdb and perf.\nThe current version has integrations for gdb, clang-tidy, cppcheck, sanitizers, perf, benchmarking, compile DB navigation, Godbolt, symbolization, binary inspection, and decompilation.<p>It supports Anthropic, OpenAI, Gemini, and self-hosted models. There are editor workflows for VS Code, CLion, emacs, neovim, and cursor.",
+      "url": "https://byteask.ai/",
+      "date": "2026-07-06T14:38:49Z",
+      "points": 5
+    },
+    {
+      "source": "hackernews",
+      "title": "AI coding assistant is quietly shipping your secrets",
+      "content": "",
+      "url": "https://reykur.io/blog/ai-coding-assistant-shipping-secrets/",
+      "date": "2026-07-07T09:28:08Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "GhostApproval: A trust-boundary gap in AI coding assistants",
+      "content": "",
+      "url": "https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants",
+      "date": "2026-07-09T16:55:05Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Rowboat – Open-source, local-first alternative to Claude Desktop",
+      "content": "Claude’s desktop app is brilliant, but for our own daily work we kept wanting it to be less like a chat app and more like a full-fledged work app. Rowboat is our attempt at that, including the ability to build your own work surfaces inside Rowboat (more below).<p>Our repo is <a href=\"https:&#x2F;&#x2F;github.com&#x2F;rowboatlabs&#x2F;rowboat\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;rowboatlabs&#x2F;rowboat</a>, and there’s a demo video here: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=et5yQABJ3xI\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=et5yQABJ3xI</a><p>In a previous startup, we built a deep-learning product for enterprise support reps, including teams supporting P&amp;G brands. Models took live notes, suggested replies, and recommended actions while support reps were on calls or handling emails. One lesson stuck with us: it&#x27;s not enough for the AI to be right, the help has to show up where the work is happening.<p>So we added what we came to call “work surfaces”: dedicated areas for email, meetings, notes, browser, and parallel coding, where the assistant can help inside the workflow itself rather than only through chat:<p>- Email client: Rowboat has a simple email client that sorts incoming emails into important vs. everything else, and pre-creates drafts for important emails. As you edit and send emails, it takes notes on your style, so future drafts get closer to your voice.<p>- Meeting notes: We built a Granola-style local meeting notetaker. Notes are stored as plain Markdown files on your machine. After a meeting, Rowboat feeds the notes back into the knowledge graph and updates the relevant people, project, and topic notes.<p>- Browser: We added a built-in browser, isolated from your main one, where you can log in only to the accounts you want the assistant to help with. The assistant uses browser-use skills to navigate websites.<p>- Parallel coding: The code-mode inside Rowboat lets you spin multiple instances of Claude Code or Codex and either work with them directly or let Rowboat use your work context to orchestrate them. We built an ACP (Agent Client Protocol) client in Rowboat for this.<p>- Notes: Rowboat has an Obsidian-style local note-taking system. It comes with graph view, bases view, and voice notes. You can also sync Google Docs files and edit them inside Rowboat.<p>You can also build your own work surfaces inside Rowboat (web apps). Each app gets its own UI and a background agent, and can use all of Rowboat&#x27;s tools, product integrations, and your work memory. For instance: an app to manage GitHub activity, project tracking, or ads campaign management. There are a few community apps at launch you can search and install, and you can publish your own by creating a GitHub repo for it and registering it.<p>Rowboat also indexes your work into a knowledge graph that all of the above surfaces use to have better context. We did a Show HN a few months back on this: <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=46962641\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=46962641</a>.<p>As an example that ties some of these together: you can create an app inside Rowboat that collects feature requests from your email, meetings, and Slack and ranks them, then uses Claude Code to draft a first version of the top-ranked feature, pulling prior context about it from your knowledge graph.<p>Rowboat is local-first: data is stored as plain Markdown files you can read, edit, or delete anytime. It is Apache-2.0 and works with any LLM, including local models through Ollama or LM Studio.<p>We’d love to hear your thoughts, and contributions are welcome!",
+      "url": "https://github.com/rowboatlabs/rowboat",
+      "date": "2026-07-07T16:10:44Z",
+      "points": 218
+    },
+    {
+      "source": "anthropic",
+      "title": "Inviting hard questions",
+      "content": "",
+      "url": "https://www.anthropic.com/news/hard-questions",
+      "date": "2026-07-13"
+    },
+    {
+      "source": "bilibili",
+      "title": "【36氪】5个关键人物，看懂Anthropic的“行为艺术”",
+      "content": "Anthropic，为什么这么能“整活”？\n欢迎关注36氪，来看氪深度解读财经热点\n资料源于网络整理",
+      "url": "https://www.bilibili.com/video/BV1JJMH6EEDg",
+      "date": "2026-07-09T11:21:48.000Z",
+      "views": 42134,
+      "video_id": "BV1JJMH6EEDg",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/ebada49d6e43dbccf21d336d806086b9c85cd13c.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "为何 Anthropic 如此反华？",
+      "content": "简介内容：\n作为程序员，我们不得不承认 Claude 系列模型在编程能力上的卓越。从霸榜权威评测到定义 MCP 标准，Anthropic 似乎站在了技术之巅。\n但你是否感觉到，这也是一家对中国用户“恶意”最大的公司？\n从最初的封禁 IP，到如今“穿透式”审查股权结构；从指控中国大模型“偷窃”，到 CEO 公开将 AI 芯片比作“核武器”并游说立法……\n这真的仅仅是为了商业合规吗？为什么同样的法律环境下，OpenAI 甚至 NVIDIA 的做法截然不同？\n本期视频，我们将剥开 Anthropic 的技术外衣",
+      "url": "https://www.bilibili.com/video/BV12zP7zWExf",
+      "date": "2026-03-02T15:18:06.000Z",
+      "views": 328507,
+      "video_id": "BV12zP7zWExf",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/8b9727d300b922c4b5b4cb03b2f192249ee615ba.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Anthropic史：从OpenAI叛逃者，到估值万亿的AI帝国",
+      "content": "21小时前，Anthropic公布了估值9650亿美元的融资。距离这家公司首次亮相，刚好五年整。\n\nAnthropic这5年，不只是一个AI创业公司的崛起故事。它也是一部关于理想、资本、产品、算力和地缘竞争如何纠缠在一起的商业史。而当初的屠龙少年，是否也终将变成恶龙？Anthropic影响的，绝不仅仅是一个行业，更可能是全人类。\n\n这是《眼镜说财经》的第一期视频。这个频道会长期分享深度商业史、公司史和行业观察。",
+      "url": "https://www.bilibili.com/video/BV1itVa6nEJH",
+      "date": "2026-05-29T14:26:49.000Z",
+      "views": 107405,
+      "video_id": "BV1itVa6nEJH",
+      "thumbnail_url": "https://i1.hdslb.com/bfs/archive/a8758d33883094ac148f43690160c4064a8dc321.jpg"
+    }
+  ]
+}
