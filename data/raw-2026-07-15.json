@@ -1,0 +1,205 @@
+{
+  "date": "2026-07-15",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.210 Released",
+      "content": "## What's changed\n\n- Added a live elapsed-time counter to the collapsed tool summary line so long-running tool calls visibly tick instead of looking stuck\n- Added a startup warning for `Write(path)`, `NotebookEdit(path)`, and `Glob(path)` permission rules — use `Edit(path)` or `Read(path)` instead\n- Fixed `isolation: 'worktree'` subagents being able to run git-mutating commands against the main repo checkout instead of their own isolated worktree\n- Fixed the `ultracode` keyword opt-in firing on non-human-originated input such as webhook payloads and relayed PR comments\n- Fixed a rendered text fragment leaking into crash telemetry when a UI component returned content outside a styled text element\n- Fixed paste markers leaking into external editors opened from Claude Code, which could appear",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.210",
+      "date": "2026-07-14T23:45:25Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.209 Released",
+      "content": "## What's changed\n\n- Fixed /model and other dialogs being blocked in `claude agents` background sessions (reverts an overly broad guard)\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.209",
+      "date": "2026-07-14T06:36:28Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.208 Released",
+      "content": "## What's changed\n\n- Added screen reader mode: opt-in plain-text rendering for screen reader users. Run `claude --ax-screen-reader`, set CLAUDE_AX_SCREEN_READER=1, or add \"axScreenReader\": true to settings.\n- Added `vimInsertModeRemaps` setting: map two-key insert-mode sequences like `jj` to Escape in vim mode\n- Added `CLAUDE_CODE_PROCESS_WRAPPER`: agent view and the background service now honor a corporate launcher by running every Claude Code self-spawn through a required wrapper executable\n- Added mouse-click support for multi-select menus and \"Other\" input rows in fullscreen mode\n- Fixed fast mode staying off after switching back to a model that supports it — it now restores automatically when enabled in settings\n- Fixed replies typed to a background agent being lost when delivery fail",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.208",
+      "date": "2026-07-14T01:10:42Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.207 Released",
+      "content": "## What's changed\n\n- Auto mode is now available without `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in on Bedrock, Vertex AI, and Foundry; disable via `disableAutoMode` in settings\n- Fixed the terminal freezing and keystrokes lagging while streaming responses containing very long lists, tables, paragraphs, or code blocks\n- Fixed remote managed settings from a non-interactive run (`claude -p`, the SDK) being permanently recorded as consented without ever showing the security consent dialog\n- Fixed spurious prompt-injection warnings triggered by benign system-generated conversation updates\n- Fixed the auto-updater overwriting a custom launcher script or symlink at `~/.local/bin/claude` on every release; `/doctor` now reports an externally managed launcher\n- Fixed compound commands with `cd` prompting",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.207",
+      "date": "2026-07-11T00:52:10Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.206 Released",
+      "content": "## What's changed\n\n- Added directory path suggestions to `/cd`, matching `/add-dir` behavior\n- Added a `/doctor` check that proposes trimming checked-in `CLAUDE.md` files by cutting content Claude could derive from the codebase\n- `/commit-push-pr` now auto-allows `git push` to the repo's configured push remote (`remote.pushDefault`, or the sole remote when only one is configured) in addition to `origin`\n- Gateway: `/login` now supports Anthropic-operated public gateway endpoints\n- `EnterWorktree` now asks for confirmation before entering a git worktree outside the project's `.claude/worktrees/` directory\n- Background agents now upgrade to a new version in the background right after a Claude Code update, instead of paying a slow stale-session upgrade when you attach\n- Fixed an expired login",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.206",
+      "date": "2026-07-10T01:45:26Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+      "content": "This started based off of a hunch. We usually use OpenCode, but were &#x27;forced&#x27; to use Claude Code for a while due to issues with Meridian. In that time, we saw the usage meter rise much, much more quickly than when using OpenCode.<p>This was the initial anecdotal evidence, but we undertook this small study to collect empirical data:<p>We added logging between the agentic coding tool (Claude Code and OpenCode) and Anthropic&#x27;s endpoint, and captured all requests (and the returned usage blocks).<p>With one caveat (toward the end of the post) we found unambiguously that Claude Code was far more inefficient in terms of its cache strategy and its harness token usage than OpenCode.",
+      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+      "date": "2026-07-12T18:25:51Z",
+      "points": 698
+    },
+    {
+      "source": "hackernews",
+      "title": "Geosql: A Claude/Codex skill for geospatial data",
+      "content": "",
+      "url": "https://github.com/dekart-xyz/geosql",
+      "date": "2026-07-08T08:37:26Z",
+      "points": 138
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code plugin that plays a Mr. Meeseeks voice line whene Claude is waiting",
+      "content": "",
+      "url": "https://github.com/thephw/claude-meseeks",
+      "date": "2026-07-13T22:03:54Z",
+      "points": 131
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Abralo – Free, easy way to run several Claude Code agents in one window",
+      "content": "Hi guys,<p>I&#x27;ve been using Claude Code for almost everything lately. Have given one an email account so it can research business leads, draft emails, fact-check them and clear them with me before sending (works really well by the way). I also tend to have a few Claude Code agents running at any one time for coding.<p>I used to create a split terminal to manage them from there, but found working in the terminal all day pretty depressing and, more importantly, found it hard to follow Claude Code&#x27;s process and see which agents needed my immediate attention.<p>I tried Anthropic&#x27;s VS Code Claude Code extension and it had a great UI (more info on Claude Code&#x27;s process and easier to read), but it crashed my PC when I ran more than 3 and I couldn&#x27;t watch multiple agents in parallel (had to constantly switch between them).<p>So I built a lightweight Tauri desktop app which lets you run multiple Claude Code agents in one window alongside each other. It&#x27;s easier to read the output and see which agents need your attention than a terminal.<p>Have been using this all day everyday instead of an IDE and have obsessed over every detail to make sure it&#x27;s easy-to-use, but also lightweight and fast (so you can manage multiple agents without your PC crashing).<p>There are some nice features like better usage alerts for when you&#x27;re going to hit your 5-hour and weekly limits (with sparklines to show when usage peaked, and which agents are the most token-intensive).<p>It&#x27;s free to use (you just need to log in with your existing Claude Code account) for up to 4 agents simultaneously. This app doesn&#x27;t store your Claude Code account details and doesn&#x27;t store any of your interactions with Claude Code. They remain between you and Anthropic. It&#x27;s compatible with Windows, MacOS and 64-bit Linux.<p>Would really appreciate any feedback, so if you have any thoughts, issues or suggestions please let me know.<p>Thanks,\nChris",
+      "url": "https://abralo.com/",
+      "date": "2026-07-08T14:54:59Z",
+      "points": 37
+    },
+    {
+      "source": "hackernews",
+      "title": "GhostApproval: A trust-boundary gap in AI coding assistants",
+      "content": "",
+      "url": "https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants",
+      "date": "2026-07-09T16:55:05Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: BYO AI free notetaking with optional screen reading for OpenClaw/hermes",
+      "content": "I&#x27;ve built fully on-device (macOS) meeting transcription&#x2F;summaries&#x2F;action-items app. It uses parakeet and gemma 4 or OpenClaw or Hermes Agent to drive main functionalities. It&#x27;s free, requires no account or email, and is source available.\nYou can also natively connect your own local&#x2F;VPS OpenClaw or Hermes to use them, their memory and context, as a notetaker.<p>About me: my name is Piotr. I&#x27;m having plenty of calls as a freelancing programmer, and have interest in audio domain, so it was natural for me to pick this as my side project. I struggled a bit with echo cancellation, and writing idiomatic plugins to let users use their OpenClaw or Hermes agents as BYO AI (basically backend). I started project coding Tauri app by hand, only after establishing architecture I started leaning on AI coding agents. I use Claude Code with <a href=\"https:&#x2F;&#x2F;github.com&#x2F;openai&#x2F;codex-plugin-cc\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;openai&#x2F;codex-plugin-cc</a> for &quot;adversarial-reviews&quot;.<p>On the website I&#x27;ve included an offer to upgrade StageWhisper Lite to Founders edition with one-time payment: this give screen reading (via accessibility tree) and proactive, two-way communication - that is, your connected agent can provide suggestions by listening to audio (Cluely style), and you can chat with it during the call. Again, you bring your own AI, so Founders is a single payment, no subscription offer.<p>Both apps include MCP and in-app chat with your transcripts and meeting notes. Both also allow to connect any model downloaded from HF or connecting OpenClaw&#x2F;Hermes.<p>I created StageWhisper Lite &amp; Founders to test business feasibility of one-time payment AI apps that have no marginal costs (you either use local model or your own assistant).<p>I hope you will enjoy free Lite app and consider upgrading to Founders.",
+      "url": "https://stagewhisper.io/lite",
+      "date": "2026-07-14T11:02:38Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "Reality of Commercial AI World from a 16 Year Old's Perspective",
+      "content": "Let me tell you who I am first. I&#x27;m 16, a mad scientist. Started coding and AI at 12 — before ChatGPT existed. Built AI voice assistants in 2022 when nobody knew what AI was. Worked 10 hours a day at 12, building anonymously.\nI HAVE 1 THING: ASK ME TO BUILD ANYTHING — IMPOSSIBLE OR POSSIBLE — I WILL FIGURE IT OUT. AI, MATHS, SCIENCE, WHATEVER. THAT&#x27;S IT.\nAt 15, I started selling AI automation and voice agents. Cold called, cold emailed, worked hundreds of hours for 4 straight months. Never got a single sale. Fine — selling wasn&#x27;t my strength.\nThen I tried building real products — made an OpenClaw clone that ran on low-end laptops, built AI researchers. I&#x27;m not a salesman. I&#x27;m the guy who if you say &quot;build Claude from scratch including model training&quot; — I&#x27;ll somehow do it. But &quot;build something cool&quot; — I freeze.\nStill, I tried the startup routes. Here&#x27;s what I found:\n1) INVESTORS &amp; VCs: Completely opposite of what they sound. They claim to find talent and take risks. They don&#x27;t. A16Z has 1-1.5% selection. They invest in ex-Google employees, ex-DeepMind CTOs, founders who already built million-dollar companies. What about the 14-year-old who didn&#x27;t know what you wanted? What about that 25-year-old building AI agents before OpenClaw and Claude Code existed — you just weren&#x27;t comfortable investing in talented unknowns. VCs lost their entire meaning trying to be &quot;safe.&quot;\n2) FOUNDER STUDIOS: 10,000 ultra-talented people apply. Maybe 1,000 are genuinely strong. 100 get selected. The other 9,900 showed they can build anything, anyhow — but you wanted people with 10 years at Google, ML degrees, millions in the bank. You wanted morons with credentials over builders with capability.\n3) BUILD IN PUBLIC — COMPLETELY DEAD: Among 100% who try, 10% succeed, and 9% of those are AI slop YouTubers with zero real skill. Reddit, X, GitHub — only giants with existing traction get seen. A developer starting today gets 0-1 viewers and zero forks. Community is gone.\n4) JOBS: Small AI startups want years of experience. Medium companies want 10 degrees for junior roles. Giant AI companies want 5 years experience + ML degree. And to GET that experience you go to small companies — who also want experience.\nTHE LOOP HAS NO ENTRY POINT.\nFellowships say &quot;freshers welcome, any age&quot; then in fine print: &quot;ML degree, Rust&#x2F;Python, 18+.&quot; Their brains are stuck in 2015 while their tools are from 2035.\nYou know why 90% of AI startups fail? They&#x27;re selling AI, not using it. They still want manual coders in interviews for Applied AI Engineer roles — while Anthropic spent billions building models that score top on coding benchmarks. And even the owners of those model companies still have 2005 mentality: degrees and manual coding.\nHOW TO ACTUALLY HIRE TALENT: Launch an impossible challenge. Automated evaluation — answer is right or wrong, no 10-day human review. Winners go straight to final interview. That&#x27;s it. OpenAI&#x27;s Parameter Golf was close. Nothing else comes close.<p>I&#x27;m tired. It&#x27;s been years.\nBuild in public — closed. Freelancing — trap. Investors — too cautious. Jobs — need experience and age.\nNO WAY LEFT.<p>But if somehow you read this far — THANK YOU, THAT&#x27;S ALL I CAN SAY\nIF I BECOME SUCCESSFUL, I WILL READ THIS POST AGAIN, IF I DIDN&#x27;T , STILL I WILL READ THIS POST AGAIN\nI DONT KNOW MAN, ITS TODAY IS 10 JULY 2026, I AM VANSH SHARMA\nNOW , I AM SIGNING OFF\nTHANK YOU\nI HAVE STRGGLED A LOT\nI HOPE YOU GUYS SUCCEED\nI DONT KNOW IF ANYONE IS READING OR NOT",
+      "url": "https://news.ycombinator.com/item?id=48851812",
+      "date": "2026-07-09T20:16:50Z",
+      "points": 4
+    },
+    {
+      "source": "anthropic",
+      "title": "Inviting hard questions",
+      "content": "",
+      "url": "https://www.anthropic.com/news/hard-questions",
+      "date": "2026-07-15"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 1507201,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "保姆级Claude Code速成，必学！简单！【附完整文档】",
+      "content": "文档链接：https://lcnaoyjp4e3z.feishu.cn/wiki/MtJlwX0B5iy6y9k5GZTcdjSknTd",
+      "url": "https://www.bilibili.com/video/BV1kX546QEjG",
+      "date": "2026-05-11T09:02:15.000Z",
+      "views": 973365,
+      "video_id": "BV1kX546QEjG",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/ea066ef317e7400afb52f37e75a9544996e3157a.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Claude Code保姆级全套教程（软件+文档），从入门到精通，搞定所有开发场景，零基础十分钟上手，全程干货无废话！",
+      "content": "Claude Code保姆级全套教程（软件+文档）\n   喜欢视频课程的同学一键三连多多支持一下，长按点赞五秒=lv6大佬 可以的发送彩色弹幕哦。\n配套源码项目已打包评论区回复up",
+      "url": "https://www.bilibili.com/video/BV1JBorBoEXh",
+      "date": "2026-04-27T08:51:41.000Z",
+      "views": 85093,
+      "video_id": "BV1JBorBoEXh",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/17edb6853157df48141c4e2e290ebabd07c2abab.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-07-15",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-07-15",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-07-15",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Ultimate Claude Code Guide: How to Use Claude Code for Beginners in 2026",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=RywmhLTFeFk",
+      "date": "2026-07-15",
+      "video_id": "RywmhLTFeFk",
+      "thumbnail_url": "https://i.ytimg.com/vi/RywmhLTFeFk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial for Beginners in 2026! (Step-By-Step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=qYqIhX9hTQk",
+      "date": "2026-07-15",
+      "video_id": "qYqIhX9hTQk",
+      "thumbnail_url": "https://i.ytimg.com/vi/qYqIhX9hTQk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-07-15",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-07-15",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-07-15",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
