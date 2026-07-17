@@ -1,0 +1,197 @@
+{
+  "date": "2026-07-17",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.212 Released",
+      "content": "## What's changed\n\n- `/fork` now copies your conversation into a new background session (its own row in `claude agents`) while you keep working; the in-session subagent it used to launch is now `/subtask`\n- Added `claude auto-mode reset` to restore the default auto-mode configuration, with a confirmation prompt (pass `--yes` to skip)\n- Added a session-wide limit on WebSearch tool calls (default 200, tunable via `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`) to stop runaway search loops\n- Added a per-session cap on subagent spawns (default 200, override with `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`) to stop runaway delegation loops; `/clear` resets the budget\n- MCP tool calls running longer than 2 minutes now move to the background automatically so the session stays usable; configure the thresh",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.212",
+      "date": "2026-07-17T00:26:27Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.211 Released",
+      "content": "## What's changed\n\n- Added `--forward-subagent-text` flag and `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` environment variable to include subagent text and thinking in stream-json output\n- Fixed permission previews relayed to chat channels not neutralizing bidirectional-override, zero-width, and look-alike quote characters, so tool inputs cannot visually alter the approval message\n- Fixed auto mode overriding a PreToolUse hook's `ask` decision for unsandboxed Bash — a hook `ask` now floors the decision at a prompt\n- Fixed parallel Claude Code sessions all logging out simultaneously after wake-from-sleep when many sessions share one credential store\n- Fixed plugin MCP servers not reconnecting after an idle web session woke, leaving MCP calls failing until the next message\n- Fixed Claude Code on Ver",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.211",
+      "date": "2026-07-15T23:02:35Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.210 Released",
+      "content": "## What's changed\n\n- Added a live elapsed-time counter to the collapsed tool summary line so long-running tool calls visibly tick instead of looking stuck\n- Added a startup warning for `Write(path)`, `NotebookEdit(path)`, and `Glob(path)` permission rules — use `Edit(path)` or `Read(path)` instead\n- Fixed `isolation: 'worktree'` subagents being able to run git-mutating commands against the main repo checkout instead of their own isolated worktree\n- Fixed the `ultracode` keyword opt-in firing on non-human-originated input such as webhook payloads and relayed PR comments\n- Fixed a rendered text fragment leaking into crash telemetry when a UI component returned content outside a styled text element\n- Fixed paste markers leaking into external editors opened from Claude Code, which could appear",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.210",
+      "date": "2026-07-14T23:45:25Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.209 Released",
+      "content": "## What's changed\n\n- Fixed /model and other dialogs being blocked in `claude agents` background sessions (reverts an overly broad guard)\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.209",
+      "date": "2026-07-14T06:36:28Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.208 Released",
+      "content": "## What's changed\n\n- Added screen reader mode: opt-in plain-text rendering for screen reader users. Run `claude --ax-screen-reader`, set CLAUDE_AX_SCREEN_READER=1, or add \"axScreenReader\": true to settings.\n- Added `vimInsertModeRemaps` setting: map two-key insert-mode sequences like `jj` to Escape in vim mode\n- Added `CLAUDE_CODE_PROCESS_WRAPPER`: agent view and the background service now honor a corporate launcher by running every Claude Code self-spawn through a required wrapper executable\n- Added mouse-click support for multi-select menus and \"Other\" input rows in fullscreen mode\n- Fixed fast mode staying off after switching back to a model that supports it — it now restores automatically when enabled in settings\n- Fixed replies typed to a background agent being lost when delivery fail",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.208",
+      "date": "2026-07-14T01:10:42Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+      "content": "This started based off of a hunch. We usually use OpenCode, but were &#x27;forced&#x27; to use Claude Code for a while due to issues with Meridian. In that time, we saw the usage meter rise much, much more quickly than when using OpenCode.<p>This was the initial anecdotal evidence, but we undertook this small study to collect empirical data:<p>We added logging between the agentic coding tool (Claude Code and OpenCode) and Anthropic&#x27;s endpoint, and captured all requests (and the returned usage blocks).<p>With one caveat (toward the end of the post) we found unambiguously that Claude Code was far more inefficient in terms of its cache strategy and its harness token usage than OpenCode.",
+      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+      "date": "2026-07-12T18:25:51Z",
+      "points": 700
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code plugin that plays a Mr. Meeseeks voice line whene Claude is waiting",
+      "content": "",
+      "url": "https://github.com/thephw/claude-meseeks",
+      "date": "2026-07-13T22:03:54Z",
+      "points": 131
+    },
+    {
+      "source": "hackernews",
+      "title": "Brainless: Shadcn components that look like Claude Code, Codex and Grok",
+      "content": "",
+      "url": "https://brainless.swerdlow.dev",
+      "date": "2026-07-15T19:42:53Z",
+      "points": 127
+    },
+    {
+      "source": "hackernews",
+      "title": "Launch HN: Traceforce (YC S26) – Company-wide security monitoring for AI apps",
+      "content": "Hey HN, we’re Xia and Varun, the founders of Traceforce (<a href=\"https:&#x2F;&#x2F;www.traceforce.ai&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.traceforce.ai&#x2F;</a>). Traceforce provides visibility and control over AI apps such as ChatGPT, Claude etc directly on all devices (laptops, sandboxes, virtual machines) by discovering not just which apps are being used but also how they are connected to other data sources via MCPs. We also have an open-source dynamic MCP pentesting tool <a href=\"https:&#x2F;&#x2F;github.com&#x2F;traceforce&#x2F;mcp-xray\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;traceforce&#x2F;mcp-xray</a> to detect vulnerable MCPs.<p>The purpose of Traceforce is to:<p>- Give a company’s employees a standardized way to ensure that AI software running on their device is operating safely<p>- Give the company’s security team visibility of the activities of AI software on the company’s devices, and to detect and prevent unsafe actions and security breaches as early as possible.<p>How Traceforce works<p>1. Traceforce is installed on each device as a lightweight binary and browser extension.<p>2. Within 30 minutes, the device is uploading live data to the company profile, displaying all the AI agents&#x2F;apps running across all company devices on a dashboard.<p>3. Company security staff can monitor the activity of all the agents in real time, implement controls, and be alerted to any security risks as soon as they arise.<p>Here’s the video demo: <a href=\"https:&#x2F;&#x2F;youtube.com&#x2F;watch?v=IdK2WKg7kaM\" rel=\"nofollow\">https:&#x2F;&#x2F;youtube.com&#x2F;watch?v=IdK2WKg7kaM</a><p>The inspiration for Traceforce came via Xia’s experience as Director of Engineering at a startup called Clumio (which was acquired by Commvault in Oct 2024). Being able to monitor how team members are using AI without slowing them down was a top priority at Clumio. After speaking with 50+ CISOs and CIOs, it became clear that this is a much-needed solution right now across industries. We keep hearing that new AI features are being adopted so quickly and so broadly that visibility and control just can&#x27;t keep up.<p>Traceforce is transparent about what we monitor and collect. By default, Traceforce collects only metadata and telemetry about the AI applications, MCPs, and tools running on a device. Security teams can enable options to inspect tool calls for the purpose of detecting, warning on, or blocking predefined high-risk or potentially destructive actions. All content inspection happens locally on the device. User prompts are never stored unless explicitly configured by the organization&#x27;s security administrators.<p>We work closely with end-users of the product, and once they understand what is being monitored&#x2F;shared, they actually have great comfort that they have a powerful layer of protection on their device to prevent security incidents. It enables them to just focus on their work without worrying about what leaks and breaches may be happening under the hood without their awareness.<p>The Traceforce binary is built using Go and the browser extension is written in Node JS. The hardest part is building a complete connectivity graph between AI applications, MCPs, and tools, then identifying the vulnerabilities and attack paths introduced by those connections. Traditional security tools fall short: EDRs see processes, CASBs see network traffic, but neither has visibility into the application-level activity happening inside AI apps. The way we got it to work was by understanding the configurations and logs of each and every app. It’s a labor intensive process because every app is different and AI features change frequently.<p>Traceforce is currently deployed across more than 1,000 devices at 10 organizations. On average, we discover over 15 AI applications per device with each application connected to 5-10 MCPs. We&#x27;ve helped customers identify exposed plaintext secrets in MCP configurations, prevent API keys from leaking through AI-generated code, and warn developers before executing potentially destructive commands such as “DROP TABLE”. Our &quot;warn and acknowledge&quot; approach has been especially well received, giving developers the freedom to work while helping them avoid costly mistakes.<p>We&#x27;re looking to work with security, IT, and AI platform teams at small to medium enterprises (200+ employees) that are rapidly adopting AI coding assistants, ChatGPT, Claude, and MCPs. If you&#x27;re struggling to understand what AI tools people use to boost their productivity or need a practical way to reduce AI-related security risk without slowing folks down, we&#x27;d love to talk.<p>You can get started with a free trial at <a href=\"https:&#x2F;&#x2F;www.traceforce.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;www.traceforce.ai</a> or reach out directly to schedule a demo and discuss your environment.",
+      "url": "https://news.ycombinator.com/item?id=48937020",
+      "date": "2026-07-16T16:52:16Z",
+      "points": 39
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: BYO AI free notetaking with optional screen reading for OpenClaw/hermes",
+      "content": "I&#x27;ve built fully on-device (macOS) meeting transcription&#x2F;summaries&#x2F;action-items app. It uses parakeet and gemma 4 or OpenClaw or Hermes Agent to drive main functionalities. It&#x27;s free, requires no account or email, and is source available.\nYou can also natively connect your own local&#x2F;VPS OpenClaw or Hermes to use them, their memory and context, as a notetaker.<p>About me: my name is Piotr. I&#x27;m having plenty of calls as a freelancing programmer, and have interest in audio domain, so it was natural for me to pick this as my side project. I struggled a bit with echo cancellation, and writing idiomatic plugins to let users use their OpenClaw or Hermes agents as BYO AI (basically backend). I started project coding Tauri app by hand, only after establishing architecture I started leaning on AI coding agents. I use Claude Code with <a href=\"https:&#x2F;&#x2F;github.com&#x2F;openai&#x2F;codex-plugin-cc\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;openai&#x2F;codex-plugin-cc</a> for &quot;adversarial-reviews&quot;.<p>On the website I&#x27;ve included an offer to upgrade StageWhisper Lite to Founders edition with one-time payment: this give screen reading (via accessibility tree) and proactive, two-way communication - that is, your connected agent can provide suggestions by listening to audio (Cluely style), and you can chat with it during the call. Again, you bring your own AI, so Founders is a single payment, no subscription offer.<p>Both apps include MCP and in-app chat with your transcripts and meeting notes. Both also allow to connect any model downloaded from HF or connecting OpenClaw&#x2F;Hermes.<p>I created StageWhisper Lite &amp; Founders to test business feasibility of one-time payment AI apps that have no marginal costs (you either use local model or your own assistant).<p>I hope you will enjoy free Lite app and consider upgrading to Founders.",
+      "url": "https://stagewhisper.io/lite",
+      "date": "2026-07-14T11:02:38Z",
+      "points": 3
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: OtoDock, run Claude Code and Codex as a team of agents on your server",
+      "content": "Hi HN, i am Dimitris,<p>I have been using Claude Code and Codex agents, for some time now from the beggining i had been using them from inside my terminal mainly for coding.<p>For the past 3 years i kept building so i have a homelab and a business server, which already has a lot of vms, so a lot of things to manage.<p>So i decided to start building my own ideal version of using claude code, and codex flexibly and connect them easily with all my vms and infra but at the same time keep using them for coding, and as a personal assistant for daily use.<p>So for the past months I built OtoDock. Its a self hosted platform, that runs real CLaude code and Codex as the engine. On top of them i build a live dashboard with websockets and integrated in depth the clis, so its even nicer to work with the cli through the dashboard instead of working on the terminal. I even ended up integrating interactive terminals as well (due to the subscription change Anthropic was trying to do for harnesses) so you can also use interactive terminals directly from the dashboard remotely.<p>OtoDock is a multitenant self hosted agents platform, is meant for businesses to create and manager agents, that can act autonomously on the background doing various jobs, or they can also be collaborative, they can work with users (team members) of the platform so many team members can use a collaborative agent meant for a specific job or department (ex. social media agent, dev agent, etc.)<p>Each user of the platform can bring his own anthropic and openai subscriptions that is automatically used for his user sessions with the clis. (or local models through Ollama)<p>I have also built an MCP framework, so that its easy to add cummunity mcps fast on the application, and i keep a community mcp repo where i will put all available mcps there.<p>The dashboard as well has a lot of features, for example it has a fully functional chat for talking to the agents, that supports collabora previews for editing and viewing PDF, Word, Excel, Powerpoint files as the user works with the agents, a workspace per user with a proper file browser (like each user and agents google drive showing in the dashboard), per agent shared knowledge and workspace folders across users, a per user and per agent memory system, scheduled tasks with real intervals, webhook triggers that can initiate a scheduled task of an agent, meetings between agents (live meetings directly in the chat where the agents can collaborate), voice with TTS and STT for talking to the agents and many more...<p>I am a security paranoid myself so i spent a lot of time making sure the agents run as securely as possible and can be safely desployed in a real business server. The agents run on a kernel sandbox with network isolation by default, and specific local up excemptions are added by the admin for specific mcps that need local network access. Access to the internet of course is always on.<p>The license, it is Fair Source, not OSI open source. Self hosting is free up to 5 users, all the code is public so you can review everything.<p>Trying it is one docker compose file, images are on GHCR, the setup wizard creates your admin locally, no signup or email anywhere.<p>Its the first time I publish a proper application and I would love people to try it and read the code and use it in their setups, I have spent a lot of time on this and i would love all the feedback I can get.<p>AI Disclaimer: Large parts of OtoDock are written using otodock itself, for the last 2 months the application was mature enought where i started using an agent of OtoDock daily for the development. If you use Claude Code Cli or Codex for development feel free to try it, you might find very useful and helpful in your workflow. (remote machines feature will be available in a week, where you will be able to make the agents of the platform run in your local machine).<p>GitHub: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;OtoDock&#x2F;oto-dock\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;OtoDock&#x2F;oto-dock</a>\nWebsite: <a href=\"https:&#x2F;&#x2F;otodock.io\" rel=\"nofollow\">https:&#x2F;&#x2F;otodock.io</a>",
+      "url": "https://github.com/OtoDock/oto-dock/",
+      "date": "2026-07-15T16:11:23Z",
+      "points": 2
+    },
+    {
+      "source": "anthropic",
+      "title": "Inviting hard questions",
+      "content": "",
+      "url": "https://www.anthropic.com/news/hard-questions",
+      "date": "2026-07-17"
+    },
+    {
+      "source": "bilibili",
+      "title": "【AI实战】AI智能简历优化助手，基于SpringAI+Springboot+Vue，AI简历诊断、AI简历优化、AI简历改写、AI模拟面试题",
+      "content": "项目完整资料：https://aigcbaba.com/course/90",
+      "url": "https://www.bilibili.com/video/BV1UyK36YE3c",
+      "date": "2026-07-16T10:22:22.000Z",
+      "views": 5905,
+      "video_id": "BV1UyK36YE3c",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/4f9c3f3a7c9e16839625ac82ba82f7b312105320.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【用DeepSeek开发外挂？】0基础小白也可以，某些人要失业了！代码和分析能力测试",
+      "content": "【用DeepSeek开发外挂】0基础小白也可以，某些人要失业了！",
+      "url": "https://www.bilibili.com/video/BV1zdAceNEmt",
+      "date": "2025-02-18T01:03:09.000Z",
+      "views": 120879,
+      "video_id": "BV1zdAceNEmt",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/6f82665b2fc60839fa76b8d1b21d662dbf99a3d3.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "小白都能学的AI编程实战：从0带你做出产品",
+      "content": "",
+      "url": "https://www.bilibili.com/video/",
+      "date": "1970-01-01T00:00:00.000Z",
+      "views": 167326,
+      "video_id": null,
+      "thumbnail_url": "https://archive.biliimg.com/bfs/archive/49db7b090795b5221119d08636901d62eef4475a.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-07-17",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-07-17",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "From Zero to Claude Code in 19 Minutes (no code)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5tgHMa2Z3jc",
+      "date": "2026-07-17",
+      "video_id": "5tgHMa2Z3jc",
+      "thumbnail_url": "https://i.ytimg.com/vi/5tgHMa2Z3jc/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial For Beginners in 2026! (Become a PRO)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=X_zVY3-mbM8",
+      "date": "2026-07-17",
+      "video_id": "X_zVY3-mbM8",
+      "thumbnail_url": "https://i.ytimg.com/vi/X_zVY3-mbM8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-07-17",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-07-17",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-07-17",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-07-17",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
