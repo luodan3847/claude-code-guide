@@ -1,0 +1,227 @@
+{
+  "date": "2026-07-24",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.218 Released",
+      "content": "## What's changed\n\n- Changed `/code-review` to run as a background subagent, so review work no longer fills your conversation and keeps stacked slash commands as its review target\n- Added screen-reader announcements of deleted text for word and line deletions (`Option+Delete`, `Ctrl+W`, `Cmd+Backspace`, `Ctrl+U`, `Ctrl+K`) in `--ax-screen-reader` mode\n- Fixed Windows paths with `\\u`-prefixed segments (like `C:\\Users\\unicorn`) being corrupted into CJK characters in tool inputs, which made those files inaccessible\n- Fixed the left arrow key discarding the conversation with no undo: presses right after editing now ask to confirm, and Esc in the agent view returns to the conversation it backgrounded\n- Added HTTP status and error text to `claude mcp list` and `/mcp` when a server fails to conne",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
+      "date": "2026-07-22T21:24:56Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.217 Released",
+      "content": "## What's changed\n\n- Added emoji shortcode autocomplete in the prompt input: type `:heart:` to insert ❤️, or `:hea` for suggestions — disable with the `emojiCompletionEnabled` setting\n- Added warnings when transcript writes are failing (e.g. disk full) or when session saving is off due to an inherited environment variable, instead of losing transcripts silently\n- Fixed a memory leak where truncated MCP tool outputs kept the full untruncated result in memory for the rest of the session\n- Fixed Windows auto-update failures that could leave `claude.exe` missing; failed updates now restore the preserved executable automatically\n- Fixed background session isolation not canonicalizing symlinked working directories, which could let sessions escape their workspace folder\n- Fixed auto-compact never",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "date": "2026-07-21T21:35:10Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.216 Released",
+      "content": "## What's changed\n\n- Added `sandbox.filesystem.disabled` setting to skip filesystem isolation while keeping network egress control\n- Fixed a slowdown in long sessions where message normalization cost grew quadratically with the number of turns, causing multi-second stalls and slow resumes\n- Fixed auto mode denying commands with \"HTTP 401\" classifier errors after the OAuth token expired or rotated mid-session\n- Fixed AskUserQuestion telling Claude to continue even when your answer asked it to wait or explain first — free-text answers now get neutral wording\n- Fixed Claude Code on the web re-asking the same question and dropping your answer after the session sat idle for a few minutes\n- Fixed @-mentions silently attaching nothing after file-modifying hooks, vim dot-repeat of `c`-operators an",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.216",
+      "date": "2026-07-20T22:14:00Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.215 Released",
+      "content": "## What's changed\n\n- Claude no longer runs the `/verify` and `/code-review` skills on its own; invoke them with `/verify` or `/code-review` when you want them\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.215",
+      "date": "2026-07-19T02:56:01Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.214 Released",
+      "content": "## What's changed\n\n- Fixed single-segment `dir/**` allow rules like `Edit(src/**)` auto-approving writes to nested `dir/` directories anywhere in the tree instead of only `<cwd>/dir`\n- Fixed a permission-check bypass affecting commands run in Windows PowerShell 5.1 sessions\n- Fixed Bash permission checks to fail closed on file-descriptor redirect forms that bash parses differently than the permission analyzer\n- Fixed Bash permission checks misjudging very long commands — commands over 10,000 characters now always prompt instead of running automatically\n- Fixed Bash permission checks treating zsh variable subscripts and modifiers in `[[ ]]` comparisons as inert text — these commands now prompt for approval\n- Fixed Bash permission checks to no longer auto-approve certain `help` and `man` com",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.214",
+      "date": "2026-07-18T01:20:30Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code uses Bun written in Rust now",
+      "content": "",
+      "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/",
+      "date": "2026-07-19T10:03:23Z",
+      "points": 606
+    },
+    {
+      "source": "hackernews",
+      "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
+      "content": "",
+      "url": "https://ykdojo.github.io/claude-controls-mac/",
+      "date": "2026-07-18T16:12:08Z",
+      "points": 251
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code: Anatomy of a Misfeature",
+      "content": "",
+      "url": "https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/",
+      "date": "2026-07-17T14:26:58Z",
+      "points": 142
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Cognikernel- Local Memory for AI Coding Assistants",
+      "content": "Every coding session in claude code&#x2F; codex starts blindly. It forgets the archiectural decisions you made in a session you ran yesterday&#x2F; a week ago or a month ago. We end up depending on maintaining a Claude.md file or diff markdown files that these agents rely on their memory features.<p>I started building CogniKernel to solve this problem.<p>Instead of relying on markdown memory files, CogniKernel observes the coding session itself. It captures decisions, constraints, architectural decisions, project specific context etc info as they naturally emerge.<p>The goal is simple: The agent should remember what it learned yesterday without me telling it what to remember.<p>Some things it stores automatically:<p>- Architectural decisions and design rationale\n- Project conventions and coding patterns\n- Important implementation details\n- User preferences and recurring constraints\n- Relationships between files, modules, and components<p>The memory is local-first and designed to work alongside existing coding agents rather than replace them.<p>A few design goals I had:<p>- Zero manual memory curation\n- Local storage instead of cloud dependency\n- Fast retrieval with relevant context instead of dumping everything\n- Agent-agnostic architecture so it can work beyond a single coding assistant\n- Memory that improves over time instead of growing into an unsearchable log<p>Was it impactful???\nI build 4 full fledged projects using cognikernel while switching the auto-memory off from claude code and same project same prompt, same sessions using the auto memory<p>- 30% Less Tokens used \n- 4x less read tools used<p>And a bonus!!! If you use claude code and codex both you can just start a session in alternate tool and your memory will carry forward there as well!!!<p>This was a hobby project and if you use it and it helped your work, please let me know any feedback!",
+      "url": "https://github.com/KanishkNoir/cognikernel",
+      "date": "2026-07-20T20:20:10Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "AI Coding Assistant Strategy Slashes Token Bills",
+      "content": "",
+      "url": "https://spectrum.ieee.org/ai-coding-assistant-china-anthropic",
+      "date": "2026-07-21T15:27:32Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "NoWreck-A deterministic verifier for AI coding assistants",
+      "content": "",
+      "url": "https://github.com/AstralXVoid/NoWreck/",
+      "date": "2026-07-20T02:10:46Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Inviting hard questions",
+      "content": "",
+      "url": "https://www.anthropic.com/news/hard-questions",
+      "date": "2026-07-24"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 1592342,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "【Claude Code】这绝对是b站讲的最好的Claude Code教程，手把手教你在国内从安装到代码实战的保姆级教程！!让你少走99%弯路！AI大模型",
+      "content": "如果视频对你有用的话请 一键三连【长按点赞】支持一下UP哦，拜托，这对我真的很重要！\n【视频配套籽料+问题解答请看”平论区置顶”自取哦】",
+      "url": "https://www.bilibili.com/video/BV16ggC6DEZK",
+      "date": "2026-07-22T10:10:42.000Z",
+      "views": 11653,
+      "video_id": "BV16ggC6DEZK",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/00c108c477e9467441f69161b7aa9e446e190ea2.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Claude Code保姆级全套教程（软件+文档），从入门到精通，搞定所有开发场景，零基础十分钟上手，全程干货无废话！",
+      "content": "Claude Code保姆级全套教程（软件+文档）\n   喜欢视频课程的同学一键三连多多支持一下，长按点赞五秒=lv6大佬 可以的发送彩色弹幕哦。\n配套源码项目已打包评论区回复up",
+      "url": "https://www.bilibili.com/video/BV1JBorBoEXh",
+      "date": "2026-04-27T08:51:41.000Z",
+      "views": 107111,
+      "video_id": "BV1JBorBoEXh",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/17edb6853157df48141c4e2e290ebabd07c2abab.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Vibe Coding纯小白教程：对AI说话就做出软件。手把手带你做出1个软件！",
+      "content": "🤔如果你最近也在想一件事：我一个完全不会代码的人，真的可以用 AI 为自己做出一个软件吗？\n🌟我的答案是：当然可以！\n\n📚我把自己这4个月Vibe Coding里最重要的经验，浓缩成了一次完整实操演示。\n不是只告诉你装什么工具，而是直接带你从0到1做出一个真正能运行的软件：怎么提第一次需求，怎么让AI稳定执行，怎么一步一步把项目推进下去。\n\n如果你刚开始对Vibe Coding感兴趣，那这条就是为你制作的！看完之后，你应该就能自己动手开始第一次尝试了。",
+      "url": "https://www.bilibili.com/video/BV1BvR1BtEFD",
+      "date": "2026-05-05T10:13:18.000Z",
+      "views": 201321,
+      "video_id": "BV1BvR1BtEFD",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/c965767b57bb5f7d53097dd38755b56b5d95e9ba.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "《3分钟搞定Codex！手把手教你接入三方 API Key，小白也能直接跑AI编程助手》",
+      "content": "-",
+      "url": "https://www.bilibili.com/video/BV151K66xEbP",
+      "date": "2026-07-19T16:20:09.000Z",
+      "views": 175,
+      "video_id": "BV151K66xEbP",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/f0ffd5fcf35a45ec19c7bdd5d6a9a968278fb1d8.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "AI编程一人公司训练营",
+      "content": "",
+      "url": "https://www.bilibili.com/video/",
+      "date": "1970-01-01T00:00:00.000Z",
+      "views": 1392,
+      "video_id": null,
+      "thumbnail_url": "https://archive.biliimg.com/bfs/archive/389adf9f1a07ab57822fe4b81a270aab362024b2.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Non-Coders",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=inxAjCRHe2o",
+      "date": "2026-07-24",
+      "video_id": "inxAjCRHe2o",
+      "thumbnail_url": "https://i.ytimg.com/vi/inxAjCRHe2o/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "You’re Not Behind (Yet): Master Claude Code in 31 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5v0ZYlje474",
+      "date": "2026-07-24",
+      "video_id": "5v0ZYlje474",
+      "thumbnail_url": "https://i.ytimg.com/vi/5v0ZYlje474/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "I Built an AI Agent That Day Trades Crypto Using Claude Code (Tutorial)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=DkT6UzYX_UA",
+      "date": "2026-07-24",
+      "video_id": "DkT6UzYX_UA",
+      "thumbnail_url": "https://i.ytimg.com/vi/DkT6UzYX_UA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-07-24",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial For Beginners in 2026! (Become a PRO)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=X_zVY3-mbM8",
+      "date": "2026-07-24",
+      "video_id": "X_zVY3-mbM8",
+      "thumbnail_url": "https://i.ytimg.com/vi/X_zVY3-mbM8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-07-24",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-07-24",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude is definitely not conscious…",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=KGtko3y2RXQ",
+      "date": "2026-07-24",
+      "video_id": "KGtko3y2RXQ",
+      "thumbnail_url": "https://i.ytimg.com/vi/KGtko3y2RXQ/mqdefault.jpg"
+    }
+  ]
+}
