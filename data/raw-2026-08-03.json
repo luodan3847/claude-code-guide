@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-03",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.220 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
+      "date": "2026-07-25T01:35:55Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.219 Released",
+      "content": "## What's changed\n\n- Added Claude Opus 5 (`claude-opus-5`), now the default Opus model — 1M context, fast mode at $10/$50 per Mtok\n- Added `sandbox.network.strictAllowlist` setting to deny non-allowlisted hosts for sandboxed commands without prompting\n- Added `DirectoryAdded` hook that fires after `/add-dir` or the SDK `register_repo_root` control request registers a new working directory mid-session\n- Added `mcp_server_errors` to the headless stream-json init event, listing `--mcp-config` entries skipped by config validation; terminal runs print a startup warning\n- Added the `workflowSizeGuideline` settings key so the advisory Dynamic workflow size guideline can be set from any settings file; the `/config` row is hidden while one does\n- Added nested subagent forwarding in stream-json: sub",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.219",
+      "date": "2026-07-24T17:14:23Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.218 Released",
+      "content": "## What's changed\n\n- Changed `/code-review` to run as a background subagent, so review work no longer fills your conversation and keeps stacked slash commands as its review target\n- Added screen-reader announcements of deleted text for word and line deletions (`Option+Delete`, `Ctrl+W`, `Cmd+Backspace`, `Ctrl+U`, `Ctrl+K`) in `--ax-screen-reader` mode\n- Fixed Windows paths with `\\u`-prefixed segments (like `C:\\Users\\unicorn`) being corrupted into CJK characters in tool inputs, which made those files inaccessible\n- Fixed the left arrow key discarding the conversation with no undo: presses right after editing now ask to confirm, and Esc in the agent view returns to the conversation it backgrounded\n- Added HTTP status and error text to `claude mcp list` and `/mcp` when a server fails to conne",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
+      "date": "2026-07-22T21:24:56Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.217 Released",
+      "content": "## What's changed\n\n- Added emoji shortcode autocomplete in the prompt input: type `:heart:` to insert ❤️, or `:hea` for suggestions — disable with the `emojiCompletionEnabled` setting\n- Added warnings when transcript writes are failing (e.g. disk full) or when session saving is off due to an inherited environment variable, instead of losing transcripts silently\n- Fixed a memory leak where truncated MCP tool outputs kept the full untruncated result in memory for the rest of the session\n- Fixed Windows auto-update failures that could leave `claude.exe` missing; failed updates now restore the preserved executable automatically\n- Fixed background session isolation not canonicalizing symlinked working directories, which could let sessions escape their workspace folder\n- Fixed auto-compact never",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "date": "2026-07-21T21:35:10Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.216 Released",
+      "content": "## What's changed\n\n- Added `sandbox.filesystem.disabled` setting to skip filesystem isolation while keeping network egress control\n- Fixed a slowdown in long sessions where message normalization cost grew quadratically with the number of turns, causing multi-second stalls and slow resumes\n- Fixed auto mode denying commands with \"HTTP 401\" classifier errors after the OAuth token expired or rotated mid-session\n- Fixed AskUserQuestion telling Claude to continue even when your answer asked it to wait or explain first — free-text answers now get neutral wording\n- Fixed Claude Code on the web re-asking the same question and dropping your answer after the session sat idle for a few minutes\n- Fixed @-mentions silently attaching nothing after file-modifying hooks, vim dot-repeat of `c`-operators an",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.216",
+      "date": "2026-07-20T22:14:00Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Agent-Manager: A Tmux TUI for Running Claude Code, Codex and OpenCode",
+      "content": "",
+      "url": "https://github.com/YoanWai/agent-manager",
+      "date": "2026-07-30T09:34:27Z",
+      "points": 98
+    },
+    {
+      "source": "hackernews",
+      "title": "Boris Cherny on Trying to Get Claude Code to Rewrite the Claude App",
+      "content": "",
+      "url": "https://daringfireball.net/linked/2026/08/02/cherny-claude-swift",
+      "date": "2026-08-03T00:22:55Z",
+      "points": 61
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Claude-account – switch Claude Code accounts without logging in again",
+      "content": "I use separate Claude Code accounts for work and personal projects. Having to log out and go through the login flow every time I switched accounts became annoying, so I built a small CLI to solve it.<p>The commands are intentionally simple:<p>claude account add myworkaccount\nclaude account add mypersonalaccount\nclaude account use myworkaccount\nclaude account current<p>After switching, Claude Code works normally:<p>claude\nclaude &quot;fix this bug in main.py&quot;\nRepository: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;hamzarehmandeveloper&#x2F;claude-account\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;hamzarehmandeveloper&#x2F;claude-account</a><p>Give it a try",
+      "url": "https://github.com/hamzarehmandeveloper/claude-account",
+      "date": "2026-07-30T14:58:59Z",
+      "points": 54
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: MandoCode Desktop – Native Windows AI Coding Assistant on Ollama .NET",
+      "content": "Quick backstory on how this version came to be: the original MandoCode is a CLI, and its UI is built with RazorConsole — Blazor components rendered into a terminal. Genuinely clever tech! I wanted tabs, though, and when I attended MS Build this year I got a good look at what WinUI apps could do and saw the potential to give the original agent some actual windows and tabs. Having up to 4 agents running in one window is pretty cool. Aside from that — tabs! I feel like everything is a chat these days, and for some reason my brain keeps screaming AGENTS, not chats, at me. I love the tabbed-browser experience a lot more<p>Some of the stuff I got to toy with once the plumbing worked:<p>- Context snapshots — closing an agent archives the conversation instead of deleting it, and you can snapshot mid-conversation to get an AI-written recap you can hand to a different model or a fresh agent and have it pick up the thread. You pick the LLM from a dropdown right when you create the snapshot.<p>- Transcript export — every agent tab can dump its full conversation to a file.<p>- 16 themes — this is where the kid in me just had plain fun, building the kind of themes you find in VS Code and other IDEs. Dracula, Tokyo Night, One Dark Pro, all the tasteful ones, plus a period-accurate Windows 98 desktop and a Cathode Ray CRT mode. Drop in your own background image too if none of the 16 land.<p>- A deliberately limited Notes pad — always there, separate from any project, optional AI help, but the assistant has zero file tools in it. The only way a reply lands in your note is you clicking a button to put it there.<p>- A tiny built-in music player — for the vibes, lol. Lofi&#x2F;synthwave bundled, or point it at your own MP3 folder.<p>Overall I loved working within WinUI XD",
+      "url": "https://github.com/DevMando/MandoCode.Desktop",
+      "date": "2026-07-29T16:48:12Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Dozenal – A Game of Spatial Arithmetic",
+      "content": "Hello HN! We&#x27;re Rory and Chris, and we&#x27;ve made a game called Dozenal[0], a grid-based number puzzle game where the objective is to use all the tiles on the board to create totals of 12 (hence the name).<p>We think the mechanic is quite unique, although keen to hear if people know of similar games! You essentially drag tiles across the board, and the distance between two numbers decides the arithmetic operation when they connect to each other: zero spaces is addition, one space is subtraction, two spaces is multiplication: e.g.<p>5 → 4 = 9<p>5 → _ → 4 = 1<p>5 → _ → _ → 4 = 20<p>We&#x27;ve spent the past month getting people to test the game. The two biggest points of feedback are: 1. People generally find the learning curve a little too steep -- we are open to any feedback on how to make the rules clearer or easier -- but we&#x27;ve found that almost everyone that sticks with it for more than a couple of days can solve the puzzles. 2. People find that &quot;mixing&quot; arithmetic is confusing -- you can combine up to two arithmetic operations (e.g. addition and multiplication) in a single chain to reach a &quot;12 total&quot;, but there&#x27;s a catch in that you can only do this for one move.<p>We release a new puzzle every day (all of them are set by Chris), and our aim is to make something that people enjoy coming back to and that strikes the right balance between a time-killer and a bit of a challenge.<p>A bit of backstory: Chris and I came up with the idea over a decade ago while we were students. We were always tinkering with prototypes but never released anything. AI coding assistants made it a lot easier to work on the game in the past couple of months (it&#x27;s a mixture of human and AI development, not fully vibe-coded).<p>Give it a try and let us know what you think!<p>[0] - <a href=\"https:&#x2F;&#x2F;dozenal.game\" rel=\"nofollow\">https:&#x2F;&#x2F;dozenal.game</a>",
+      "url": "https://dozenal.game",
+      "date": "2026-07-27T10:44:17Z",
+      "points": 16
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: CogniKernel; AI Coding with cross session and cross platform memory",
+      "content": "Last week I posted about launching the project I&#x27;ve been working since some time CogniKernel. Since then the project has been cloned almost 600 times, this showed me the use case was real and people might really need this tool as it comes at no extra cost and just integrates into your claude code and codex smoothly.<p>To reduce the headache of cloning now I have added the project as PyPi package so now it&#x27;s just a terminal pip install command away as mentioned in the readme on GitHub.\nIt has been installed 300+ times within a week!<p>If you try the CogniKernel and if it&#x27;s genuinely been helpful I would love to know some feedback, maybe a GitHub star can covey that as I&#x27;m still continuing my research on it to improve the quality and making your AI assistants work with no amnesia!",
+      "url": "https://github.com/KanishkNoir/cognikernel",
+      "date": "2026-07-28T21:28:22Z",
+      "points": 2
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "date": "2026-08-03"
+    },
+    {
+      "source": "youtube",
+      "title": "How Does Claude Code Actually Work? Let's Make Our Own",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=vp6Dlx5aHDU",
+      "date": "2026-08-03",
+      "video_id": "vp6Dlx5aHDU",
+      "thumbnail_url": "https://i.ytimg.com/vi/vp6Dlx5aHDU/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Basics | Master 95% in 10 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=Y4xDbxs-xxs",
+      "date": "2026-08-03",
+      "video_id": "Y4xDbxs-xxs",
+      "thumbnail_url": "https://i.ytimg.com/vi/Y4xDbxs-xxs/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Non-Coders",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=inxAjCRHe2o",
+      "date": "2026-08-03",
+      "video_id": "inxAjCRHe2o",
+      "thumbnail_url": "https://i.ytimg.com/vi/inxAjCRHe2o/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-08-03",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-08-03",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-08-03",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "The New Way Top Anthropic Engineers Prompt Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=r8ih5HRRLLU",
+      "date": "2026-08-03",
+      "video_id": "r8ih5HRRLLU",
+      "thumbnail_url": "https://i.ytimg.com/vi/r8ih5HRRLLU/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic Engineers Just Rewrote the Rules of Claude Code (25min Course)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gQeRjkb_Hlc",
+      "date": "2026-08-03",
+      "video_id": "gQeRjkb_Hlc",
+      "thumbnail_url": "https://i.ytimg.com/vi/gQeRjkb_Hlc/mqdefault.jpg"
+    }
+  ]
+}
