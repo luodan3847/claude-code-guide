@@ -1,0 +1,197 @@
+{
+  "date": "2026-08-04",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.221 Released",
+      "content": "## What's changed\n\n- [VSCode] Added Focus view: a chat-menu toggle that hides tool activity behind an expandable per-turn summary with a live running-tool indicator, toggled with `Ctrl+Alt+F` or the \"Claude Code: Toggle Focus view\" command\n- Added `mode: \"mask\"` for sandbox credential files on Linux and WSL — sandboxed commands read a sentinel copy (the whole file, or just the spans captured by an `extract` regex) while the sandbox proxy substitutes the real value on egress; on macOS file masking falls back to `deny`\n- Added warnings to `claude plugin validate` when a marketplace or plugin name would be rejected by Claude Desktop's managed marketplace sync\n- Added a `prompt-audit` subcommand to the `claude-api` skill for auditing prompts and tool descriptions for patterns written for older",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
+      "date": "2026-08-04T00:14:23Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.220 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
+      "date": "2026-07-25T01:35:55Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.219 Released",
+      "content": "## What's changed\n\n- Added Claude Opus 5 (`claude-opus-5`), now the default Opus model — 1M context, fast mode at $10/$50 per Mtok\n- Added `sandbox.network.strictAllowlist` setting to deny non-allowlisted hosts for sandboxed commands without prompting\n- Added `DirectoryAdded` hook that fires after `/add-dir` or the SDK `register_repo_root` control request registers a new working directory mid-session\n- Added `mcp_server_errors` to the headless stream-json init event, listing `--mcp-config` entries skipped by config validation; terminal runs print a startup warning\n- Added the `workflowSizeGuideline` settings key so the advisory Dynamic workflow size guideline can be set from any settings file; the `/config` row is hidden while one does\n- Added nested subagent forwarding in stream-json: sub",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.219",
+      "date": "2026-07-24T17:14:23Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.218 Released",
+      "content": "## What's changed\n\n- Changed `/code-review` to run as a background subagent, so review work no longer fills your conversation and keeps stacked slash commands as its review target\n- Added screen-reader announcements of deleted text for word and line deletions (`Option+Delete`, `Ctrl+W`, `Cmd+Backspace`, `Ctrl+U`, `Ctrl+K`) in `--ax-screen-reader` mode\n- Fixed Windows paths with `\\u`-prefixed segments (like `C:\\Users\\unicorn`) being corrupted into CJK characters in tool inputs, which made those files inaccessible\n- Fixed the left arrow key discarding the conversation with no undo: presses right after editing now ask to confirm, and Esc in the agent view returns to the conversation it backgrounded\n- Added HTTP status and error text to `claude mcp list` and `/mcp` when a server fails to conne",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
+      "date": "2026-07-22T21:24:56Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.217 Released",
+      "content": "## What's changed\n\n- Added emoji shortcode autocomplete in the prompt input: type `:heart:` to insert ❤️, or `:hea` for suggestions — disable with the `emojiCompletionEnabled` setting\n- Added warnings when transcript writes are failing (e.g. disk full) or when session saving is off due to an inherited environment variable, instead of losing transcripts silently\n- Fixed a memory leak where truncated MCP tool outputs kept the full untruncated result in memory for the rest of the session\n- Fixed Windows auto-update failures that could leave `claude.exe` missing; failed updates now restore the preserved executable automatically\n- Fixed background session isolation not canonicalizing symlinked working directories, which could let sessions escape their workspace folder\n- Fixed auto-compact never",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
+      "date": "2026-07-21T21:35:10Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Agent-Manager: A Tmux TUI for Running Claude Code, Codex and OpenCode",
+      "content": "",
+      "url": "https://github.com/YoanWai/agent-manager",
+      "date": "2026-07-30T09:34:27Z",
+      "points": 98
+    },
+    {
+      "source": "hackernews",
+      "title": "Boris Cherny on Trying to Get Claude Code to Rewrite the Claude App",
+      "content": "",
+      "url": "https://daringfireball.net/linked/2026/08/02/cherny-claude-swift",
+      "date": "2026-08-03T00:22:55Z",
+      "points": 69
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Claude-account – switch Claude Code accounts without logging in again",
+      "content": "I use separate Claude Code accounts for work and personal projects. Having to log out and go through the login flow every time I switched accounts became annoying, so I built a small CLI to solve it.<p>The commands are intentionally simple:<p>claude account add myworkaccount\nclaude account add mypersonalaccount\nclaude account use myworkaccount\nclaude account current<p>After switching, Claude Code works normally:<p>claude\nclaude &quot;fix this bug in main.py&quot;\nRepository: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;hamzarehmandeveloper&#x2F;claude-account\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;hamzarehmandeveloper&#x2F;claude-account</a><p>Give it a try",
+      "url": "https://github.com/hamzarehmandeveloper/claude-account",
+      "date": "2026-07-30T14:58:59Z",
+      "points": 54
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: MandoCode Desktop – Native Windows AI Coding Assistant on Ollama .NET",
+      "content": "Quick backstory on how this version came to be: the original MandoCode is a CLI, and its UI is built with RazorConsole — Blazor components rendered into a terminal. Genuinely clever tech! I wanted tabs, though, and when I attended MS Build this year I got a good look at what WinUI apps could do and saw the potential to give the original agent some actual windows and tabs. Having up to 4 agents running in one window is pretty cool. Aside from that — tabs! I feel like everything is a chat these days, and for some reason my brain keeps screaming AGENTS, not chats, at me. I love the tabbed-browser experience a lot more<p>Some of the stuff I got to toy with once the plumbing worked:<p>- Context snapshots — closing an agent archives the conversation instead of deleting it, and you can snapshot mid-conversation to get an AI-written recap you can hand to a different model or a fresh agent and have it pick up the thread. You pick the LLM from a dropdown right when you create the snapshot.<p>- Transcript export — every agent tab can dump its full conversation to a file.<p>- 16 themes — this is where the kid in me just had plain fun, building the kind of themes you find in VS Code and other IDEs. Dracula, Tokyo Night, One Dark Pro, all the tasteful ones, plus a period-accurate Windows 98 desktop and a Cathode Ray CRT mode. Drop in your own background image too if none of the 16 land.<p>- A deliberately limited Notes pad — always there, separate from any project, optional AI help, but the assistant has zero file tools in it. The only way a reply lands in your note is you clicking a button to put it there.<p>- A tiny built-in music player — for the vibes, lol. Lofi&#x2F;synthwave bundled, or point it at your own MP3 folder.<p>Overall I loved working within WinUI XD",
+      "url": "https://github.com/DevMando/MandoCode.Desktop",
+      "date": "2026-07-29T16:48:12Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Benzi – An AI coding assistant grounded in a live code map",
+      "content": "Benzi is a compiler + runtime tracer + harness and  AI agent built to  understand code from ground up.<p>Challenging traditional RAG and embedding space approaches, Benzi aims to write code as cleanly as it understands it.<p>Any feedback is greatly appriciated!",
+      "url": "https://benzi.fly.dev/",
+      "date": "2026-08-04T03:30:27Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Self-hosted pet diary built on Frigate and a local vision model",
+      "content": "I have a cat and a dog, and I worry about them whenever I am away. My cameras ping me with a clip of the cat crossing the kitchen, which tells me almost nothing. I could sit and watch hours of recordings to work out how their day went and whether anything looks off, but that&#x27;s too time consuming. What I actually wanted to know were concrete things: did they eat, did they drink, did the cat use the litter box, are they sleeping more than usual.<p>So pet-report sits on top of Frigate, which I already run for the cameras. Twice a day it sends the new clips to a vision model (I run Qwen3.6-35B-A3B on an RTX 5090) on my own server and writes up the day, with every line linking back to the footage behind it so you can check it yourself. You can also ask it things like &quot;did the dog drink today?&quot; and it answers from what the cameras actually saw.<p>I&#x27;ve found myself needing an app like this for a long time, and pulling contextual metadata out of an image or a video is exactly what these models are good at. Before LLMs this would have taken money, time and R&amp;D I don&#x27;t have, and I couldn&#x27;t have done it alone, since I have no background in ML or image analysis. Most of the code here was written by an AI coding assistant, with me directing and reviewing it. The design and the review are mine.<p>The part I&#x27;m happiest about is that a local vision model keeps everything private. Nothing leaves my network.<p>It does get things wrong, but the whole thing is designed around that: uncertain moments are flagged, and anything can be corrected by hand. Every moment keeps the frame&#x2F;clip it came from, so you can see what the model saw instead of taking its word for it. The results are only as good as the model you run, the descriptions you give it of your pets, and where your cameras are pointing. If you have two orange cats, it won&#x27;t tell them apart: it labels the sighting &quot;a cat&quot; and leaves you to pick which one. Fortunately I have one cat and one dog, so every sighting gets named on its own, but I did try my best to prompt the model in a way that smooths out those identification edges.<p>Anyway, just wanted to share something that has been working for me and my two animals, which is the honest extent of the testing. I&#x27;d love to know how it does on yours.",
+      "url": "https://github.com/bolt12/pet-report",
+      "date": "2026-08-03T15:21:34Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "date": "2026-08-04"
+    },
+    {
+      "source": "bilibili",
+      "title": "9分钟搞定！Claude Code 保姆级安装+原理+真实用法（国内直连）",
+      "content": "本期视频因为白菜要毕业了，up伤心过度导致了拖更（）",
+      "url": "https://www.bilibili.com/video/BV1KjoxBoEQJ",
+      "date": "2026-04-22T09:02:25.000Z",
+      "views": 1659146,
+      "video_id": "BV1KjoxBoEQJ",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/ef6ac6b2e9aefc319e9829a5506c648506066ac9.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Claude Code保姆级全套教程（软件+文档），从入门到精通，搞定所有开发场景，零基础十分钟上手，全程干货无废话！",
+      "content": "Claude Code保姆级全套教程（软件+文档）\n   喜欢视频课程的同学一键三连多多支持一下，长按点赞五秒=lv6大佬 可以的发送彩色弹幕哦。\n配套源码项目已打包评论区回复up",
+      "url": "https://www.bilibili.com/video/BV1JBorBoEXh",
+      "date": "2026-04-27T08:51:41.000Z",
+      "views": 135590,
+      "video_id": "BV1JBorBoEXh",
+      "thumbnail_url": "https://i2.hdslb.com/bfs/archive/17edb6853157df48141c4e2e290ebabd07c2abab.jpg"
+    },
+    {
+      "source": "bilibili",
+      "title": "Claude Code在国内保姆级从安装到代码实战教程，手把手教你Claude Code企业级实战案例，比付费效果强百倍，少走99%弯路！",
+      "content": "【视频配套资料+问题解答+请看评论区置顶领取哦】",
+      "url": "https://www.bilibili.com/video/BV1co3Q6jE9r",
+      "date": "2026-08-02T06:23:09.000Z",
+      "views": 1791,
+      "video_id": "BV1co3Q6jE9r",
+      "thumbnail_url": "https://i0.hdslb.com/bfs/archive/92113b58b3f9363d98fbf8b08743fc0a656b62f2.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "How Does Claude Code Actually Work? Let's Make Our Own",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=vp6Dlx5aHDU",
+      "date": "2026-08-04",
+      "video_id": "vp6Dlx5aHDU",
+      "thumbnail_url": "https://i.ytimg.com/vi/vp6Dlx5aHDU/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Basics | Master 95% in 10 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=Y4xDbxs-xxs",
+      "date": "2026-08-04",
+      "video_id": "Y4xDbxs-xxs",
+      "thumbnail_url": "https://i.ytimg.com/vi/Y4xDbxs-xxs/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Non-Coders",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=inxAjCRHe2o",
+      "date": "2026-08-04",
+      "video_id": "inxAjCRHe2o",
+      "thumbnail_url": "https://i.ytimg.com/vi/inxAjCRHe2o/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-08-04",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial for Beginners in 2026! (Step-By-Step)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=qYqIhX9hTQk",
+      "date": "2026-08-04",
+      "video_id": "qYqIhX9hTQk",
+      "thumbnail_url": "https://i.ytimg.com/vi/qYqIhX9hTQk/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-08-04",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-08-04",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-08-04",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    }
+  ]
+}
