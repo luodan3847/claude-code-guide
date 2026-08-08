@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-08",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.226 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
+      "date": "2026-08-08T02:48:05Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.225 Released",
+      "content": "## What's changed\n\n- Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.225)\n- Added a workspace trust prompt to `claude agents` for untrusted directories, matching the behavior of `claude`\n- Fixed a transient 401 replacing a long-lived `CLAUDE_CODE_OAUTH_TOKEN` with a stored login's short-lived token, breaking headless sessions until restart\n- Fixed MCP OAuth servers on macOS intermittently failing with a burst of 401 errors, as if never authenticated, after a keychain read timed out\n- Fixed auto mode counting a safety-filter refusal of its own permission check toward the consecutive-block limit; the action is still denied, but the model is now told to move o",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
+      "date": "2026-08-08T01:09:26Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.224 Released",
+      "content": "## What's changed\n\n- Added self-hosted environments: `claude self-hosted-runner` turns your own machines or containers into a place Claude Code web, mobile, and desktop sessions can run, on Team and Enterprise plans\n- Added `archive` plugin source: install plugins from a zip over HTTPS without git or npm, with optional SHA-256 pinning\n- Added a cancel-and-confirm step when removing an unavailable paste changes a command's text\n- Added `ANTHROPIC_BEDROCK_REGION_PREFIX` env var for Bedrock to prefer a specific cross-region inference profile over the `AWS_REGION`-derived one\n- Added `crossSessionInbound` and `dialogExpiry` settings: cross-session messages sent to a session running with bypassed permissions are held for your approval, and messages to other sessions auto-deliver\n- Added sandbox",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
+      "date": "2026-08-07T04:00:59Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.223 Released",
+      "content": "## What's changed\n\n- Added owner wildcard entries (`\"owner/*\"`) to the `strictKnownMarketplaces` and `blockedMarketplaces` managed settings for allowing or blocking all marketplace repos under a GitHub org\n- Added a warning when workflow agents, forked skills, slash commands, or resumed background agents' requested subagent model is restricted and the parent model runs instead\n- Added a `/teleport` hint in cloud sessions showing how to continue locally with `claude --teleport <session id>`\n- Fixed a Bash permission bypass where a crafted command could hide parts of itself from permission checks\n- Fixed permission prompts so commands padded with tabs or invisible Unicode can no longer hide part of the command from the approval dialog\n- Fixed workflow scripts being able to use dynamic `impor",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
+      "date": "2026-08-06T00:52:37Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.222 Released",
+      "content": "## What's changed\n\n- Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session type\n- Fixed PreToolUse auto-allow hooks bypassing tool restrictions in background agent tasks (summaries, compaction, renames)\n- Fixed `/usage-credits` on Team and Enterprise showing \"you've already sent a usage credit request\" for members whose earlier request was dismissed, blocking them from sending a new one\n- Fixed the startup connectivity check hanging and then failing behind an HTTPS proxy; it now uses the same proxy-aware transport as API requests and times out with a clear message\n- Fixed \"Connection closed mid-response\" errors being reported on responses that had actually comp",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
+      "date": "2026-08-04T22:39:55Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Agent skills that bring team coding standards to Claude Code and Codex",
+      "content": "",
+      "url": "https://github.com/tikalk/adlc-team-skills",
+      "date": "2026-08-04T14:38:31Z",
+      "points": 75
+    },
+    {
+      "source": "hackernews",
+      "title": "Boris Cherny on Trying to Get Claude Code to Rewrite the Claude App",
+      "content": "",
+      "url": "https://daringfireball.net/linked/2026/08/02/cherny-claude-swift",
+      "date": "2026-08-03T00:22:55Z",
+      "points": 69
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Wallfacer – A terminal session manager for Claude Code, and more",
+      "content": "",
+      "url": "https://github.com/pradipta/wallfacer",
+      "date": "2026-08-06T03:52:56Z",
+      "points": 35
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Benzi – An AI coding assistant grounded in a live code map",
+      "content": "Benzi is a compiler + runtime tracer + harness and  AI agent built to  understand code from ground up.<p>Challenging traditional RAG and embedding space approaches, Benzi aims to write code as cleanly as it understands it.<p>Any feedback is greatly appriciated!",
+      "url": "https://benzi.fly.dev/",
+      "date": "2026-08-04T03:30:27Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "Token Monitor, An ESP32-S3 desktop display that tracks AI coding assistant usage",
+      "content": "",
+      "url": "https://www.cnx-software.com/2026/08/07/token-monitor-an-esp32-s3-desktop-display-that-tracks-ai-coding-assistant-usage/",
+      "date": "2026-08-07T17:48:08Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Self-hosted pet diary built on Frigate and a local vision model",
+      "content": "I have a cat and a dog, and I worry about them whenever I am away. My cameras ping me with a clip of the cat crossing the kitchen, which tells me almost nothing. I could sit and watch hours of recordings to work out how their day went and whether anything looks off, but that&#x27;s too time consuming. What I actually wanted to know were concrete things: did they eat, did they drink, did the cat use the litter box, are they sleeping more than usual.<p>So pet-report sits on top of Frigate, which I already run for the cameras. Twice a day it sends the new clips to a vision model (I run Qwen3.6-35B-A3B on an RTX 5090) on my own server and writes up the day, with every line linking back to the footage behind it so you can check it yourself. You can also ask it things like &quot;did the dog drink today?&quot; and it answers from what the cameras actually saw.<p>I&#x27;ve found myself needing an app like this for a long time, and pulling contextual metadata out of an image or a video is exactly what these models are good at. Before LLMs this would have taken money, time and R&amp;D I don&#x27;t have, and I couldn&#x27;t have done it alone, since I have no background in ML or image analysis. Most of the code here was written by an AI coding assistant, with me directing and reviewing it. The design and the review are mine.<p>The part I&#x27;m happiest about is that a local vision model keeps everything private. Nothing leaves my network.<p>It does get things wrong, but the whole thing is designed around that: uncertain moments are flagged, and anything can be corrected by hand. Every moment keeps the frame&#x2F;clip it came from, so you can see what the model saw instead of taking its word for it. The results are only as good as the model you run, the descriptions you give it of your pets, and where your cameras are pointing. If you have two orange cats, it won&#x27;t tell them apart: it labels the sighting &quot;a cat&quot; and leaves you to pick which one. Fortunately I have one cat and one dog, so every sighting gets named on its own, but I did try my best to prompt the model in a way that smooths out those identification edges.<p>Anyway, just wanted to share something that has been working for me and my two animals, which is the honest extent of the testing. I&#x27;d love to know how it does on yours.",
+      "url": "https://github.com/bolt12/pet-report",
+      "date": "2026-08-03T15:21:34Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "date": "2026-08-08"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Full Course – Autonomous Goals, MCP, and VS Code Setup",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=7l6bXLAKyEI",
+      "date": "2026-08-08",
+      "video_id": "7l6bXLAKyEI",
+      "thumbnail_url": "https://i.ytimg.com/vi/7l6bXLAKyEI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "How To Use Claude Code To Build Anything (for beginners)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=eM9uzhXH3AA",
+      "date": "2026-08-08",
+      "video_id": "eM9uzhXH3AA",
+      "thumbnail_url": "https://i.ytimg.com/vi/eM9uzhXH3AA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-08-08",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Non-Coders",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=inxAjCRHe2o",
+      "date": "2026-08-08",
+      "video_id": "inxAjCRHe2o",
+      "thumbnail_url": "https://i.ytimg.com/vi/inxAjCRHe2o/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-08-08",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-08-08",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Anthropic",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCrDwWp7EBBv4NwvScIpBDOA",
+      "date": "2026-08-08",
+      "video_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCrDwWp7EBBv4NwvScIpBDOA/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-08-08",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
