@@ -1,0 +1,159 @@
+{
+  "date": "2026-08-11",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.227 Released",
+      "content": "## What's changed\n\n- Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage credits for Fable\n- Fixed every Bash command failing under `claude-code-action` with `allowed_non_write_users` on GitHub-hosted runners\n- Fixed `/tui` bringing back a conversation that had been rewound to before its first message\n- Improved slash-command menu: blue now marks only the selected row, matched characters are bolded instead of recolored, and emoji or accented names keep their glyphs\n- Improved performance: fewer event-loop stalls on file-not-found suggestions and at-mention size checks\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
+      "date": "2026-08-10T22:56:53Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.226 Released",
+      "content": "## What's changed\n\n- Bug fixes and reliability improvements\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
+      "date": "2026-08-08T02:48:05Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.225 Released",
+      "content": "## What's changed\n\n- Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.225)\n- Added a workspace trust prompt to `claude agents` for untrusted directories, matching the behavior of `claude`\n- Fixed a transient 401 replacing a long-lived `CLAUDE_CODE_OAUTH_TOKEN` with a stored login's short-lived token, breaking headless sessions until restart\n- Fixed MCP OAuth servers on macOS intermittently failing with a burst of 401 errors, as if never authenticated, after a keychain read timed out\n- Fixed auto mode counting a safety-filter refusal of its own permission check toward the consecutive-block limit; the action is still denied, but the model is now told to move o",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
+      "date": "2026-08-08T01:09:26Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.224 Released",
+      "content": "## What's changed\n\n- Added self-hosted environments: `claude self-hosted-runner` turns your own machines or containers into a place Claude Code web, mobile, and desktop sessions can run, on Team and Enterprise plans\n- Added `archive` plugin source: install plugins from a zip over HTTPS without git or npm, with optional SHA-256 pinning\n- Added a cancel-and-confirm step when removing an unavailable paste changes a command's text\n- Added `ANTHROPIC_BEDROCK_REGION_PREFIX` env var for Bedrock to prefer a specific cross-region inference profile over the `AWS_REGION`-derived one\n- Added `crossSessionInbound` and `dialogExpiry` settings: cross-session messages sent to a session running with bypassed permissions are held for your approval, and messages to other sessions auto-deliver\n- Added sandbox",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
+      "date": "2026-08-07T04:00:59Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.223 Released",
+      "content": "## What's changed\n\n- Added owner wildcard entries (`\"owner/*\"`) to the `strictKnownMarketplaces` and `blockedMarketplaces` managed settings for allowing or blocking all marketplace repos under a GitHub org\n- Added a warning when workflow agents, forked skills, slash commands, or resumed background agents' requested subagent model is restricted and the parent model runs instead\n- Added a `/teleport` hint in cloud sessions showing how to continue locally with `claude --teleport <session id>`\n- Fixed a Bash permission bypass where a crafted command could hide parts of itself from permission checks\n- Fixed permission prompts so commands padded with tabs or invisible Unicode can no longer hide part of the command from the approval dialog\n- Fixed workflow scripts being able to use dynamic `impor",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
+      "date": "2026-08-06T00:52:37Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Auto mode is now the default in Claude Code",
+      "content": "",
+      "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
+      "date": "2026-08-10T03:50:00Z",
+      "points": 280
+    },
+    {
+      "source": "hackernews",
+      "title": "Message your other Claude Code sessions",
+      "content": "",
+      "url": "https://code.claude.com/docs/en/cross-session-messaging",
+      "date": "2026-08-08T15:34:49Z",
+      "points": 169
+    },
+    {
+      "source": "hackernews",
+      "title": "Agent skills that bring team coding standards to Claude Code and Codex",
+      "content": "",
+      "url": "https://github.com/tikalk/adlc-team-skills",
+      "date": "2026-08-04T14:38:31Z",
+      "points": 75
+    },
+    {
+      "source": "hackernews",
+      "title": "Hi HN Rune – A software intelligence runtime for AI coding assistants",
+      "content": "",
+      "url": "https://github.com/thecolourfoundation/rune",
+      "date": "2026-08-10T17:39:22Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Token Monitor, An ESP32-S3 desktop display that tracks AI coding assistant usage",
+      "content": "",
+      "url": "https://www.cnx-software.com/2026/08/07/token-monitor-an-esp32-s3-desktop-display-that-tracks-ai-coding-assistant-usage/",
+      "date": "2026-08-07T17:48:08Z",
+      "points": 1
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "date": "2026-08-11"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial: Beginner to Pro In 15 Minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=5-KUalu-L6k",
+      "date": "2026-08-11",
+      "video_id": "5-KUalu-L6k",
+      "thumbnail_url": "https://i.ytimg.com/vi/5-KUalu-L6k/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-08-11",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-08-11",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-08-11",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Non-Coders",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=inxAjCRHe2o",
+      "date": "2026-08-11",
+      "video_id": "inxAjCRHe2o",
+      "thumbnail_url": "https://i.ytimg.com/vi/inxAjCRHe2o/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-08-11",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-08-11",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "How we Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=IlqJqcl8ONE",
+      "date": "2026-08-11",
+      "video_id": "IlqJqcl8ONE",
+      "thumbnail_url": "https://i.ytimg.com/vi/IlqJqcl8ONE/mqdefault.jpg"
+    }
+  ]
+}
