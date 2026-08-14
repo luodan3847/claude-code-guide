@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-14",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.232 Released",
+      "content": "## What's changed\n\n- Subagent forking is now on by default: a `subagent_type: \"fork\"` subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run in the background by default\n- Type `@` in the prompt to mention another Claude session by name; Claude then uses `SendMessage` to reach that session directly\n- `SendMessage` now delivers to a bare name that exactly matches one live session, instead of asking to confirm with a ref first\n- Interactive sessions on one machine now keep unique names: starting or renaming a session to a name another live session already uses gives it a `name-word-word` variant and tells you\n- Added `/config` rows for \"Dialog expiry\" and \"Messages from your other sessions\" (cross-session inbound accept/hold/re",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
+      "date": "2026-08-13T23:29:59Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.231 Released",
+      "content": "## What's changed\n\n- Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
+      "date": "2026-08-13T08:38:50Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.229 Released",
+      "content": "## What's changed\n\n- Documented `claude remote-control --continue` for resuming the most recent Remote Control session\n- Added server-supplied Claude Code hook support for self-hosted runner sessions, matching managed-environment behavior\n- Added SSE keepalive pings to gateway streaming responses during long thinking pauses, preventing idle-timeout disconnects on Vertex and Bedrock upstreams\n- Added plugin marketplace `command` sources: a local command (e.g. an IDE) prints the plugin directory, which is re-resolved each session and applied without a restart; `mode: \"link\"` uses it in place\n- `ListAgents` now marks disconnected Remote Control sessions as `offline` and labels your cloud sessions as `cloud`\n- Fixed long responses partly disappearing while streaming and being printed twice in ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
+      "date": "2026-08-12T20:56:22Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.228 Released",
+      "content": "## What's changed\n\n- Fixed interactive sessions that could stop redrawing entirely, while the process kept running, after a rare internal layout error\n- Fixed `git` / Git Bash not being found on Windows when Claude Code is launched from a parent folder of the git installation\n- Fixed `/tui` reverting the session to an earlier model when `/model` had been changed since the last response\n- Fixed cross-session messaging sometimes starting without an inbox in the first session after install or upgrade\n- Fixed Remote Control `/resume` while connected leaking the resumed conversation's title or history into the connected session\n- Fixed `claude self-hosted-runner` sessions failing on every fresh runner when the `checkout` hook fails for a repository the session doesn't push to; that repository i",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
+      "date": "2026-08-11T19:50:59Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.227 Released",
+      "content": "## What's changed\n\n- Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage credits for Fable\n- Fixed every Bash command failing under `claude-code-action` with `allowed_non_write_users` on GitHub-hosted runners\n- Fixed `/tui` bringing back a conversation that had been rewound to before its first message\n- Improved slash-command menu: blue now marks only the selected row, matched characters are bolded instead of recolored, and emoji or accented names keep their glyphs\n- Improved performance: fewer event-loop stalls on file-not-found suggestions and at-mention size checks\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
+      "date": "2026-08-10T22:56:53Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Auto mode is now the default in Claude Code",
+      "content": "",
+      "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
+      "date": "2026-08-10T03:50:00Z",
+      "points": 291
+    },
+    {
+      "source": "hackernews",
+      "title": "Message your other Claude Code sessions",
+      "content": "",
+      "url": "https://code.claude.com/docs/en/cross-session-messaging",
+      "date": "2026-08-08T15:34:49Z",
+      "points": 172
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code is leaking real email address as a User-Agent string in curl command",
+      "content": "",
+      "url": "https://github.com/anthropics/claude-code/issues/78431",
+      "date": "2026-08-11T14:21:47Z",
+      "points": 38
+    },
+    {
+      "source": "hackernews",
+      "title": "Hi HN Rune – A software intelligence runtime for AI coding assistants",
+      "content": "",
+      "url": "https://github.com/thecolourfoundation/rune",
+      "date": "2026-08-10T17:39:22Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Token Monitor, An ESP32-S3 desktop display that tracks AI coding assistant usage",
+      "content": "",
+      "url": "https://www.cnx-software.com/2026/08/07/token-monitor-an-esp32-s3-desktop-display-that-tracks-ai-coding-assistant-usage/",
+      "date": "2026-08-07T17:48:08Z",
+      "points": 1
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: How much money do you spend monthly on subscriptions for AI models?",
+      "content": "Monthly total for all AI model subscriptions for personal use, with a breakdown of which models you use and for what purpose (coding side projects, AI assistants, etc.).<p>You can also mention how much you spend monthly on AI tools for professional work that your company pays for.",
+      "url": "https://news.ycombinator.com/item?id=49290713",
+      "date": "2026-08-13T19:21:36Z",
+      "points": 8
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "date": "2026-08-14"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-08-14",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code for Beginners Tutorial [Full Course]",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=gh2_PhgZGsM",
+      "date": "2026-08-14",
+      "video_id": "gh2_PhgZGsM",
+      "thumbnail_url": "https://i.ytimg.com/vi/gh2_PhgZGsM/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-08-14",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial For Beginners in 2026! (Become a PRO)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=X_zVY3-mbM8",
+      "date": "2026-08-14",
+      "video_id": "X_zVY3-mbM8",
+      "thumbnail_url": "https://i.ytimg.com/vi/X_zVY3-mbM8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Non-Coders",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=inxAjCRHe2o",
+      "date": "2026-08-14",
+      "video_id": "inxAjCRHe2o",
+      "thumbnail_url": "https://i.ytimg.com/vi/inxAjCRHe2o/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-08-14",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-08-14",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=UCV03SRZXJEz-hchIAogeJOg",
+      "date": "2026-08-14",
+      "video_id": "UCV03SRZXJEz-hchIAogeJOg",
+      "thumbnail_url": "https://i.ytimg.com/vi/UCV03SRZXJEz-hchIAogeJOg/mqdefault.jpg"
+    }
+  ]
+}
