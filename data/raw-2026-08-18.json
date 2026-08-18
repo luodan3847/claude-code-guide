@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-18",
+  "items": [
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.234 Released",
+      "content": "## What's changed\n\n- Added the optional `CLAUDE_CODE_PROJECT_DIR_NAME` environment variable: hosts that give each session its own config directory can choose a short name for the per-project transcript directory\n- Added the `selection:clear` keybinding action, so a key can be bound to clear an in-app text selection; also works in the agents view\n- Added a GitLab merge request badge to the footer and statusline: repos with a GitLab remote and an authenticated glab CLI show MR !N with draft/pending/green states\n- Claude Code now continues your session automatically when a claude.ai usage limit resets; turn it off in `/config` (\"Continue automatically at usage limit\")\n- Claude is now told to use your account email only to identify you, and not to send it to unrelated services unless you ask\n-",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+      "date": "2026-08-17T20:20:58Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.233 Released",
+      "content": "## What's changed\n\n- Added GitLab merge request URL support to the `--worktree` flag and the `claude agents` view (where MRs display as `!N`)\n- Added an opt-in `forward_user_identity` apps gateway setting on Anthropic upstreams that sends the signed-in user's identity as headers, so a proxy behind the gateway can attribute spend per user\n- Added opt-in memory cgroup support for Bash tool commands on Linux (`CLAUDE_CODE_TOOL_MEMORY_LIMIT`) so a runaway build can't stall the session\n- Added `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` environment variable to configure the WebFetch session URL cache TTL (default unchanged: 15 minutes)\n- Fixed cloud sessions occasionally being marked as lost when the environment shut down while Claude was waiting on a permission prompt\n- Fixed MCP v2 connections endles",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
+      "date": "2026-08-14T22:20:57Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.232 Released",
+      "content": "## What's changed\n\n- Subagent forking is now on by default: a `subagent_type: \"fork\"` subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run in the background by default\n- Type `@` in the prompt to mention another Claude session by name; Claude then uses `SendMessage` to reach that session directly\n- `SendMessage` now delivers to a bare name that exactly matches one live session, instead of asking to confirm with a ref first\n- Interactive sessions on one machine now keep unique names: starting or renaming a session to a name another live session already uses gives it a `name-word-word` variant and tells you\n- Added `/config` rows for \"Dialog expiry\" and \"Messages from your other sessions\" (cross-session inbound accept/hold/re",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
+      "date": "2026-08-13T23:29:59Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.231 Released",
+      "content": "## What's changed\n\n- Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack\n",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
+      "date": "2026-08-13T08:38:50Z"
+    },
+    {
+      "source": "github",
+      "title": "Claude Code v2.1.229 Released",
+      "content": "## What's changed\n\n- Documented `claude remote-control --continue` for resuming the most recent Remote Control session\n- Added server-supplied Claude Code hook support for self-hosted runner sessions, matching managed-environment behavior\n- Added SSE keepalive pings to gateway streaming responses during long thinking pauses, preventing idle-timeout disconnects on Vertex and Bedrock upstreams\n- Added plugin marketplace `command` sources: a local command (e.g. an IDE) prints the plugin directory, which is re-resolved each session and applied without a restart; `mode: \"link\"` uses it in place\n- `ListAgents` now marks disconnected Remote Control sessions as `offline` and labels your cloud sessions as `cloud`\n- Fixed long responses partly disappearing while streaming and being printed twice in ",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
+      "date": "2026-08-12T20:56:22Z"
+    },
+    {
+      "source": "hackernews",
+      "title": "Maximizing the value of your Claude Code sessions",
+      "content": "",
+      "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
+      "date": "2026-08-14T16:15:21Z",
+      "points": 318
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Graft – Claude Code hooks that cut grep tokens by 42%",
+      "content": "",
+      "url": "https://github.com/NanoNets/Graft",
+      "date": "2026-08-14T15:22:02Z",
+      "points": 39
+    },
+    {
+      "source": "hackernews",
+      "title": "Claude Code is leaking real email address as a User-Agent string in curl command",
+      "content": "",
+      "url": "https://github.com/anthropics/claude-code/issues/78431",
+      "date": "2026-08-11T14:21:47Z",
+      "points": 38
+    },
+    {
+      "source": "hackernews",
+      "title": "Using AI in 2026 (Coding, Writing, Learning, Assistant-Ing)",
+      "content": "",
+      "url": "https://blog.sshh.io/p/how-i-use-ai-in-2026-coding-writing",
+      "date": "2026-08-17T14:11:01Z",
+      "points": 2
+    },
+    {
+      "source": "hackernews",
+      "title": "Ask HN: How much money do you spend monthly on subscriptions for AI models?",
+      "content": "Monthly total for all AI model subscriptions for personal use, with a breakdown of which models you use and for what purpose (coding side projects, AI assistants, etc.).<p>You can also mention how much you spend monthly on AI tools for professional work that your company pays for.",
+      "url": "https://news.ycombinator.com/item?id=49290713",
+      "date": "2026-08-13T19:21:36Z",
+      "points": 14
+    },
+    {
+      "source": "hackernews",
+      "title": "Show HN: Hearth – a shared family workspace where an agent can build apps",
+      "content": "Hi HN — I built Hearth for my family: <a href=\"https:&#x2F;&#x2F;ourhearth.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;ourhearth.ai</a><p>Hearth is a shared workspace for a household. We use it for plans, notes, schedules, people, and recurring family rituals, with an AI agent that can work across that context. Kind of like a shared Obsidian with an agent.<p>The cool part is that the agent can also build apps on top of the family&#x27;s notes and run them inside the same workspace. We have a calendar and a travel app, for instance, and all the apps I use to manage my company&#x27;s operations are in another Hearth.<p>Hearth is built on Playground, a library we&#x27;re developing for building collaborative AI coding harnesses. The common primitives are synchronized files, agents, people, app code sandboxing, and a policy layer. Hearth is the family-scale example; we&#x27;re building Bear for construction projects using the same library.<p>Hearth is beta software! We designed it with isolation and least-privilege in mind, but I recommend that you don&#x27;t put anything too sensitive in there until the source is out and stable (we&#x27;re making Hearth open source soon).<p>If this sounds like something you family could use, check it out and let me know what you think!<p>More background: [Hearth: Build your own assistant](<a href=\"https:&#x2F;&#x2F;bear.build&#x2F;posts&#x2F;hearth-build-your-own-assistant&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;bear.build&#x2F;posts&#x2F;hearth-build-your-own-assistant&#x2F;</a>)",
+      "url": "https://news.ycombinator.com/item?id=49292004",
+      "date": "2026-08-13T21:18:38Z",
+      "points": 9
+    },
+    {
+      "source": "anthropic",
+      "title": "Introducing Claude Opus 5",
+      "content": "",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "date": "2026-08-18"
+    },
+    {
+      "source": "youtube",
+      "title": "The Ultimate Claude Code Tutorial (Beginner to Pro)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=OVm2AGTxYuE",
+      "date": "2026-08-18",
+      "video_id": "OVm2AGTxYuE",
+      "thumbnail_url": "https://i.ytimg.com/vi/OVm2AGTxYuE/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code - Full Tutorial for Beginners",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=ntDIxaeo3Wg",
+      "date": "2026-08-18",
+      "video_id": "ntDIxaeo3Wg",
+      "thumbnail_url": "https://i.ytimg.com/vi/ntDIxaeo3Wg/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "date": "2026-08-18",
+      "video_id": "QoQBzR1NIqI",
+      "thumbnail_url": "https://i.ytimg.com/vi/QoQBzR1NIqI/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "FULL Claude Code Tutorial For Beginners in 2026! (Become a PRO)",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=X_zVY3-mbM8",
+      "date": "2026-08-18",
+      "video_id": "X_zVY3-mbM8",
+      "thumbnail_url": "https://i.ytimg.com/vi/X_zVY3-mbM8/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code Tutorial for Non-Coders",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=inxAjCRHe2o",
+      "date": "2026-08-18",
+      "video_id": "inxAjCRHe2o",
+      "thumbnail_url": "https://i.ytimg.com/vi/inxAjCRHe2o/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Mastering Claude Code in 30 minutes",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "date": "2026-08-18",
+      "video_id": "6eBSHbLKuN0",
+      "thumbnail_url": "https://i.ytimg.com/vi/6eBSHbLKuN0/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Claude Code New Features, Explained",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=SkY-tR9kf-k",
+      "date": "2026-08-18",
+      "video_id": "SkY-tR9kf-k",
+      "thumbnail_url": "https://i.ytimg.com/vi/SkY-tR9kf-k/mqdefault.jpg"
+    },
+    {
+      "source": "youtube",
+      "title": "Introducing Claude Code",
+      "content": "",
+      "url": "https://www.youtube.com/watch?v=AJpK3YTTKZ4",
+      "date": "2026-08-18",
+      "video_id": "AJpK3YTTKZ4",
+      "thumbnail_url": "https://i.ytimg.com/vi/AJpK3YTTKZ4/mqdefault.jpg"
+    }
+  ]
+}
